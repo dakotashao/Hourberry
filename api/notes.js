@@ -1,6 +1,7 @@
 import { Redis } from "@upstash/redis";
-const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const TOKEN_ = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+const envEnding = (...ends) => { const k = Object.keys(process.env).find(k => ends.some(e => k.endsWith(e))); return k ? process.env[k] : undefined; };
+const URL_ = envEnding("KV_REST_API_URL", "REDIS_REST_URL");
+const TOKEN_ = envEnding("KV_REST_API_TOKEN", "REDIS_REST_TOKEN");
 const redis = URL_ && TOKEN_ ? new Redis({ url: URL_, token: TOKEN_ }) : null;
 const H = "hourberry:notes";
 const clip = (v, n) => (typeof v === "string" ? v.slice(0, n) : v);
