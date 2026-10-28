@@ -587,7 +587,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
 .h2sheet .h2chip{box-shadow:none;background:#f2f2f2;padding:8px 14px}.h2sheet .h2chip.on{background:#000;color:#fff}
 .h2ftag{display:flex;align-items:center;gap:8px;height:44px;border-radius:22px;background:#fff;padding:0 8px 0 16px;box-shadow:0 2px 8px rgba(0,0,0,.12);font-size:15px;font-weight:700;white-space:nowrap}.h2ftag>i{width:8px;height:8px;border-radius:4px;background:#000}.h2ftag button{width:28px;height:28px;border-radius:14px;background:#f2f2f2;font-size:15px;color:#555}
 .h2sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -4px 20px rgba(0,0,0,.08);display:flex;flex-direction:column;z-index:7;transition:height .3s cubic-bezier(.2,.8,.2,1)}
-.h2grab{width:100%;height:22px;align-self:stretch;position:relative;flex:none;cursor:grab;touch-action:none}.h2grab::after{content:"";position:absolute;left:calc(50% - 20px);width:40px;top:8px;height:5px;border-radius:3px;background:#c4c4c4}.h2sheet.drag{transition:none}.h2sheet.peek .h2body>*:not(.h2cta){opacity:0}.h2body>*{transition:opacity .2s}
+.h2grab{width:100%;height:22px;align-self:stretch;position:relative;flex:none;cursor:grab;touch-action:none}.h2grab::after{content:"";position:absolute;left:calc(50% - 20px);width:40px;top:8px;height:5px;border-radius:3px;background:#c4c4c4}.h2sheet.drag{transition:none}.h2sheet .h2cta,.h2sheet .h2hd,.h2grab{touch-action:none}.h2sheet:not(.full),.h2sheet:not(.full) .h2body{touch-action:none}.h2sheet.peek .h2body>*:not(.h2cta){opacity:0}.h2body>*{transition:opacity .2s}
 .h2body{flex:1;overflow:auto;display:flex;flex-direction:column;gap:8px;padding-bottom:10px}
 .h2sheet .tabs{flex:none}
 .h2cta{display:flex;gap:10px;padding:0 16px}.h2cta .btn{flex:1;height:52px;border-radius:26px}.h2plus{width:52px;height:52px;border-radius:26px;background:#f2f2f2;font-size:24px;flex:none}
@@ -836,7 +836,7 @@ function homeFull(){
   else body=cta+`<div class="h2hd"><b>${S.time==="This week"?"Week":S.time}</b><span>5 plans</span></div>`+card("Tacos at Leo’s","7:00, 8 min walk","Jess: I’ll grab a big table",A.go("m04"));
  }
  const H=free?(S.pick>=3?360:(S.skipFb?540:506)):full?732:S.sheet==="peek"?150:310;
- return `<div class="h2wrap"><div class="h2map"><i style="left:-20px;right:-20px;top:230px;height:14px;transform:rotate(-5deg)"></i><i style="left:-20px;right:-20px;top:400px;height:12px;transform:rotate(3deg)"></i><i style="top:-20px;bottom:-20px;left:250px;width:14px;transform:rotate(6deg)"></i><i style="top:-20px;bottom:-20px;left:92px;width:12px;transform:rotate(-3deg)"></i><b style="left:120px;top:270px;width:110px;height:110px"></b><b style="left:280px;top:280px;width:90px;height:90px"></b></div>${pins}${you}${freeNow}${top}${coach}${pop}<div class="h2sheet ${!free&&S.sheet==="peek"?"peek":""}" style="height:${H}px"><button class="h2grab" ${free?"":A.act("h2:sheet")} aria-label="Expand"></button><div class="h2body">${body}</div>${tabs("Map")}</div></div>`;
+ return `<div class="h2wrap"><div class="h2map"><i style="left:-20px;right:-20px;top:230px;height:14px;transform:rotate(-5deg)"></i><i style="left:-20px;right:-20px;top:400px;height:12px;transform:rotate(3deg)"></i><i style="top:-20px;bottom:-20px;left:250px;width:14px;transform:rotate(6deg)"></i><i style="top:-20px;bottom:-20px;left:92px;width:12px;transform:rotate(-3deg)"></i><b style="left:120px;top:270px;width:110px;height:110px"></b><b style="left:280px;top:280px;width:90px;height:90px"></b></div>${pins}${you}${freeNow}${top}${coach}${pop}<div class="h2sheet ${!free&&S.sheet==="peek"?"peek":""} ${free||S.sheet==="full"?"full":""}" style="height:${H}px"><button class="h2grab" ${free?"":A.act("h2:sheet")} aria-label="Expand"></button><div class="h2body">${body}</div>${tabs("Map")}</div></div>`;
 }
 
 const SCREENS={
@@ -1136,12 +1136,14 @@ addEventListener("resize",scale);scale();syncNew();render(null);
 
 // ---------- drag the home sheet ----------
 (()=>{const V={peek:150,half:310,full:732};let y0=null,h0=0,sh=null,moved=false;
- document.addEventListener("pointerdown",e=>{const g=e.target.closest(".h2grab");if(!g||S.free)return;sh=g.closest(".h2sheet");y0=e.clientY;h0=sh.offsetHeight;moved=false;sh.classList.add("drag")});
- document.addEventListener("pointermove",e=>{if(y0==null)return;const dy=(e.clientY-y0)/SC;if(Math.abs(dy)>4)moved=true;sh.style.height=Math.max(V.peek-30,Math.min(V.full,h0-dy))+"px"});
+ document.addEventListener("pointerdown",e=>{const t=e.target;const s=t.closest(".h2sheet");if(!s||S.free||t.closest(".tabs,input"))return;
+  const body=s.querySelector(".h2body");if(!t.closest(".h2grab")&&S.sheet==="full"&&body&&body.contains(t)&&body.scrollTop>0)return;
+  sh=s;y0=e.clientY;h0=sh.offsetHeight;moved=false});
+ document.addEventListener("pointermove",e=>{if(y0==null)return;const dy=(e.clientY-y0)/SC;if(!moved&&Math.abs(dy)>6){moved=true;sh.classList.add("drag")}if(moved)sh.style.height=Math.max(V.peek-30,Math.min(V.full,h0-dy))+"px"});
  const end=e=>{if(y0==null)return;const dy=(e.clientY-y0)/SC;y0=null;sh.classList.remove("drag");if(!moved)return;
   const h=h0-dy,next=Object.entries(V).sort((a,b)=>Math.abs(a[1]-h)-Math.abs(b[1]-h))[0][0];S.sheet=next;refresh()};
  document.addEventListener("pointerup",end);document.addEventListener("pointercancel",end);
- document.addEventListener("click",e=>{if(moved&&e.target.closest(".h2grab")){e.stopPropagation();e.preventDefault();moved=false}},true);
+ document.addEventListener("click",e=>{if(moved&&e.target.closest(".h2sheet")){e.stopPropagation();e.preventDefault();moved=false}},true);
 })();
 
 // ---------- swipe between picks ----------
