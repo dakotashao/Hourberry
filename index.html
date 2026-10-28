@@ -646,6 +646,38 @@ body{padding:0;-webkit-font-smoothing:antialiased}
 .tour-hi{outline:3px solid #ff5a36!important;outline-offset:3px;animation:tourp 1.2s ease-in-out infinite;position:relative;z-index:5}
 @keyframes tourp{0%,100%{outline-color:#ff5a36}50%{outline-color:rgba(255,90,54,.25)}}
 
+
+.tour{padding:0;background:none;border-radius:0;gap:0;margin-top:14px}
+.tour .ttog{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font-size:14px;font-weight:500;color:var(--ink);padding:8px;border-radius:8px}
+.tour .ttog:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.tour .ttog small{font-size:12px;font-weight:400;color:var(--muted)}
+.tour .ttog .chev{margin-left:auto;font-size:12px;color:var(--muted);transition:transform .15s}
+.tour.open .ttog .chev{transform:rotate(90deg)}
+.tour .tbody{display:none;flex-direction:column;gap:1px;padding-left:14px}
+.tour.open .tbody{display:flex}
+.tour .tlist{gap:1px}
+.tour .tlist button{display:flex;gap:10px;text-align:left;font-size:14px;color:color-mix(in srgb,var(--ink) 70%,transparent);padding:7px 8px;border-radius:8px;background:none}
+.tour .tlist button:hover{background:color-mix(in srgb,var(--ink) 5%,transparent);color:var(--ink)}
+.tour .tlist i{all:unset;font-size:12px;color:var(--muted);min-width:14px;padding-top:2px;font-variant-numeric:tabular-nums}
+.tour .tlist b{font-size:14px;font-weight:400;line-height:1.35;color:inherit}
+.tour .tlist small{font-size:12px;color:var(--muted)}
+.tour .tcur{display:flex;flex-direction:column;gap:8px;padding:6px 8px 4px}
+.tour .tcur .ttitle{font-size:14px;font-weight:500;line-height:1.35;color:var(--ink)}
+.tour .tcur .tmeta{font-size:12px;color:var(--muted)}
+.tour .tbarp{height:3px;border-radius:2px;background:var(--line)}
+.tour .tbarp i{background:var(--ink)}
+.tour .tsteps{gap:2px}
+.tour .tsteps li{font-size:13px;gap:10px;padding:3px 0;color:var(--muted)}
+.tour .tsteps li i{all:unset;min-width:14px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.tour .tsteps li.ok{color:color-mix(in srgb,var(--ink) 55%,transparent);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--ink) 25%,transparent)}
+.tour .tsteps li.ok i{background:none;color:var(--muted)}
+.tour .tsteps li.now{color:var(--ink);font-weight:500}
+.tour .tsteps li.now i{color:#ff5a36}
+.tour .tacts,.tour .tdone{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tour .tacts button,.tour .tdone button{font-size:13px;color:color-mix(in srgb,var(--ink) 75%,transparent);padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--page)}
+.tour .tacts button:hover,.tour .tdone button:hover{color:var(--ink)}
+.tour .tdone b{font-size:13px;font-weight:500;margin-right:auto}
+.side .list button .nbadge{margin-left:auto;align-self:center;font-style:normal;font-size:11px;font-weight:600;line-height:18px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--ink);color:var(--panel);text-align:center;box-sizing:border-box}
 </style>
 
 <div class="app">
@@ -1079,7 +1111,7 @@ function drawPins(){phone.querySelectorAll(".npin,.nlayer").forEach(e=>e.remove(
  if(noteMode){const l=document.createElement("div");l.className="nlayer";phone.appendChild(l)}}
 function renderNotes(){const id=curId();const mine=NOTES.filter(n=>n.screen===id);const open=NOTES.filter(n=>!n.done).length;
  notesPanel.innerHTML=(mine.length?`<h2>Notes · ${mine.length}</h2>`+mine.map((n,i)=>`<div class="note ${n.done?"done":""} ${selNote===n.id?"sel":""}"><span class="num" style="background:${colorOf(n.by)}">${i+1}</span><div style="min-width:0"><div style="font-size:11px;font-weight:600;color:${colorOf(n.by)}">${esc(n.by?(n.by===ME?"You":(NAMES[n.by]||"…")):"Someone")}</div><div class="txt">${esc(n.text)}</div><div class="acts"><button data-ndone="${n.id}">${n.done?"Reopen":"Done"}</button><button data-ndel="${n.id}">Delete</button></div></div></div>`).join(""):``);
- list.querySelectorAll("[data-jump]").forEach(b=>{b.querySelector(".badge")?.remove();const c=NOTES.filter(n=>n.screen===b.dataset.jump&&!n.done).length;if(c){const e=document.createElement("em");e.className="badge";e.textContent=c;b.appendChild(e)}})}
+ list.querySelectorAll("[data-jump]").forEach(b=>{b.querySelector(".nbadge")?.remove();const c=NOTES.filter(n=>n.screen===b.dataset.jump&&!n.done).length;if(c){const e=document.createElement("em");e.className="nbadge";e.textContent=c;b.appendChild(e)}})}
 phone.addEventListener("click",e=>{
  if(e.target.closest(".nlayer")){const r=phone.getBoundingClientRect();pending={screen:curId(),x:Math.round((e.clientX-r.left)/SC),y:Math.round((e.clientY-r.top)/SC)};noteMode=false;noteBtn.classList.remove("on");ned.hidden=false;{const W=300,x=Math.min(e.clientX+20,innerWidth-W-12),y=Math.min(Math.max(12,e.clientY-20),innerHeight-ned.offsetHeight-12);ned.style.left=x+"px";ned.style.top=y+"px"}noteText.focus();drawPins();e.stopPropagation();return}
  const p=e.target.closest(".npin");if(p){if(p.dataset.note){selNote=p.dataset.note;drawPins();renderNotes()}e.stopPropagation();return}},true);
@@ -1143,15 +1175,20 @@ const STORIES=[
 let TS=null,TI=0;
 const tourEl=document.createElement("div");tourEl.className="tour";{const sd=document.getElementById("side"),np=document.getElementById("notesPanel");sd.insertBefore(tourEl,np)}const tourMini=document.createElement("span");tourMini.className="tmini";document.querySelector(".tbar").prepend(tourMini);
 function tourStart(k){const st=STORIES[k];Object.assign(S,{vsug:0,free:false,joined:false,plan:0,refresh:2,recap:0,ignored:{},grp:"new",chat:[],rx:{},archived:false,guest:false,ov:null,sheet:"half",newAcct:false,layer:"Plans",pick:0,skipFb:0,pickAll:false,bingo:0,bingoMin:0,renNew:0,prem:false,premUsed:0,pPlace:null});if(st.init)st.init();TS=k;TI=0;tab(st.start);closeSide&&closeSide();tourDraw()}
+let TOPEN=false;try{TOPEN=localStorage.getItem("hb_tour_open")==="1"}catch(e){}
 function tourDraw(){
  tourMini.innerHTML=TS===null?"":`<b>Story ${TS+1}</b> ${TI>=STORIES[TS].steps.length?"Done!":`${TI+1}/${STORIES[TS].steps.length} · ${STORIES[TS].steps[TI][0]}`}`;
- if(TS===null){tourEl.innerHTML=`<div class="thead"><b>User stories</b><span>Tap one to walk through it</span></div><div class="tlist">${STORIES.map((s,k)=>`<button data-tstory="${k}"><i>${k+1}</i><span><b>${s.t}</b><small>${s.who} · ${s.steps.length} steps</small></span></button>`).join("")}</div>`;return}
- const st=STORIES[TS],done=TI>=st.steps.length;
- tourEl.innerHTML=`<div class="thead"><button class="tback" data-tback aria-label="All stories">‹</button><span style="min-width:0"><small>Story ${TS+1} of ${STORIES.length} · ${st.who}</small><b>${st.t}</b></span></div>
- <div class="tbarp"><i style="width:${Math.round(100*Math.min(TI,st.steps.length)/st.steps.length)}%"></i></div>
- <ol class="tsteps">${st.steps.map((s,i)=>`<li class="${i<TI?"ok":i===TI?"now":""}"><i>${i<TI?"✓":i+1}</i>${s[0]}</li>`).join("")}</ol>
- ${done?`<div class="tdone"><b>Done!</b>${TS<STORIES.length-1?`<button data-tstory="${TS+1}">Next story ›</button>`:`<button data-tback>All stories</button>`}</div>`:`<div class="tacts"><button data-trestart>Restart</button><button data-tskip>Skip step</button></div>`}`}
-tourEl.addEventListener("click",e=>{const a=e.target.closest("[data-tstory]");if(a){tourStart(+a.dataset.tstory);return}
+ const open=TOPEN||TS!==null;tourEl.classList.toggle("open",open);
+ const head=`<button class="ttog" data-ttog>User stories <small>${TS===null?STORIES.length:`${TS+1} of ${STORIES.length}`}</small><span class="chev">›</span></button>`;
+ let body;
+ if(TS===null){body=`<div class="tlist">${STORIES.map((s,k)=>`<button data-tstory="${k}"><i>${k+1}</i><span><b>${s.t}</b><small>${s.who} · ${s.steps.length} steps</small></span></button>`).join("")}</div>`}
+ else{const st=STORIES[TS],done=TI>=st.steps.length;
+  body=`<div class="tcur"><div><div class="ttitle">${st.t}</div><div class="tmeta">${st.who} · step ${Math.min(TI+1,st.steps.length)} of ${st.steps.length}</div></div>
+  <div class="tbarp"><i style="width:${Math.round(100*Math.min(TI,st.steps.length)/st.steps.length)}%"></i></div>
+  <ol class="tsteps">${st.steps.map((s,i)=>`<li class="${i<TI?"ok":i===TI?"now":""}"><i>${i<TI?"✓":i+1}</i>${s[0]}</li>`).join("")}</ol>
+  ${done?`<div class="tdone"><b>Done</b>${TS<STORIES.length-1?`<button data-tstory="${TS+1}">Next story</button>`:""}<button data-tback>All stories</button></div>`:`<div class="tacts"><button data-tback>All stories</button><button data-trestart>Restart</button><button data-tskip>Skip step</button></div>`}</div>`}
+ tourEl.innerHTML=head+`<div class="tbody">${body}</div>`}
+tourEl.addEventListener("click",e=>{if(e.target.closest("[data-ttog]")){if(TS!==null){TS=null;tourHi(null)}TOPEN=!tourEl.classList.contains("open");try{localStorage.setItem("hb_tour_open",TOPEN?"1":"0")}catch(_){}tourDraw();return}const a=e.target.closest("[data-tstory]");if(a){tourStart(+a.dataset.tstory);return}
  if(e.target.closest("[data-tback]")){TS=null;tourHi(null);tourDraw();return}
  if(e.target.closest("[data-trestart]")){tourStart(TS);return}
  if(e.target.closest("[data-tskip]")){TI++;tourDraw();return}});
