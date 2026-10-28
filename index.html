@@ -1318,12 +1318,13 @@ function drawCursors(){const r=phone.getBoundingClientRect(),k=r.width/390;const
  [...layer.children].forEach(el=>{if(!seen.has(el.id))el.remove()})}
 function draw(){const self=me();const myId=self?self.connectionId:null;
  const fol=OTHERS.filter(o=>o.presence&&o.presence.following===myId).length;
- if(!OTHERS.length)pres.innerHTML="";
- else pres.innerHTML=`<span class="pav me" style="background:${col(myId)}" title="You">${esc(ini(nm()||"Y"))}</span>`+OTHERS.map(o=>`<button class="pav ${FOLLOW===o.connectionId?"on":""}" data-follow="${o.connectionId}" style="background:${col(o.connectionId)};color:${col(o.connectionId)}" title="${FOLLOW===o.connectionId?"Stop following":"Follow"} ${esc((o.presence&&o.presence.name)||"Guest")}"><span style="color:#fff">${esc(ini((o.presence&&o.presence.name)||"G"))}</span></button>`).join("")+(fol?`<span class="pfol">${fol} following you</span>`:"");
+ let ph="";
+ if(OTHERS.length)ph=`<span class="pav me" style="background:${col(myId)}" title="You">${esc(ini(nm()||"Y"))}</span>`+OTHERS.map(o=>`<button class="pav ${FOLLOW===o.connectionId?"on":""}" data-follow="${o.connectionId}" style="background:${col(o.connectionId)};color:${col(o.connectionId)}" title="${FOLLOW===o.connectionId?"Stop following":"Follow"} ${esc((o.presence&&o.presence.name)||"Guest")}"><span style="color:#fff">${esc(ini((o.presence&&o.presence.name)||"G"))}</span></button>`).join("")+(fol?`<span class="pfol">${fol} following you</span>`:"");
+ if(pres.innerHTML!==ph)pres.innerHTML=ph;
  const L=FOLLOW!==null&&OTHERS.find(o=>o.connectionId===FOLLOW);
  if(FOLLOW!==null&&!L){FOLLOW=null;room.updatePresence({following:null})}
  bar.hidden=!L;fit.classList.toggle("following",!!L);
- if(L){bar.style.background=col(L.connectionId);fit.style.setProperty("--fc",col(L.connectionId));bar.innerHTML=`Following ${esc(L.presence.name||"Guest")}<button data-unfollow>Stop</button>`;apply(L.presence.state)}
+ if(L){bar.style.background=col(L.connectionId);fit.style.setProperty("--fc",col(L.connectionId));{const bh=`Following ${esc(L.presence.name||"Guest")}<button data-unfollow>Stop</button>`;if(bar.innerHTML!==bh)bar.innerHTML=bh}apply(L.presence.state)}
  drawCursors()}
 room.subscribe("others",others=>{OTHERS=[...others];draw()});
 room.subscribe("my-presence",()=>{});
@@ -1335,11 +1336,11 @@ addEventListener("pointermove",e=>{const r=phone.getBoundingClientRect(),k=r.wid
  room.updatePresence({cursor:(x>-60&&x<450&&y>-60&&y<904)?{x:Math.round(x),y:Math.round(y)}:null})});
 document.addEventListener("pointerleave",()=>room.updatePresence({cursor:null}));
 addEventListener("resize",drawCursors);addEventListener("scroll",drawCursors,true);
-pres.addEventListener("click",e=>{const b=e.target.closest("[data-follow]");if(!b)return;const id=+b.dataset.follow;
+pres.addEventListener("pointerdown",e=>{const b=e.target.closest("[data-follow]");if(!b)return;const id=+b.dataset.follow;
  if(FOLLOW===id){FOLLOW=null;room.updatePresence({following:null});draw();return}
  if(!nm()){const n=(prompt("Your name (so they can see who’s following)")||"").trim().slice(0,40);if(n)try{localStorage.setItem("hb_name",n)}catch(_){}}
  FOLLOW=id;lastApplied="";room.updatePresence({following:id,name:nm()});draw()});
-bar.addEventListener("click",e=>{if(e.target.closest("[data-unfollow]")){FOLLOW=null;room.updatePresence({following:null});draw()}});
+bar.addEventListener("pointerdown",e=>{if(e.target.closest("[data-unfollow]")){e.preventDefault();FOLLOW=null;room.updatePresence({following:null});draw()}});
 document.addEventListener("pointerdown",e=>{if(FOLLOW!==null&&e.isTrusted&&(e.target.closest("#phone")||e.target.closest("#list,.tour"))){FOLLOW=null;room.updatePresence({following:null});draw()}},true);
 </script>
 </body></html>
