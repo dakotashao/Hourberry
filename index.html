@@ -1027,8 +1027,8 @@ function bindMap(el){const m=el.querySelector(".homewrap .map");if(!m)return;con
  m.addEventListener("click",e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);
  m.addEventListener("wheel",e=>{e.preventDefault();if(e.ctrlKey){c.z=Math.max(.6,Math.min(3,c.z*Math.exp(-e.deltaY*.01)))}else{c.x-=e.deltaX/SC;c.y-=e.deltaY/SC}ap()},{passive:false});}
 function bindBadge(el){const b=el.querySelector("#badge");if(!b)return;const L=b.parentNode;let a=0,v=0,lx=null,run=true;
- const tick=()=>{if(!b.isConnected)return;v+=-a*.02;v*=.965;a+=v;L.style.transform=`rotate(${a}deg)`;requestAnimationFrame(tick)};v=2.2;tick();
- phone.addEventListener("pointermove",e=>{if(!b.isConnected)return;if(lx!==null)v+=Math.max(-1.5,Math.min(1.5,(e.clientX-lx)*.04));lx=e.clientX});
+ const tick=()=>{if(!b.isConnected)return;v+=-a*.03;v*=.93;a+=v;a=Math.max(-6,Math.min(6,a));L.style.transform=`rotate(${a}deg)`;requestAnimationFrame(tick)};v=.8;tick();
+ phone.addEventListener("pointermove",e=>{if(!b.isConnected)return;if(lx!==null)v+=Math.max(-.25,Math.min(.25,(e.clientX-lx)*.01));lx=e.clientX});
  if(window.DeviceOrientationEvent)addEventListener("deviceorientation",e=>{if(b.isConnected&&e.gamma!=null)v+=(e.gamma*.5-a)*.004})}
 function bindSheet(el){const sh=el.querySelector("#hsheet"),g=el.querySelector("#grab");if(!sh)return;const V={peek:170,half:470,full:690};let y0=null,t0=0,moved=false;
  g.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;y0=e.clientY;t0=700-V[S.sheet];moved=false;sh.classList.add("drag");g.setPointerCapture(e.pointerId)});
