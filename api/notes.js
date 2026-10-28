@@ -1,11 +1,11 @@
 import { Redis } from "@upstash/redis";
-const redis = new Redis({
-  url: process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN,
-});
+const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+const TOKEN_ = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+const redis = URL_ && TOKEN_ ? new Redis({ url: URL_, token: TOKEN_ }) : null;
 const H = "hourberry:notes";
 const clip = (v, n) => (typeof v === "string" ? v.slice(0, n) : v);
 export default async function handler(req, res) {
+  if (!redis) return res.status(500).json({ error: "storage not connected: no Upstash env vars on this deployment" });
   try {
     if (req.method === "GET") {
       const all = (await redis.hgetall(H)) || {};
@@ -34,6 +34,6 @@ export default async function handler(req, res) {
     }
     res.status(405).end();
   } catch (e) {
-    res.status(500).json({ error: "storage not connected" });
+    res.status(500).json({ error: "storage error: " + (e && e.message) });
   }
 }
