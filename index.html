@@ -283,6 +283,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
 .stage{padding:16px}
 @media (max-width:760px){.side{border-radius:0;padding-top:calc(24px + env(safe-area-inset-top,0px))}}
 .stage{gap:36px}
+.pres{display:flex;align-items:center;gap:2px}.pres:empty{display:none}.pav{width:28px;height:28px;border-radius:14px;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;border:2px solid var(--panel);margin-left:-6px;cursor:pointer}.pav:first-child{margin-left:0}.pav.on{box-shadow:0 0 0 2px var(--panel),0 0 0 4px currentColor}.pav.me{cursor:default}.pfol{font-size:12px;color:#666;padding:0 6px;white-space:nowrap}.followbar{position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:60;color:#fff;border-radius:999px;padding:7px 8px 7px 14px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(0,0,0,.18)}.followbar button{background:rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}.fit.following .phone{outline:4px solid var(--fc);outline-offset:6px;border-radius:50px}
 .tbar{display:flex;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px 4px 4px 14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .tbar .where{font-size:13px;color:var(--ink);font-weight:500;text-align:left}
 .tbar .where b{font-weight:500}
@@ -696,7 +697,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
     <div class="tbar">
       <span class="where" id="where"></span>
       <span class="nhint" id="noteHint"></span>
-      <i class="tsep"></i>
+      <span class="pres" id="pres"></span><i class="tsep"></i>
       <button id="noteBtn" class="cbtn" aria-label="Add note" title="Add note (C)"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3.2c-4 0-6.8 2.6-6.8 6 0 1.4.5 2.7 1.4 3.7l-.9 3 3.3-1.3c.9.4 1.9.6 3 .6 4 0 6.8-2.6 6.8-6s-2.8-6-6.8-6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 6.8v4.8M7.6 9.2h4.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </div>
     <div class="ned" id="noteEditor" hidden><textarea id="noteText" placeholder="What should change here?" aria-label="Note"></textarea><div><button id="noteCancel">Cancel</button><button class="save" id="noteSave">Save note</button></div></div>
@@ -1162,6 +1163,47 @@ notesPanel.addEventListener("click",async e=>{const d=e.target.closest("[data-nd
  subs.push(()=>{drawPins();renderNotes()});pull();setInterval(pull,5000);
 })();
 addEventListener("resize",scale);scale();syncNew();render(null);
+
+
+// ---------- presence + follow (like Figma) ----------
+(()=>{
+ let PID="";try{PID=sessionStorage.getItem("hb_pid")||""}catch(e){}if(!PID){PID=Math.random().toString(36).slice(2,10);try{sessionStorage.setItem("hb_pid",PID)}catch(e){}}
+ const nm=()=>{try{return localStorage.getItem("hb_name")||""}catch(e){return ""}};
+ const PC=["#e5484d","#0b7fdb","#16a34a","#f59e0b","#db2777","#0d9488","#7c3aed"];
+ const col=id=>{let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return PC[h%PC.length]};
+ const ini=n=>(n||"?").trim().slice(0,1).toUpperCase();
+ let PEOPLE=[],FOLLOW=null,lastApplied="",myState="",v=0,busy=false;
+ const pres=document.getElementById("pres"),fit=document.getElementById("fit");
+ let bar=document.createElement("div");bar.className="followbar";bar.hidden=true;document.body.appendChild(bar);
+ const snap=()=>{try{return JSON.stringify(S)}catch(e){return ""}};
+ function apply(st){if(!st||st===lastApplied)return;lastApplied=st;let o;try{o=JSON.parse(st)}catch(e){return}
+  for(const k of Object.keys(S))if(!(k in o))delete S[k];Object.assign(S,o);myState=snap();
+  try{render(null);renderOv();if(typeof sideUpdate==="function")sideUpdate()}catch(e){}}
+ function draw(){const others=PEOPLE.filter(p=>p.id!==PID);
+  const fol=PEOPLE.filter(p=>p.following===PID).length;
+  if(!others.length){pres.innerHTML="";}
+  else pres.innerHTML=`<span class="pav me" style="background:${col(PID)}" title="You${nm()?" ("+nm()+")":""}">${ini(nm()||"Y")}</span>`+others.map(p=>`<button class="pav ${FOLLOW===p.id?"on":""}" data-follow="${p.id}" style="background:${col(p.id)};color:${col(p.id)}" title="${FOLLOW===p.id?"Stop following":"Follow"} ${(p.name||"Guest").replace(/"/g,"")}"><span style="color:#fff">${ini(p.name||"G")}</span></button>`).join("")+(fol?`<span class="pfol">${fol} following you</span>`:"");
+  const L=FOLLOW&&PEOPLE.find(p=>p.id===FOLLOW);
+  if(FOLLOW&&!L){FOLLOW=null}
+  bar.hidden=!L;fit.classList.toggle("following",!!L);
+  if(L){bar.style.background=col(L.id);fit.style.setProperty("--fc",col(L.id));bar.innerHTML=`Following ${(L.name||"Guest").replace(/</g,"")}<button data-unfollow>Stop</button>`}}
+ async function tick(){if(busy)return;busy=true;
+  try{const st=snap();const changed=st!==myState;if(changed){myState=st;v++}
+   const r=await fetch("/api/presence",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:PID,name:nm(),following:FOLLOW,v,state:changed||v===1?st:undefined})});
+   if(r.ok){PEOPLE=await r.json();if(FOLLOW){const L=PEOPLE.find(p=>p.id===FOLLOW);if(L&&L.state)apply(L.state)}draw()}}catch(e){}
+  busy=false}
+ function loop(){tick();setTimeout(loop,document.hidden?8000:1000)}
+ v=1;myState="";loop();
+ pres.addEventListener("click",e=>{const b=e.target.closest("[data-follow]");if(!b)return;const id=b.dataset.follow;
+  if(FOLLOW===id){FOLLOW=null;draw();return}
+  if(!nm()){const n=(prompt("Your name (so they can see who’s following)")||"").trim().slice(0,40);if(n)try{localStorage.setItem("hb_name",n)}catch(_){}}
+  FOLLOW=id;lastApplied="";const L=PEOPLE.find(p=>p.id===id);if(L&&L.state)apply(L.state);draw();tick()});
+ bar.addEventListener("click",e=>{if(e.target.closest("[data-unfollow]")){FOLLOW=null;draw();tick()}});
+ // any real interaction with the prototype stops following
+ const stop=e=>{if(FOLLOW&&e.isTrusted&&(e.target.closest("#phone")||e.target.closest(".side,.list,#list,.tour"))){FOLLOW=null;draw();tick()}};
+ document.addEventListener("pointerdown",stop,true);
+ addEventListener("pagehide",()=>{try{navigator.sendBeacon&&fetch("/api/presence?id="+PID,{method:"DELETE",keepalive:true})}catch(e){}});
+})();
 
 // ---------- drag the home sheet ----------
 (()=>{const V={peek:150,half:310,full:732};let y0=null,h0=0,sh=null,moved=false;
