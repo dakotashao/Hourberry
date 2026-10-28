@@ -1205,7 +1205,7 @@ addEventListener("resize",scale);scale();syncNew();render(null);
  const PC=["#e5484d","#0b7fdb","#16a34a","#f59e0b","#db2777","#0d9488","#7c3aed"];
  const col=id=>{let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return PC[h%PC.length]};
  const ini=n=>(n||"?").trim().slice(0,1).toUpperCase();
- let PEOPLE=[],FOLLOW=null,lastApplied="",myState="",v=0,busy=false;
+ let PEOPLE=[],FOLLOW=null,FNAME="",lastSeen=0,lastApplied="",myState="",v=0,busy=false,timer=null;
  const pres=document.getElementById("pres"),fit=document.getElementById("fit");
  let bar=document.createElement("div");bar.className="followbar";bar.hidden=true;document.body.appendChild(bar);
  const snap=()=>{try{return JSON.stringify(S)}catch(e){return ""}};
@@ -1217,20 +1217,22 @@ addEventListener("resize",scale);scale();syncNew();render(null);
   if(!others.length){pres.innerHTML="";}
   else pres.innerHTML=`<span class="pav me" style="background:${col(PID)}" title="You${nm()?" ("+nm()+")":""}">${ini(nm()||"Y")}</span>`+others.map(p=>`<button class="pav ${FOLLOW===p.id?"on":""}" data-follow="${p.id}" style="background:${col(p.id)};color:${col(p.id)}" title="${FOLLOW===p.id?"Stop following":"Follow"} ${(p.name||"Guest").replace(/"/g,"")}"><span style="color:#fff">${ini(p.name||"G")}</span></button>`).join("")+(fol?`<span class="pfol">${fol} following you</span>`:"");
   const L=FOLLOW&&PEOPLE.find(p=>p.id===FOLLOW);
-  if(FOLLOW&&!L){FOLLOW=null}
-  bar.hidden=!L;fit.classList.toggle("following",!!L);
-  if(L){bar.style.background=col(L.id);fit.style.setProperty("--fc",col(L.id));bar.innerHTML=`Following ${(L.name||"Guest").replace(/</g,"")}<button data-unfollow>Stop</button>`}}
+  if(L){lastSeen=Date.now();FNAME=L.name||"Guest"}
+  if(FOLLOW&&!L&&Date.now()-lastSeen>30000){FOLLOW=null}
+  bar.hidden=!FOLLOW;fit.classList.toggle("following",!!FOLLOW);
+  if(FOLLOW){bar.style.background=col(FOLLOW);fit.style.setProperty("--fc",col(FOLLOW));bar.innerHTML=`${L?"Following":"Waiting for"} ${FNAME.replace(/</g,"")}${L?"":"…"}<button data-unfollow>Stop</button>`}}
  async function tick(){if(busy)return;busy=true;
   try{const st=snap();const changed=st!==myState;if(changed){myState=st;v++}
-   const r=await fetch("/api/presence",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:PID,name:nm(),following:FOLLOW,v,state:changed||v===1?st:undefined})});
-   if(r.ok){PEOPLE=await r.json();if(FOLLOW){const L=PEOPLE.find(p=>p.id===FOLLOW);if(L&&L.state)apply(L.state)}draw()}}catch(e){}
+   const ac=new AbortController();const to=setTimeout(()=>ac.abort(),4000);const r=await fetch("/api/presence",{signal:ac.signal,method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:PID,name:nm(),following:FOLLOW,v,state:changed||v===1?st:undefined})});
+   clearTimeout(to);if(r.ok){PEOPLE=await r.json();if(FOLLOW){const L=PEOPLE.find(p=>p.id===FOLLOW);if(L&&L.state)apply(L.state)}draw()}}catch(e){}
   busy=false}
- function loop(){tick();setTimeout(loop,document.hidden?8000:1000)}
+ function loop(){clearTimeout(timer);tick();timer=setTimeout(loop,document.hidden?5000:FOLLOW?700:1000)}
+ document.addEventListener("visibilitychange",()=>{if(!document.hidden){busy=false;loop()}});addEventListener("focus",()=>{busy=false;loop()});
  v=1;myState="";loop();
  pres.addEventListener("click",e=>{const b=e.target.closest("[data-follow]");if(!b)return;const id=b.dataset.follow;
   if(FOLLOW===id){FOLLOW=null;draw();return}
   if(!nm()){const n=(prompt("Your name (so they can see who’s following)")||"").trim().slice(0,40);if(n)try{localStorage.setItem("hb_name",n)}catch(_){}}
-  FOLLOW=id;lastApplied="";const L=PEOPLE.find(p=>p.id===id);if(L&&L.state)apply(L.state);draw();tick()});
+  FOLLOW=id;lastSeen=Date.now();lastApplied="";const L=PEOPLE.find(p=>p.id===id);if(L){FNAME=L.name||"Guest";if(L.state)apply(L.state)}draw();loop()});
  bar.addEventListener("click",e=>{if(e.target.closest("[data-unfollow]")){FOLLOW=null;draw();tick()}});
  // any real interaction with the prototype stops following
  const stop=e=>{if(FOLLOW&&e.isTrusted&&(e.target.closest("#phone")||e.target.closest(".side,.list,#list,.tour"))){FOLLOW=null;draw();tick()}};
