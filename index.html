@@ -154,7 +154,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);ou
 @media (prefers-reduced-motion:reduce){.a-inR,.a-outL,.a-inL,.a-outR,.ov.modal,.ov.drawer .back,.ov.drawer .sheet{animation:none}}
 /* notes */
 .npin{position:absolute;z-index:45;width:26px;height:26px;border-radius:50% 50% 50% 4px;background:var(--accent);color:#fff;font:600 12px var(--sans);transform:translate(-4px,-22px);box-shadow:0 2px 6px rgba(0,0,0,.3)}
-.npin.done{opacity:.4}.npin.sel{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--accent)}.npin.new{background:#000}
+.npin.done{opacity:.4}.npin.sel{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--accent)}.npin.new{background:#000}.nbub{position:absolute;z-index:46;width:226px;background:#fff;border-radius:14px;padding:10px 12px;box-shadow:0 8px 28px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.05);font:13px/1.4 var(--sans);color:#111;pointer-events:none}.nbub.sticky{pointer-events:auto}.nbh{display:flex;align-items:center;gap:7px;margin-bottom:4px}.nbh i{width:20px;height:20px;border-radius:10px;color:#fff;font-style:normal;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}.nbh b{font-weight:600}.nbh span{color:#8c8c8c;font-size:12px;margin-left:auto}.nbub p{margin:0;white-space:pre-wrap;word-break:break-word}.nba{display:flex;gap:6px;margin-top:8px}.nba button{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:#f2f2f2}
 .nlayer{position:absolute;inset:0;z-index:44;cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M6%2029Q2%2029%202%2025V16A13%2013%200%201%201%2015%2029Z%22%20fill%3D%22%23000%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M15%2011v10M10%2016h10%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") 3 29,crosshair;background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .notebar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:12px;color:var(--muted)}
 .notebar button,.ned button{font-size:13px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
@@ -1168,8 +1168,13 @@ const noteBtn=document.getElementById("noteBtn"),noteHint=document.getElementByI
 const curId=()=>S.ov||cur();
 const nameOf=id=>(SCREENS[id]||OVERLAYS[id]).n;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
-function drawPins(){phone.querySelectorAll(".npin,.nlayer").forEach(e=>e.remove());const id=curId();
- NOTES.filter(n=>n.screen===id).forEach((n,i)=>{const p=document.createElement("button");p.className="npin"+(n.done?" done":"")+(selNote===n.id?" sel":"");p.style.background=colorOf(n.by);p.style.left=n.x+"px";p.style.top=n.y+"px";p.textContent=i+1;p.dataset.note=n.id;p.title=n.text;phone.appendChild(p)});
+function ago(t){const m=Math.round((Date.now()-t)/60000);return m<1?"just now":m<60?m+" min ago":m<1440?Math.round(m/60)+" h ago":Math.round(m/1440)+" d ago"}
+function noteBubble(n,sticky){phone.querySelectorAll(".nbub").forEach(e=>e.remove());const b=document.createElement("div");b.className="nbub"+(sticky?" sticky":"");const left=n.x>200;b.style.left=(left?n.x-252:n.x+26)+"px";b.style.top=Math.max(8,Math.min(n.y-40,844-150))+"px";
+ const who=n.by?(n.by===ME?"You":(NAMES[n.by]||n.by)):"Someone";
+ b.innerHTML=`<div class="nbh"><i style="background:${colorOf(n.by)}">${esc((who||"?").slice(0,1).toUpperCase())}</i><b>${esc(who)}</b><span>${ago(n.at)}</span></div><p>${esc(n.text)}</p>${sticky?`<div class="nba"><button data-bdone="${n.id}">${n.done?"Reopen":"Resolve"}</button><button data-bdel="${n.id}">Delete</button></div>`:""}`;phone.appendChild(b)}
+function drawPins(){phone.querySelectorAll(".npin,.nlayer,.nbub").forEach(e=>e.remove());const id=curId();
+ NOTES.filter(n=>n.screen===id).forEach((n,i)=>{const p=document.createElement("button");p.className="npin"+(n.done?" done":"")+(selNote===n.id?" sel":"");p.style.background=colorOf(n.by);p.style.left=n.x+"px";p.style.top=n.y+"px";p.textContent=i+1;p.dataset.note=n.id;phone.appendChild(p)});
+ if(selNote){const n=NOTES.find(q=>q.id===selNote&&q.screen===id);if(n)noteBubble(n,true)}
  if(pending&&pending.screen===id){const p=document.createElement("button");p.className="npin new";p.style.left=pending.x+"px";p.style.top=pending.y+"px";p.textContent="+";phone.appendChild(p)}
  if(noteMode){const l=document.createElement("div");l.className="nlayer";phone.appendChild(l)}}
 function renderNotes(){const id=curId();const mine=NOTES.filter(n=>n.screen===id);const open=NOTES.filter(n=>!n.done).length;
@@ -1178,7 +1183,12 @@ function renderNotes(){const id=curId();const mine=NOTES.filter(n=>n.screen===id
  list.querySelectorAll("[data-jump]").forEach(b=>{b.querySelector(".nbadge")?.remove();const c=NOTES.filter(n=>n.screen===b.dataset.jump&&!n.done).length;if(c){const e=document.createElement("em");e.className="nbadge";e.textContent=c;b.appendChild(e)}})}
 phone.addEventListener("click",e=>{
  if(e.target.closest(".nlayer")){const r=phone.getBoundingClientRect();pending={screen:curId(),x:Math.round((e.clientX-r.left)/SC),y:Math.round((e.clientY-r.top)/SC)};noteMode=false;noteBtn.classList.remove("on");ned.hidden=false;{const W=300,x=Math.min(e.clientX+20,innerWidth-W-12),y=Math.min(Math.max(12,e.clientY-20),innerHeight-ned.offsetHeight-12);ned.style.left=x+"px";ned.style.top=y+"px"}noteText.focus();drawPins();e.stopPropagation();return}
- const p=e.target.closest(".npin");if(p){if(p.dataset.note){selNote=p.dataset.note;drawPins();renderNotes()}e.stopPropagation();return}},true);
+ const bd=e.target.closest("[data-bdone],[data-bdel]");if(bd){e.stopPropagation();(async()=>{try{if(bd.dataset.bdone){const n=NOTES.find(q=>q.id===bd.dataset.bdone);await db.collection("notes").doc(n.id).update({done:!n.done})}else{await db.collection("notes").doc(bd.dataset.bdel).delete();selNote=null}}catch(err){noteHint.textContent="Couldn’t update the note."}drawPins();renderNotes()})();return}
+ if(e.target.closest(".nbub")){e.stopPropagation();return}
+ const p=e.target.closest(".npin");if(p){if(p.dataset.note){selNote=selNote===p.dataset.note?null:p.dataset.note;drawPins();renderNotes()}e.stopPropagation();return}
+ if(selNote&&!noteMode){selNote=null;drawPins();renderNotes()}},true);
+phone.addEventListener("pointerover",e=>{const p=e.target.closest(".npin[data-note]");if(!p||selNote)return;const n=NOTES.find(q=>q.id===p.dataset.note);if(n)noteBubble(n,false)});
+phone.addEventListener("pointerout",e=>{const p=e.target.closest(".npin[data-note]");if(!p||selNote)return;phone.querySelectorAll(".nbub:not(.sticky)").forEach(x=>x.remove())});
 document.addEventListener("keydown",e=>{if((e.key==="c"||e.key==="C")&&!e.metaKey&&!e.ctrlKey&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))noteBtn.click();if(e.key==="Escape"&&noteMode)noteBtn.click()});
 noteBtn.addEventListener("click",()=>{if(!db)return;noteMode=!noteMode;noteBtn.classList.toggle("on",noteMode);noteHint.textContent=noteMode?"Click on the screen to place a note":"";drawPins()});
 noteText.addEventListener("keydown",e=>{if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)){e.preventDefault();document.getElementById("noteSave").click()}if(e.key==="Escape"){e.stopPropagation();document.getElementById("noteCancel").click()}});
