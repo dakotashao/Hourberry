@@ -473,7 +473,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
 .berry2 b{font-size:28px;font-weight:700}
 .berry2 small{font-size:13px;font-weight:500;color:#3a3a3a;margin-top:2px}
 .berry2.sel{background:#d0d0d0}
-.berry2.mine{background:#5a5a5a;color:var(--W)}.berry2.mine small{color:rgba(255,255,255,.75)}
+.berry2.mine{background:#5a5a5a;color:var(--W)}.berry2.pop{animation:bpop .7s cubic-bezier(.3,1.5,.5,1) .15s both}@keyframes bpop{0%{scale:.3;opacity:0}100%{scale:1;opacity:1}}.berry2.mine small{color:rgba(255,255,255,.75)}
 .berry2.dash{background:var(--W);box-shadow:none;border:2px dashed #9a9a9a}
 .berry2.dash b{font-size:22px;font-weight:600}
 .berry2.dash.soft{border-color:#c4c4c4}.berry2.dash.soft b,.berry2.dash.soft small{color:var(--G2)}.berry2.dash.soft b{font-size:16px}.berry2.dash.soft small{font-size:11px;max-width:52px}
@@ -935,16 +935,16 @@ const SHAREIC=`<svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-
 const PL={tacos:{t:"Tacos at Leo’s",when:"Tonight · 7:00–8:30",by:"Jess",byI:"J",note:"I’ll grab a big table by the window",ppl:[["Sam","S","bringing salsa"],["Lena","L","starving already"]],seats:5,min:"",chips:[],rel:{Jess:"you met at Rooftop",Sam:"in Climbing with you"},meta:"Tonight, 7:00–8:30",cap:"3 going, 2 spots left",pname:"Leo’s Tacos",pline:"8 min walk, leave by 6:52",big:"Leave by 6:52",sub:"8 min walk · Leo’s Tacos, 0.4 mi",link:"Directions ↗",la:'data-drawer="dir"',cta:"Join",no:"Not now",plus1:1,hold:1},
 picnic:{t:"Picnic at Central Park",when:"Saturday · 2:00–4:00",by:"Noor",byI:"N",note:"Bringing the blanket. You bring snacks?",ppl:[["Sam","S",""]],seats:4,min:"needs 2 more",fade:"Fades Friday 8 pm if it doesn’t fill",chips:[],rel:{Noor:"Jess’s friend",Sam:"you met at Climbing"},meta:"Saturday, 2:00–4:00",cap:"2 going, needs 2 more by Friday",pname:"Central Park",pline:"1.2 mi away",big:"Sat · 2:00",sub:"Central Park · 1.2 mi",link:"Add to calendar",la:'data-act="cal"',cta:"Join",no:"Not now",plus1:1,hold:0}};
 const MINIMAP=`<span class="mm"><i style="left:0;right:0;top:34px;height:7px"></i><i style="top:0;bottom:0;left:62px;width:7px"></i><svg width="104" height="100" aria-hidden="true"><path d="M20 76 C44 72 52 50 70 44 S86 30 88 26" fill="none" stroke="#000" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round"/><circle cx="20" cy="76" r="5" fill="#000"/><circle cx="88" cy="26" r="6" fill="#fff" stroke="#000" stroke-width="2"/></svg></span>`;
-function planPage(k){const p=PL[k];if(S.plk!==k)S.bn=0;S.plk=k;const taken=p.ppl.length+1;const open=p.seats-taken;const held=S.holdK===k&&S.holdUntil>Date.now();
+function planPage(k){const p=PL[k];if(S.plk!==k)S.bn=0;S.plk=k;const jn=S.joined&&k==="tacos";const taken=p.ppl.length+1+(jn?1:0);const open=p.seats-taken;const held=S.holdK===k&&S.holdUntil>Date.now();const pop=jn&&S.justJoined;if(pop)setTimeout(()=>{S.justJoined=0},1200);
  const rel=n=>p.rel&&p.rel[n]?" · "+p.rel[n]:"";const slots=[{i:p.byI,n:p.by,note:p.note,who:p.by+" · started it"+rel(p.by),f:1}].concat(p.ppl.map(([n,i,c])=>({i,n,note:c||"I’m in",who:n+rel(n),f:1})));
- slots.push(held?{i:"M",n:"Held",c:`<span id="holdt">${fmtHold()}</span>`,me:1,held:1}:{n:"Sit here",me:1});
- for(let x=1;x<open;x++)slots.push(x===1&&p.plus1?{n:"Bring a friend",plus:1}:{n:"Open",empty:1});
+ slots.push(jn?{i:"M",n:"You",note:S.jnote||"I’m in",who:"You",f:1,mine:1}:held?{i:"M",n:"Held",c:`<span id="holdt">${fmtHold()}</span>`,me:1,held:1}:{n:"Sit here",me:1});
+ for(let x=0;x<(jn?open:open-1);x++)slots.push(x===0&&p.plus1?{n:"Bring a friend",plus:1}:{n:"Open",empty:1});
  const P=[[86,6,98],[180,28,92],[76,104,92],[170,122,86],[258,84,74],[262,162,62]];
  const RAD=["56% 44% 52% 48% / 48% 56% 44% 52%","47% 53% 55% 45% / 55% 45% 55% 45%","52% 48% 42% 58% / 50% 54% 46% 50%","58% 42% 48% 52% / 46% 52% 48% 54%","50% 50% 58% 42% / 54% 48% 52% 46%","45% 55% 50% 50% / 52% 46% 54% 48%"];
  const ROT=[-6,5,-3,7,-5,4];
  const U=slots.map((_,ix)=>P[ix]||P[5]),mnX=Math.min(...U.map(q=>q[0])),mxX=Math.max(...U.map(q=>q[0]+q[2])),off=Math.round((390-(mxX-mnX))/2-mnX),bh=Math.max(...U.map(q=>q[1]+q[2]))+26;
  const berries=slots.map((sl,ix)=>{const [x0b,y,d]=U[ix],x=x0b+off;
-  const cls=sl.f?"":sl.held?"mine":"dash"+(sl.plus||sl.empty?" soft":"");
+  const cls=sl.mine?"mine"+(pop?" pop":""):sl.f?"":sl.held?"mine":"dash"+(sl.plus||sl.empty?" soft":"");
   const inner=sl.f?`<b>${sl.i}</b><small>${sl.n}</small>`:sl.held?`<b>${sl.i}</b><small>Held <span id="holdt">${fmtHold()}</span></small>`:sl.me?`<b>+</b><small>Sit here</small>`:sl.plus?`<b>+1</b><small>Bring a friend</small>`:`<small>Open</small>`;
   const tag=(sl.me&&!sl.held)?`button ${A.drawer("joinnote")}`:sl.plus?`button ${A.drawer("share")}`:sl.f?`button ${A.act("bn:"+ix)}`:"div";
   const host=ix===0&&sl.f;return `<${tag} class="berry2 ${cls} ${BTEX&&(sl.f||sl.held)?"tex":""} ${host?"host":""} ${(S.bn??0)===ix&&sl.f?"sel":""}" style="left:${x}px;top:${y+16}px;width:${d}px;height:${d}px;border-radius:${RAD[ix%6]};transform:rotate(${ROT[ix%6]}deg)">${host?`<i class="hst" style="height:${Math.round(d*.18)}px;top:-${Math.round(d*.18)-3}px"></i><i class="hlf" style="width:${Math.round(d*.14)}px;height:${Math.round(d*.24)}px;top:-${Math.round(d*.24*.8)}px"></i>`:""}${BTEX&&(sl.f||sl.held)?berrySvg(d,sl.held?"#000":(S.bn??0)===ix?"#cfcfcf":"#e3e3e3",sl.held?"#2b2b2b":(S.bn??0)===ix?"#b9b9b9":"#cdcdcd",ix):""}<span style="transform:rotate(${-ROT[ix%6]}deg)">${inner}</span></${tag.split(" ")[0]}>`}).join("");
@@ -952,13 +952,13 @@ function planPage(k){const p=PL[k];if(S.plk!==k)S.bn=0;S.plk=k;const taken=p.ppl
  const bi=slots[S.bn??0]&&slots[S.bn??0].f?(S.bn??0):0,bs=slots[bi],bcx=x0+bi*step+28,bw=250,bl=Math.max(16,Math.min(390-16-bw,bcx-40)),btop=164;
  const bubble=`<div class="bnote" style="left:${bl}px;top:${btop}px;width:${bw}px;--tx:${bcx-bl}px"><span>${bs.who}</span><p>${bs.note}</p></div>`;
  const clash=k==="tacos"&&S.zine?`<div class="clash"><i>!</i><span><b>Overlaps Zine fair at 7:30</b><br>You’re in that one</span><button ${A.go("m04")}>View</button></div>`:"";
- const foot=held?blk(`<div class="holdbar"><div class="holdring"></div><div><b>Spot held, <span id="holdt2">${fmtHold()}</span> left</b><span>Others just see ${open-1} spot${open-1===1?"":"s"} left. It frees up on its own.</span></div></div><div class="ctaRow">${btn("Join",A.drawer("joinnote"))}${btn("Let it go",A.act("unhold"),"outline").replace("width:100%","")}</div>`,"","padding:8px 16px 0;gap:8px")
+ const foot=jn?blk(`<div class="ctaRow">${btn("Open plan chat",A.go("m13"))}</div><div class="center" style="display:flex;flex-direction:column;align-items:center">${btn("Can’t make it",A.modal("cant"),"text")}</div>`,"","padding:8px 16px 0;gap:0"):held?blk(`<div class="holdbar"><div class="holdring"></div><div><b>Spot held, <span id="holdt2">${fmtHold()}</span> left</b><span>Others just see ${open-1} spot${open-1===1?"":"s"} left. It frees up on its own.</span></div></div><div class="ctaRow">${btn("Join",A.drawer("joinnote"))}${btn("Let it go",A.act("unhold"),"outline").replace("width:100%","")}</div>`,"","padding:8px 16px 0;gap:8px")
   :blk(`<div class="ctaRow">${btn(p.cta,A.drawer("joinnote"))}</div><div class="center" style="display:flex;flex-direction:column;align-items:center">${btn(p.no,A.back,"text")}</div>`,"","padding:8px 16px 0;gap:0");
  const person=`<div class="who4"><div class="whohead">${face(bs.i,44)}<div><b>${bi===0?bs.n+" started this":bs.n}</b><span>${(p.rel&&p.rel[bs.n])?p.rel[bs.n][0].toUpperCase()+p.rel[bs.n].slice(1):"Going"}</span></div></div><p class="quote">“${bs.note}”</p></div>`;
  const place=`<div class="placerow"><div><b>${p.pname}</b><span>${p.pline}</span></div><button ${p.la}>${p.link}</button></div>`;
  return{body:nav(BACKIC,A.back,"",`<span class="shareic">${SHAREIC}</span>`,A.drawer("share"))
  +blk(`<h2 class="h1" style="font-size:32px">${p.t}</h2><span class="meta4">${p.meta}</span>`,"","gap:4px;padding-top:0")
- +blk(`<div style="padding:0 16px">${lab("Who’s going · "+taken+"/"+p.seats+(k==="picnic"?" · needs 2 more by Fri":""))}</div><div class="bunch bunch2" style="height:${bh}px">${berries}</div>`,"","gap:0;padding-left:0;padding-right:0")
+ +blk(`<div style="padding:0 16px">${lab("Who’s going · "+taken+"/"+p.seats+(jn?" · you’re in":"")+(k==="picnic"?" · needs 2 more by Fri":""))}</div><div class="bunch bunch2" style="height:${bh}px">${berries}</div>`,"","gap:0;padding-left:0;padding-right:0")
  +blk(`<hr class="hr4">${person}${place}${clash}`,"","gap:16px"),
  foot}}
 function fmtHold(){const t=Math.max(0,Math.round(((S.holdUntil||0)-Date.now())/1000));return `${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`}
@@ -1043,7 +1043,7 @@ const ACT={
  go:()=>{S.free=true;S.ov=null;S.plan=0;S.pick=0;S.skipFb=0;S.sheet="half";S.freeOpen=0;refresh();toast("You’re free till 9")},endfree:()=>{S.free=false;S.sheet="half";refresh();toast("You’re not free anymore")},
  nextplan:()=>{S.plan=(S.plan+1)%3;refresh()},prevplan:()=>{S.plan=(S.plan+2)%3;refresh()},refresh:()=>{S.refresh--;S.plan=(S.plan+1)%3;refresh();toast("Fresh picks, just for you")},
  cluster:()=>{S.sheet="full";refresh()},
- join:()=>{S.holdUntil=0;S.holdK=null;S.joined=true;S.free=false;S.stack=["m01","m13"];S.ov=null;render("fwd");if(!S.notifAsked)setTimeout(()=>openOv("notifask"),700);else toast("You’re in")},
+ join:()=>{S.holdUntil=0;S.holdK=null;S.joined=true;S.justJoined=1;S.free=false;S.stack=["m01","m04","m13"];S.ov=null;render("fwd");if(!S.notifAsked)setTimeout(()=>openOv("notifask"),700);else toast("You’re in")},
  gomake:()=>{S.ov=null;go("m05")},gosave:()=>{S.ov=null;go("m07")},goadd:()=>{S.ov=null;S.addTab="Tap";go("m16")},gochat:()=>{S.ov=null;go("m14")},
  savedplace:()=>{back();toast("Saved")},openmyplan:()=>{S.stack=["m08","m10"];render(null)},
  dec:()=>{const e=document.getElementById("size");let n=parseInt(e.textContent);if(n>2)e.textContent=(n-1)},inc:()=>{const e=document.getElementById("size");let n=parseInt(e.textContent);if(n<12)e.textContent=(n+1)},
