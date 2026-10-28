@@ -1055,7 +1055,7 @@ const ORDER=[["Onboarding",["o1","o2","o3","o4","o5","o7","invite","o8"]],["Home
 const view=document.getElementById("view"),phone=document.getElementById("phone");
 let timer=null;
 function cur(){return S.stack[S.stack.length-1]}
-function build(id){const sc=SCREENS[id];const d=sc.r();const el=document.createElement("div");el.className="screen"+(d.full?" full":"");el.innerHTML=d.full?`${d.full}<div class="sb" style="position:absolute;top:0;left:0;right:0;z-index:8;background:transparent"><span>9:41</span><span class="bat">5G<i></i></span></div>`:`<div class="sb"><span>9:41</span><span class="bat">5G<i></i></span></div><div class="scroll">${d.body}</div>${d.foot?`<div class="foot">${d.foot}</div>`:""}<div class="hi"><i></i></div>`;return el}
+function build(id){const sc=SCREENS[id];const d=sc.r();const el=document.createElement("div");el.className="screen"+(d.full?" full":"");el.innerHTML=d.full?`${d.full}<div class="sb" style="position:absolute;top:0;left:0;right:0;z-index:8;background:transparent"><span>6:40</span><span class="bat">5G<i></i></span></div>`:`<div class="sb"><span>9:41</span><span class="bat">5G<i></i></span></div><div class="scroll">${d.body}</div>${d.foot?`<div class="foot">${d.foot}</div>`:""}<div class="hi"><i></i></div>`;return el}
 function render(dir){const old=view.querySelector(".screen:not(.leaving)");const el=build(cur());
  if(old&&dir){const inC=dir==="fwd"?"a-inR":"a-inL",outC=dir==="fwd"?"a-outL":"a-outR";old.classList.add("leaving",outC);el.classList.add(inC);view.appendChild(el);if(dir==="back")view.appendChild(old);setTimeout(()=>{old.remove();el.classList.remove(inC)},320);}
  else{view.innerHTML="";view.appendChild(el);}
