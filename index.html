@@ -1141,7 +1141,7 @@ phone.addEventListener("click",e=>{
   if(a==="smapx"){S.smap=0;S.sq="";refresh();return}
   if(a==="clearlink"){S.lnk=0;S.sq="";refresh();return}
   if(a==="wave"){S.renNew=1;go("m14");return}
-  if(a.startsWith("h2:")){const q=a.slice(3);if(q.startsWith("layer:")){S.layer=q.slice(6);S.freeOpen=0}else if(q.startsWith("spotf:")){const v=q.slice(6),c=S.spotSel||[];S.spotSel=c.includes(v)?c.filter(x=>x!==v):c.concat(v)}else if(q==="sheet")S.sheet={peek:"half",half:"full",full:"half"}[S.sheet]||"full";else if(q==="freenow")S.freeOpen=!S.freeOpen;else if(q==="coachx")S.coachX=1;else if(q==="next"){S.pick=(S.pick||0)+1;S.skipFb=S.pick<pickN()}else if(q==="prev"){if((S.pick||0)>0){S.pick=Math.min(S.pick,pickN())-1;S.skipFb=0}}else if(q==="why"){S.skipFb=0;toast("Noted. Better picks coming.")}else if(q==="again"){S.pick=0;S.skipFb=0}else if(q==="prem"){S.premUsed=1;toast("3 more picks, just for you");S.pick=3;S.skipFb=0}else if(q.startsWith("all:")){S.pickAll=q.slice(4)==="1"}else if(q.startsWith("pick:")){S.pick=+q.slice(5);S.skipFb=0}refresh();return}
+  if(a.startsWith("h2:")){const q=a.slice(3);if(q.startsWith("layer:")){S.layer=q.slice(6);S.freeOpen=0}else if(q.startsWith("spotf:")){const v=q.slice(6),c=S.spotSel||[];S.spotSel=c.includes(v)?c.filter(x=>x!==v):c.concat(v)}else if(q==="sheet")S.sheet={peek:"half",half:"full",full:"half"}[S.sheet]||"full";else if(q==="freenow")S.freeOpen=!S.freeOpen;else if(q==="coachx")S.coachX=1;else if(q==="next"){S.pick=(S.pick||0)+1;S.skipFb=S.pick<pickN()}else if(q==="prev"){if((S.pick||0)>0){S.pick=Math.min(S.pick,pickN())-1;S.skipFb=0}}else if(q==="why"){S.skipFb=0;toast("Noted. Better picks coming.")}else if(q==="again"){S.pick=0;S.skipFb=0;S.pickAll=1}else if(q==="prem"){S.premUsed=1;toast("3 more picks, just for you");S.pick=3;S.skipFb=0}else if(q.startsWith("all:")){S.pickAll=q.slice(4)==="1"}else if(q.startsWith("pick:")){S.pick=+q.slice(5);S.skipFb=0}refresh();return}
   if(a.startsWith("ignore:")){S.ignored[a.slice(7)]=1;refresh();toast("Hidden")}
   else if(a.startsWith("say:")){S.chat.push(a.slice(4));refresh();const sc=view.querySelector(".screen .scroll");if(sc)sc.scrollTop=sc.scrollHeight}
   else if(a.startsWith("react:")){const[,k,em]=a.split(":");S.rx[k]=em;closeOv();refresh()}
@@ -1268,7 +1268,7 @@ const STORIES=[
   ["Send it",()=>cur()==="m05b",'[data-go="m05b"]']]},
  {t:"I just met someone. Add them before I forget.",who:"Mia",start:"m15",steps:[
   ["Add in person",()=>cur()==="m16",'[data-go="m16"]'],
-  ["Tap phones to add Ren",()=>cur()==="m16b",null],
+  ["Tap phones to add Ren",()=>cur()==="m16b",'#badge'],
   ["Wave at Ren",()=>cur()==="m14"&&S.renNew,'[data-act="wave"]']]},
  {t:"Busy now. Save a place for when I’m free.",who:"Kai",start:"m01",steps:[
   ["Search for a place",()=>cur()==="srch",'[data-go="srch"]'],
@@ -1284,8 +1284,8 @@ const STORIES=[
   ["See your 3 places",()=>(S.bingo||0)>=3,'[data-act="bgo:list"]'],
   ["Plan one of them",()=>cur()==="m05"&&!!S.pPlace,'[data-act^="bgo:plan"]']]},
  {t:"Plans changed. I can’t make it.",who:"Mia",start:"m08",init:()=>{S.joined=true},steps:[
-  ["Open the plan you joined",()=>cur()==="m10",null],
-  ["Tap Can’t make it",()=>S.ov==="cant",'[data-drawer="cant"]']]},
+  ["Open the plan you joined",()=>cur()==="m10",'[data-go="m10"]'],
+  ["Tap Can’t make it",()=>S.ov==="cant",'[data-modal="cant"],[data-drawer="cant"]']]},
  {t:"Seen all 3. I want a few more.",who:"Nina",start:"m01",init:()=>{S.free=true;S.pick=3},steps:[
   ["Get 3 more now",()=>cur()==="m20p",'.mxprem'],
   ["Get Premium",()=>S.prem,'[data-act="getprem"]'],
@@ -1311,7 +1311,7 @@ tourEl.addEventListener("click",e=>{if(e.target.closest("[data-ttog]")){if(TS!==
  if(e.target.closest("[data-tback]")){TS=null;tourHi(null);tourDraw();return}
  if(e.target.closest("[data-trestart]")){tourStart(TS);return}
  if(e.target.closest("[data-tskip]")){TI++;tourDraw();return}});
-function tourHi(sel){phone.querySelectorAll(".tour-hi").forEach(x=>x.classList.remove("tour-hi"));if(!sel)return;const root=document.querySelector(".screen:not(.leaving)");const scope=S.ov?phone:root||phone;const el=[...scope.querySelectorAll(sel)].find(x=>x.offsetParent!==null);if(el)el.classList.add("tour-hi")}
+function tourHi(sel){phone.querySelectorAll(".tour-hi").forEach(x=>x.classList.remove("tour-hi"));if(!sel)return;const root=document.querySelector(".screen:not(.leaving)");const scope=S.ov?phone:root||phone;let el=[...scope.querySelectorAll(sel)].find(x=>x.offsetParent!==null);if(!el&&!S.ov)el=[...scope.querySelectorAll('[data-back],[data-act="srchx"]')].find(x=>x.offsetParent!==null);if(el)el.classList.add("tour-hi")}
 setInterval(()=>{if(TS===null)return;const st=STORIES[TS];let moved=false;while(TI<st.steps.length&&st.steps[TI][1]()){TI++;moved=true}if(moved)tourDraw();tourHi(TI<st.steps.length?st.steps[TI][2]:null)},300);
 tourDraw();
 </script>
