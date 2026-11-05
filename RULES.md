@@ -111,7 +111,7 @@
 - ✅ 通知设置：Plans while I’m free（弹窗）、New plans from friends（小圆点，默认关）、Morning recap。
 - ✅ 搜索可以搜区域（Hollywood 等），显示 "5 plans in Hollywood"。
 
-## 10. Home 抽屉里的 plan 列表（11/4 定）
+## 15. Home 抽屉里的 plan 列表（11/4 定）
 - ✅ 不按时间筛选（去掉 Now / Tonight / Week），改成按时间分组，一直往下滑：You’re going → Fits your free time（没开 I’m free 时叫 Starting soon）→ Later tonight → This week。
 - ✅ 每一行：左边果子串（最多 3 颗，多了合成 +N）→ 标题 → 🕒 几点到几点 → 📍 多远（一律写分钟）→ 谁在 + 剩几个位置。
 - ✅ 超出你有空的时间，时间后面加粗写 "Runs past 9"；只剩 1 个位置时加粗。
