@@ -3,19 +3,18 @@
 ID 就是 index.html 里 `SCREENS` / `OVERLAYS` 的 key。截图：`node tools/walk.cjs <id,id>`。
 
 ## 已知问题（要"make sense"的清单，按优先级）
-1. **Picks 卡片和详情页重复**：Picks 卡片点了打不开任何东西；M 04 的内容又和卡片几乎一样。按 RULES §9 改成卡片可以展开，加入后才进 plan 页（M 10 / M 13）。
+1. **Picks 卡片和详情页重复**：Picks 卡片点了打不开任何东西；M 04 的内容又和卡片几乎一样。按 RULES §9 改成：加入前只有一张 plan 卡（v5.5 布局），M04 删掉；点开看全员名单和关系；加入后进 plan 页（M 10）。测试用例：Karaoke at Gogo’s。
 2. **加入后进入的群聊里已经有"你"发的消息**（M 13 的 "Which entrance?"）。刚加入的人应该看到干净的开头，或者先落在 plan 页。
 3. **Make a plan 改不了结束时间**（M 05，"ends by 9" 只是文字）。
 4. **Picks 不排除撞时间的局**：例如已加入 Zine fair 7:30，还会推荐 Tacos 7:00。
-5. **People 页太乱**（M 15）：同一个人出现两次（Ren、Kai），右侧按钮有 5 种，分组标签不知道管哪块，搜索范围过大。按 RULES §10 重做。
+5. **People 页太乱**（M 15）：同一个人出现两次（Ren、Kai），右侧按钮有 5 种，分组标签不知道管哪块，搜索范围过大。按 RULES §13 重做。
 6. **Squeeze in、Groups 入口、个人页的分组标签**都还没做（M 16、M 19、M 18）。
-7. **加入前没有"谁会看到你"那一行**（RULES §3）。
-8. **队友 AI 方案和原型的不同**：见 Figma prototype 页 HIfi 框的 "HiFi 基础 · 规则 v1"。主要分歧：
+7. **队友 AI 方案和原型的不同**：见 Figma prototype 页 HIfi 框的 "HiFi 基础 · 规则 v1"。主要分歧：
    - 右滑加入（不同意）
    - 加入后 2 秒问通知（会盖住 Undo）
    - 距离一律写分钟（同意）
    - 地点默认不用刚跳过的那张卡（同意，原型已改）
-9. **测试入口**：peer test 需要一个从干净 Home 开始的链接，不进 story 模式。
+8. **测试入口**：peer test 需要一个从干净 Home 开始的链接，不进 story 模式。
 
 ## 屏幕
 **新用户 / 登录**：o1 Welcome · o2 Create account · o3 Verify · o4 Profile · o5 What you’re into · o6 Permissions · o7 Add your first people · o8 Welcome in · s1–s3 Sign in / Forgot · loc、notif（iOS 授权弹窗）
