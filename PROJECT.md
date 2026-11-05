@@ -32,17 +32,20 @@ How might we help people turn unexpected free time into plans with people?
 
 ## 品牌
 - 名字：Hourberry（定了，不改）
-- Slogan：Got an hour? Make it ours.　副标语：Free now? So are they.
-- 调性：活泼、好玩、简单，但要高级
-- 老师说 Patchwork 方向最强：抽象地表达人怎么聚到一起，不要直白（不要带叶子的果子）。
-- **不使用带表情的团子角色。**
-- 中保真阶段一律黑白灰，先定结构再上视觉。
+- Tagline（主）：Free time is sweeter together.
+- 品牌故事：A berry is small, sweet, and best shared. 一颗果子就是一个人，几颗凑在一起就是一个局。logo 和视觉都要讲这个故事（老师 Nov 4：没有这个故事，名字讲不通）。
+- Slogan：Got an hour? Make it ours. 见缝插针地用，例如加载页：几颗果子聚成一串小点，下面写这句。
+- 调性：活泼、好玩、简单。好玩优先。
+- 视觉以果子角色为核心（老师 Nov 4 crit：很喜欢这些角色）。形状不规则、像真的果子，可以有很多变体，组成一套灵活的系统。设计系统的形状语言从这些角色延伸出来。
+- 不做 Patchwork（老师说像扑克筹码，像另一个品牌）。
+- 地图以清楚为优先：不做 3D，地图上不叠花纹。
 
 ## 进度
 - wk02–wk05：调研、用户、功能、sitemap、命名
 - wk06：线框和原型 v2/v3，crit 反馈（Oct 28）
 - wk07：Step 1 AI 验证（已做，Figma wk07 页）→ Step 2 同学 peer test → Step 4 logo study → Step 5 品牌元素 → Step 6 style tile
 - 这周：改 mid-fi、写 user test、精修三屏 HiFi（Picked for you 卡片、Map、Make a plan）
+- 老师要的下一份：100 个不同果子的方案表（a sheet of a hundred berries）
 
 ## 资源
 - Figma：4D3RmOjXfG92ROEMudUP5M（design-system 文件）
