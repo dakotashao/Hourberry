@@ -100,3 +100,12 @@
 - ✅ 新用户的推荐不能是陌生人，至少是朋友的朋友，并显示关系。
 - ✅ 通知设置：Plans while I’m free（弹窗）、New plans from friends（小圆点，默认关）、Morning recap。
 - ✅ 搜索可以搜区域（Hollywood 等），显示 "5 plans in Hollywood"。
+
+## 10. Home 抽屉里的 plan 列表（11/4 定）
+- ✅ 不按时间筛选（去掉 Now / Tonight / Week），改成按时间分组，一直往下滑：You’re going → Fits your free time（没开 I’m free 时叫 Starting soon）→ Later tonight → This week。
+- ✅ 每一行：左边果子串（最多 3 颗，多了合成 +N）→ 标题 → 🕒 几点到几点 → 📍 多远（一律写分钟）→ 谁在 + 剩几个位置。
+- ✅ 超出你有空的时间，时间后面加粗写 "Runs past 9"；只剩 1 个位置时加粗。
+- ✅ 在家办的 plan 只写区域和大概几分钟（"Highland Park · ~15 min drive"），加入后才给地址。
+- ✅ 列表里不放留言，留言在 plan 卡里看。
+- ✅ 列表行不放 Take a seat：点一行打开 plan，在那里加入（加入前要看到"谁会看到你"）。
+- ✅ Spots 图层不显示 "3 free"。
