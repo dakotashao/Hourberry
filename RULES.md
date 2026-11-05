@@ -138,4 +138,4 @@
 - ✅ 在家办的 plan 只写区域和大概几分钟（"Highland Park · ~15 min drive"），加入后才给地址。
 - ✅ 列表里不放留言，留言在 plan 卡里看。
 - ✅ 列表行不放 Take a seat：点一行打开 plan 卡，在那里加入。
-- ✅ Spots 图层不显示 "3 free"。
+- ✅ Plans 和 Spots 两个图层都显示 "3 free"：这是"有人很有空"的信号，点开可以直接约他们。
