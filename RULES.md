@@ -9,11 +9,15 @@
 - ✅ 导航：Map、Plans、Chats、People 四个 tab；Account 在头像后面。
 - ✅ 只能用 app 加入。网页链接是用来下载 app 的。
 
-## 2. 我有空（I'm free）
-- ✅ 在 I'm free 抽屉里选有空到几点（Till 8 / 9 / 10 / 自定），或者选 This weekend。
-- ✅ 可以选择要不要在地图上显示"我有空"，以及给谁看（分组 + 排除个人）。
-- ✅ Picks 页标题 "You’re free till 9" 可以点，点了改时间。
-- ⬜ Picks 不推荐和你已加入的 plan 撞时间的局（现在会推荐）。
+## 2. 有空：拆成两件事
+- ✅ 找局和"告诉朋友我有空"分开，不再是同一个按钮。
+- ✅ 找局 = Home 主按钮 "Discover"（见 §9a）。先选有多少时间（How long do you have?），然后看推荐。私下看，不会让任何人知道。
+- ✅ 告诉朋友我有空 = Home 上 "3 free" 那串果子最后的虚线 "+ you"。点它 → 选 Till 8 / 9 / 10、确认给谁看 → "Show me as free" → 你的果子挤进去，变成 "4 free"，旁边显示 "You · till 9 ×"，点 × 结束。
+- ✅ 点这串果子本身 → 打开 Free now 列表（谁有空、发消息、一起约）。
+- ✅ Discover 看完没有加入时，最后一屏有 "Nothing fits? Let friends know you’re free"，点了同样是挤进 free 那一串。
+- ✅ "free" 只表示"朋友能看到我有空"；找局永远叫 Discover。
+- ✅ This weekend 保留。
+- ⬜ Discover 不推荐和你已加入的 plan 撞时间的局。
 
 ## 3. 谁能看到 plan、谁收到通知
 - ✅ 只给朋友看；host 可以打开 "Friends can bring friends"，让朋友的朋友也能看到和加入（显示 "via Jess"）。
@@ -64,11 +68,33 @@
 - ✅ 从截图存地点：搜索 → 相机图标。
 - ✅ Plan here 要带上这个地点进 Make a plan。
 
+## 9a. 地图和 Discover 的分工
+- ⬜ 地图：公开的局（On the map），被允许的朋友都看得到，自己逛。
+- ⬜ Discover：只放不公开的局（A few who fit），每次 3 张，只推给有空、合适的人。地图上已有的局不进 Discover。（原型里的推荐还是 Tacos / Climbing 这些地图上的局，要换成不公开的局。）
+- ✅ Discover 页标题 "Just for you"，下面 "Quiet plans till 9 · Not on the map"。
+- ⬜ 每张都必须有理由行，这是这类局的钩子。
+
+|          | 地图上的局             | Discover 里的局                 |
+|----------|------------------------|---------------------------------|
+| 谁决定给谁看 | 房主选分组             | 系统挑有空、合适的人            |
+| 房主心态   | 谁来都行               | 想见某类人，但不想直接问        |
+| 规模       | 偏大，4–8 人           | 偏小，2–3 人                    |
+| 没人加入   | 大家都看得到           | 没人知道                        |
+| 对应 persona | Jess、Nina           | Mia                             |
+
+- ❓ Make a plan 里 "A few who fit" 改得更有温度，例如 "Quietly, to a few who fit"。
+
+## 9b. 加入（Team 8 测试后，11/4）
+- ✅ 按钮叫 "Join"，不再叫 Take a seat（会被误解成选座位）。
+- ✅ 在 Discover 里点 Join：留在这张卡上，卡上出现 "✓ You’re in"，你的果子坐进空位；按钮变成 "Open plan chat"，自己决定什么时候进群聊。底部 Undo。
+- ✅ 从别处加入：先到 plan 页（M 10），不直接进群聊。
+- ⬜ 加入时不写留言（去掉 Join with a note 这一步）。
+
 ## 9. Plan 卡片（加入前只有这一个视图）
 - ⬜ 加入前只有这张卡。Picks、地图 pin、列表、邀请打开的都是它（pin / 列表 / 邀请从底部升起）。原 M04 删掉，不做单独的详情页。
 - ⬜ 卡上放"会让你说不去"的信息；点开卡片放"决定去了才用得上"的信息。
 - ⬜ 一张卡一次只有一个主视觉：默认人视图，右上角切到地图视图，下面的信息不动。切换状态在这一组卡里保持。
-- ⬜ 左右滑只是上一张 / 下一张，卡还在。Skip = 不感兴趣，这张卡拿掉。加入只能点 Take a seat。
+- ⬜ 左右滑只是上一张 / 下一张，卡还在。Skip = 不感兴趣，这张卡拿掉。加入只能点 Join。
 
 卡上必须有：
 - 谁在：果子，每颗下面写名字。
@@ -76,7 +102,7 @@
 - 几点到几点；超出你有空的时间标 "Runs past 9"。
 - 多远：用时间，例如 "8 min walk"。
 - 座位："2 of 5 seats left" / "Full · waitlist open" / 必须凑满的写截止时间。
-- 主按钮 Take a seat，加 Skip。
+- 主按钮 Join，加 Skip。
 - 一行理由（见下）。
 
 有就显示，没有就不占位置：房主留言（只显示一条、一行，从房主果子上冒出来）、Premium 星、via Jess、**费用**、**年龄限制（21+）**。
