@@ -13,7 +13,7 @@
 - ✅ 找局和"告诉朋友我有空"分开，不再是同一个按钮。
 - ✅ 找局 = Home 主按钮 "Discover"（见 §9a）。先选有多少时间（How long do you have?），然后看推荐。私下看，不会让任何人知道。
 - ✅ 告诉朋友我有空 = 地图右边竖着的一列（G 方案，11/10 定）：最上面是你的果子带 "+"，下面叠 3 个有空朋友的果子，再下面 "+N"。
-  - 点朋友那叠 → 展开成列表 "N free now"：每行 果子 · 名字 · till 9；第一行是你（"Show I’m free" / "till 8:40"）。点朋友 → 他的小卡；点外面或 ✕ 收起。
+  - 点朋友那叠 → 展开成列表 "N free now"：每行 果子 · 名字 · till 9；第一行是你：右边黑色小按钮 "I’m free too"，开了之后变成灰字 "till 8:40"。点朋友 → 他的小卡；点外面或 ✕ 收起。
   - 点你的 "+" → "How long are you free?"：1 / 2 / 3 hr / Until…，实时显示 "Free till 8:40 PM · 2 hr"，"Visible to" 一行，"They see you’re free now, not for how long."，按钮 Go。
   - Go 之后：toast "Friends can see you’re free"，你的果子变成有圈的，列表里是 "till 8:40"。再点 → 按钮变 Update，下面 "Stop showing I’m free"。
   - ⬜ Discover 的抽屉还是旧的 Till 8 / 9 / 10，下一步换成同一个时间 sheet。
