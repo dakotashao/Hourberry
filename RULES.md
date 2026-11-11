@@ -5,14 +5,18 @@
 
 ## 1. 结构
 - ✅ 主角是 plan：卡片、地图 pin、列表都是 plan。人只出现在 plan 上（谁 host、谁在）。
-- ✅ 地图上只有 plan，不显示人的实时位置。有空的人只在 "3 free" 里看。
+- ✅ 地图上只有 plan，不显示人的实时位置。有空的人只在地图右边那一列果子里看。
 - ✅ 导航：Map、Plans、Chats、People 四个 tab；Account 在头像后面。
 - ✅ 只能用 app 加入。网页链接是用来下载 app 的。
 
 ## 2. 有空：拆成两件事
 - ✅ 找局和"告诉朋友我有空"分开，不再是同一个按钮。
 - ✅ 找局 = Home 主按钮 "Discover"（见 §9a）。先选有多少时间（How long do you have?），然后看推荐。私下看，不会让任何人知道。
-- ✅ 告诉朋友我有空 = Home 上 "3 free" 那串果子最后的虚线 "+ you"。点它 → 选 Till 8 / 9 / 10、确认给谁看 → "Show me as free" → 你的果子挤进去，变成 "4 free"，旁边显示 "You · till 9 ×"，点 × 结束。
+- ✅ 告诉朋友我有空 = 地图右边竖着的一列（G 方案，11/10 定）：最上面是你的果子带 "+"，下面叠 3 个有空朋友的果子，再下面 "+N"。
+  - 点朋友那叠 → 展开成列表 "N free now"：每行 果子 · 名字 · till 9；第一行是你（"Show I’m free" / "till 8:40"）。点朋友 → 他的小卡；点外面或 ✕ 收起。
+  - 点你的 "+" → "How long are you free?"：1 / 2 / 3 hr / Until…，实时显示 "Free till 8:40 PM · 2 hr"，"Visible to" 一行，"They see you’re free now, not for how long."，按钮 Go。
+  - Go 之后：toast "Friends can see you’re free"，你的果子变成有圈的，列表里是 "till 8:40"。再点 → 按钮变 Update，下面 "Stop showing I’m free"。
+  - ⬜ Discover 的抽屉还是旧的 Till 8 / 9 / 10，下一步换成同一个时间 sheet。
 - ✅ 点这串果子本身 → 打开 Free now 列表（谁有空、发消息、一起约）。
 - ✅ Discover 看完没有加入时，最后一屏有 "Nothing fits? Let friends know you’re free"，点了同样是挤进 free 那一串。
 - ✅ "free" 只表示"朋友能看到我有空"；找局永远叫 Discover。
@@ -129,7 +133,7 @@
 ## 10. 头像
 - ⬜ 每个人的头像都是一颗果子，不用照片（老师：照片会毁掉整体感觉）。名字永远写出来。
 - ⬜ 头像编辑器：在 onboarding 和 Edit profile 里，选果子的形状、颜色、表情、配件（眼镜、帽子）、背景色。要抽象，不做头发这类太写实的东西。
-- ⬜ 两种大小：大号（卡片、plan 页）是完整角色，名字写在果子下面；小号（地图 pin、列表、3 free）只留形状，里面写首字母。
+- ⬜ 两种大小：大号（卡片、plan 页）是完整角色，名字写在果子下面；小号（地图 pin、列表、有空那一列）只留形状，里面写首字母。
 - ⬜ 点 Join：你的果子落进空位，所有人的果子挤成一堆，然后过渡到 plan 页。plan 页上就是这堆果子，像乐队合照。
 
 ## 11. 加入后的 plan 页
@@ -164,4 +168,4 @@
 - ✅ 在家办的 plan 只写区域和大概几分钟（"Highland Park · ~15 min drive"），加入后才给地址。
 - ✅ 列表里不放留言，留言在 plan 卡里看。
 - ✅ 列表行不放 Join：点一行打开 plan 卡，在那里加入。
-- ✅ Plans 和 Spots 两个图层都显示 "3 free"：这是"有人很有空"的信号，点开可以直接约他们。
+- ✅ Plans 和 Spots 两个图层都显示有空的那一列果子：这是"有人很有空"的信号，点开可以直接约他们。

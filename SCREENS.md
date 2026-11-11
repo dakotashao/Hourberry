@@ -19,7 +19,7 @@ ID 就是 index.html 里 `SCREENS` / `OVERLAYS` 的 key。截图：`node tools/w
 ## 屏幕
 **新用户 / 登录**：o1 Welcome · o2 Create account · o3 Verify · o4 Profile · o5 What you’re into · o6 Permissions · o7 Add your first people · o8 Welcome in · s1–s3 Sign in / Forgot · loc、notif（iOS 授权弹窗）
 
-**Home**：m01 Home · map（Plans / Spots 两层，底部抽屉）· srch 搜索（地点、区域、链接、照片）· free I’m free 抽屉 · tpfree 选结束时间 · aud 谁能看到你 · grp 编辑分组 · pq:Jess 有空的朋友 · plus 创建菜单（目前没有入口，"+ Plan" 直接进 m05）
+**Home**：m01 Home · map（Plans / Spots 两层，底部抽屉）· srch 搜索（地点、区域、链接、照片）· free Discover 抽屉 · tpfree 选结束时间 · freeme How long are you free?（点右边那列的 +）· tpfreeme Until… · aud 谁能看到你 · grp 编辑分组 · pq:Jess 有空的朋友 · plus 创建菜单（目前没有入口，"+ Plan" 直接进 m05）
 - Picks（"Picked for you"）是 m01 上 I’m free 之后的状态，不是单独的 ID
 
 **Plan**：m04 Plan · tonight（加入前）· m04l Plan · Saturday（只定了日期）· m10 Plan · joined（含留座）· cant / cancel · share · dir
