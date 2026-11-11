@@ -35,15 +35,15 @@
 | 你的 I'm free | 他照常看得到 | 看不到 | 看不到 | 看不到 |
 | 你 host 的局 | 他照常看得到 | 看不到；开了 Friends can bring friends 可能通过 via 看到 | 看不到 | 看不到，包括 via |
 | 共友的局 | 正常 | 正常 | 正常 | 正常 |
-| 提醒你 | 不提醒 | 不提醒 | 卡上一行 "Taylor is going · you restricted / blocked them" + 点 Take a seat 弹窗确认 + 他后来加入时私下提醒一次 | 同左 |
+| 提醒你 | 不提醒 | 不提醒 | 卡上一行 "Taylor is going · you restricted / blocked them" + 点 Join 弹窗确认 + 他后来加入时私下提醒一次 | 同左 |
 | 你的 Picks | 正常 | 正常 | 不推荐有他的局 | 不推荐有他的局 |
 
   - 被 Restrict 的人永远不会知道。
-  - 加入时的弹窗："Taylor is going. You'll both be in this plan and see each other in the chat." [Take a seat anyway] [Cancel]
+  - 加入时的弹窗："Taylor is going. You'll both be in this plan and see each other in the chat." [Join anyway] [Cancel]
   - Remove friend 之后，双方都不会再出现在对方的 People you may know 里。
 
 ## 4. 加入
-- ✅ 动词只有一个："Take a seat"。点一次就加入，底部出现 Undo。
+- ✅ 动词只有一个："Join"。点一次就加入，底部出现 Undo。
 - ✅ 通知授权要等 Undo 消失以后才问，并且点了 Undo 就不问。
 - ✅ 满了显示 "Full · Join waitlist"。
 - ✅ 留座：网页邀请自动留 15 分钟；被邀请的人可以请邀请人帮忙留到开始（"Ask Mia to keep it"）；plan 页显示 "Held · 12 min left"，可以选 Keep till 7 / Release。
@@ -130,7 +130,7 @@
 - ⬜ 每个人的头像都是一颗果子，不用照片（老师：照片会毁掉整体感觉）。名字永远写出来。
 - ⬜ 头像编辑器：在 onboarding 和 Edit profile 里，选果子的形状、颜色、表情、配件（眼镜、帽子）、背景色。要抽象，不做头发这类太写实的东西。
 - ⬜ 两种大小：大号（卡片、plan 页）是完整角色，名字写在果子下面；小号（地图 pin、列表、3 free）只留形状，里面写首字母。
-- ⬜ 点 Take a seat：你的果子落进空位，所有人的果子挤成一堆，然后过渡到 plan 页。plan 页上就是这堆果子，像乐队合照。
+- ⬜ 点 Join：你的果子落进空位，所有人的果子挤成一堆，然后过渡到 plan 页。plan 页上就是这堆果子，像乐队合照。
 
 ## 11. 加入后的 plan 页
 - ⬜ 地图上每个人一条线连到目的地，一眼看出谁快到了、谁会迟到（老师 Nov 4 主动提的）。
@@ -163,5 +163,5 @@
 - ✅ 超出你有空的时间，时间后面加粗写 "Runs past 9"；只剩 1 个位置时加粗。
 - ✅ 在家办的 plan 只写区域和大概几分钟（"Highland Park · ~15 min drive"），加入后才给地址。
 - ✅ 列表里不放留言，留言在 plan 卡里看。
-- ✅ 列表行不放 Take a seat：点一行打开 plan 卡，在那里加入。
+- ✅ 列表行不放 Join：点一行打开 plan 卡，在那里加入。
 - ✅ Plans 和 Spots 两个图层都显示 "3 free"：这是"有人很有空"的信号，点开可以直接约他们。
