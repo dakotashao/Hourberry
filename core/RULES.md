@@ -12,7 +12,7 @@
 - ✅ 导航：Map、Plans、Chats、People 四个 tab；Account 在头像后面。（11/10 确认：把 Chats 加回来，原型之前只做了 3 个。）
 - ✅ Chats：分两段。**Plans**：你加入或发起的局的群聊，按开始时间排；**Friends**：私聊，有未读的排前面。结束的局不在 Chats 里，去 Plans → Past 打开那个局，里面有它的聊天（只读）。
 - ✅ Plan 群聊：顶部固定一条，随时间变（开始前 "Tonight 7:00 · leave by 6:52" + Directions；进行中 "Happening now"；结束后关掉输入框）。输入框上面一排快捷回复：On my way / Here / 10 min late / Can’t make it（走退出流程）。标题点了进 plan 页；⋯：See the plan / Mute this chat / Leave plan。
-- ✅ 私聊：标题下写你们怎么认识的；顶部 "Make a plan with Sam"；⋯ 是个人菜单（Mute / Remove / Restrict / Block / Report）。点别人的消息可以举报。
+- ✅ 私聊（11/11 改）：标题下只在对方有空时写 "● Free till 9:30"。怎么认识的放在聊天记录最上面（大果子 + 名字 + "You met at Rooftop hang · Fri"），会跟着聊天往上滚走。Make a plan 不放顶部：输入框左边一个 + 随时可以发起；对方有空时输入框上方多一条 "Sam is free till 9:30 · Make a plan"。⋯ 是个人菜单（Mute / Remove / Restrict / Block / Report）。点别人的消息可以举报。
 - ⬜ 先不做：共享实时位置的单独地图页、Chat settings 页、Bingo、搜索聊天、New chat 按钮、Chats 里的 Archived。
 - ✅ Plans（11/11 定）：右上角只有一个 + 。顶部 **Invites**（有邀请才出现）：每个邀请是一张计划卡（谁邀请、时间、多远），Join / Not this time；不回答就一直留着，Not this time 对方不知道。下面 **Upcoming | Past**：Upcoming 是你加入的 + 你发起的（标 Hosting），按天分组，右边时间，下面一行状态（N going / Waiting on Kai / No one yet / 改动）；没人加入时多一行 Invite more / Call it off。Past：点开看谁去了、聊天（只读）、How was it?。没有 New 区，聊天消息只在 Chats。
 - ✅ Add people（11/11 第二版，参考微信 / IG / Bump / TikTok 的结构，用我们的视觉）：一页，很短。Search by @username（最上面）→ 三个灰色方块按钮 Hold phones / My code / Scan → 一个灰块：Contacts（Find friends who are already here ›）、Share invite link（打开系统分享面板）→ Suggested friends（放最下面，学 Bump：每个人一行，写为什么推荐他。理由按优先级：一起去过局 "Met at Zine fair · Sat"（最近 7 天，Add 直接成为朋友）→ 共同朋友 "Knows Jess"（Add = 请求）→ 通讯录 "In your contacts"（授权后，Add = 请求）。灰色 Add。）
@@ -139,6 +139,8 @@
 ## 10. 头像
 - ✅ 11/11：头像就是"你的果子"，用户自己捏（参考 Duolingo 的 avatar 编辑器）。编辑器：上面大预览（背景色就是选的背景），一排 tab：Berry（草莓、蓝莓、树莓、樱桃、葡萄、橘子）/ Color / Face（Eyes + Mouth）/ Top（叶子、梗、帽子、蝴蝶结）/ Extras（眼镜、墨镜、耳机、围巾）/ Background；每个选项是一个方块，里面就是你的果子换上这个样子。右上 Done，左上 ×。
 - ✅ 小尺寸规则：44px 以上完整显示；24–44px 只显示果子、颜色、脸；24px 以下只剩果子形状和颜色。
+- ✅ 11/11 借队友 v4/v2：预览顶部 Big / On map 切换，On map 直接给你看地图 pin 和聊天里的小果子；戴了小尺寸看不到的东西提示 "Shades won’t show this small"。每次换东西果子弹一下（0.4 秒，减少动态效果时关掉）。改过没存就点 ×：Save your berry? → Save / Discard / Keep editing；没改过直接关。
+- ✅ "N going" 统一写名字：按亲疏排，你在就写 You 开头。"You, Jess + 2 going" / "You and Kai" / "Sam and Ren" / "Just Kai so far"。用在 Plans 列表、Chats 计划行、计划群聊标题。
 - ✅ 没捏过的人显示首字母果子；自己的 profile 上有 "Make your berry · Start" 卡片，做完 toast "Looking good!"。
 - ⬜ 每个人的头像都是一颗果子，不用照片（老师：照片会毁掉整体感觉）。名字永远写出来。
 - ⬜ 头像编辑器：在 onboarding 和 Edit profile 里，选果子的形状、颜色、表情、配件（眼镜、帽子）、背景色。要抽象，不做头发这类太写实的东西。
@@ -152,7 +154,7 @@
 - ⬜ 几颗果子聚成一串小点，下面写 "Got an hour? Make it ours."
 
 ## 13. People 页（11/11 做完）
-- ✅ 顶部一排分组 chip：All · Close friends · 自建的组 · + New（带人数）。点一个只看这个组的人。自建的组下面有 Delete group（不通知任何人）。
+- ✅ 11/11 改：分组不放顶部。列表分 Free now（有空的人）和 Everyone 两段；分组放最下面一个灰块（Close friends · 2 › / Climbing · 3 › / + New group），下面一行说明分组的用处。点一个组进组页：成员（Remove）→ Add to 这个组（Add）→ Delete group（Close friends 没有）。
 - ✅ 列表：有空的排前面，每个人只出现一次。第二行写"什么时候能找他"：有空写 "Free till 10" / "Free tonight" + 绿点；没空写最近一起去的局（"Rooftop hang · Fri"）；没去过写怎么认识的（"Met at Boulder gym · Oct 28"），通讯录加的写 "From your contacts"。不写分组、不写 Close friend。
 - ✅ 点一个人进个人页（11/11 定，参考微信 / IG / TikTok 的结构，但用我们自己的视觉）：头像 + 名字 + "@sam · Free till 9:30" → Message / Make a plan → Note（只有你看得到；Add people 成功页写的笔记也存在这里）→ Groups（chip 就地加减、+ New；"Sam won’t know which groups they’re in."）→ You two（一起去过的局、都想去的地方，没有就不显示）→ Hide when I’m free（只对这个人隐藏你有空，对方不知道；Who sees you 里会写 Hidden from Sam）→ Mute / Restrict / Remove friend / Block / Report（直接摆出来，不藏在 ⋯ 里；Block 和 Report 红字）。Block 先弹确认（"Block Sam? … They may notice."）；Block 之后个人页不显示有空状态，也没有 Message / Make a plan。私聊右上角 ⋯ 也进这一页。不做：聊天气泡、壁纸、提示音、阅后即焚、通话、清空聊天、置顶、推荐给朋友。
 - ✅ Close friends 固定：永远第一个，不能删、不能改名（Who sees you 默认值和 Make a plan 的 "from Close friends" 靠它）。其他组可以自由建、删。
