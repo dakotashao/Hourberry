@@ -190,6 +190,8 @@
 
 - ✅ Spots 地图 pin（11/11 改，老师反馈"头像 + 名字像在说这个人叫 Dumplings"）：pin 主体是白色圆角小方块 + 类型图标（吃的 / 咖啡 / 户外），右边店名；想去的朋友是方块右上角的小果子标记（最多 1–2 颗 + "+N"）。点开在抽屉里看 "Jess, Sam +2 want to go"。挤在一起的 pin 合成黑色聚合标记 "3 spots"（带朋友果子），点了放大散开。缩小到 0.95 以下只显示图标，不显示店名。Sponsored 在 pin 上写成 "· Ad"。
 
+- ✅ Plans 地图 pin（11/11 改，同老师 "Dumplings 像人名" 的反馈）：主体是白色圆角小方块 + 活动图标（吃的 / 麦克风 / 攀岩 / 喝一杯 / 桌游 / 户外 / 咖啡），右边两行：活动名（Tacos）加粗，下面小字时间（7:00 / Sat）。host 的小果子 + "+N" 挂在方块左上角当标记，不是主体。你加入或发起的局：方块变黑。以后的局淡一点。挤在一起合成黑色 "2 plans"，点了放大散开。
+
 ## 16. 搜索（留在地图上）
 - ✅ 点搜索不跳页：顶部变成输入框 + Cancel，地图留着，底部抽屉放结果。
 - ⏸ 粘贴链接找地点：11/10 先拿掉，以后再加（包括输入框下面的提示框）。
@@ -205,3 +207,85 @@
 - ✅ 点时间：底部弹出时间滚轮（15 分钟一格），滚的时候句子里的时间实时变；背景不变暗，点空白处收起，没有 Done。
 - ✅ 点人数：底部弹出 2 3 4 5 6 8 10 12，点一个就收起。少于"你 + 已邀请的人"的数字灰掉。
 - ✅ 点地点永远是"换地方"。Where 面板最上面是当前选的地点 + Details（看完整地点页，Back 回来）。Send plan 上面一行直接写地址 · 多远。
+
+## 18. Plan 卡片的人群区（11/11 改回 Figma 那版的布局，更 clean）
+- ✅ 三列：左边小字座位数（≤2 个时变黑加粗）+ Your seat（+）+ 还有几个空位；中间 host 放在白色圆角块里突出（大果子 + 名字 + HOST · via Jess）；右边其他人小果子竖排，最多 3 个，多了是 +N See all。
+- ✅ 座位数不再用右上角的胶囊。留言气泡在最上面，"为什么和你有关"在人群区下面。
+
+## 19. 注册流程（11/13 做进原型）
+- ✅ 入口：Settings → Log out 之后、Settings 最下面 "Prototype · sign up as a new user"、链接加 `?signup`。
+- ✅ 0 欢迎（大插画 + 一个主按钮 Get started〔手机号〕+ 文字链接 I have an account，最下面一行小灰字：Terms 和 Privacy Policy）→ 1 手机号 → 2 验证码（输满 6 位自动下一步）→ 3 名字（@ 自动生成：名字小写，太短或被占用就加两位数字，以后在 Edit profile 里改）→ 4 选果子（"Pick your berry, Trevor" / "This little guy is you on the map." / 按钮下小灰字 "Dress it up anytime from your profile."）→ 6 生日（三列滚轮：月 / 日 / 年，停在 2000 年 1 月 1 日但不算选了：没滚动过，按钮是灰的 "Scroll to your birthday"；不满 18 → "Hourberry is for 18 and up"）→ 7 兴趣（不设最少数量；一个都没选时按钮是灰色的 "Skip for now"，选了就变成黑色的 "Continue"，只有这一个按钮）→ 8 定位（中间是小地图预览，用真的 plan pin；按钮下小灰字 "Your exact location is never shown to anyone."；系统弹窗照 iOS：小地图 + Precise: On，Allow Once / Allow While Using App / Don’t Allow。Allow Once 下次打开 app 会再问）→ 9 通知（中间是两条通知预览，按钮下不放字）→ 10 加人（可跳过）→ 11 You’re in。
+- ✅ 11/16 改：**只用手机号注册和登录**（参考 Hinge、Bumble、Bump、Partiful：都必须验证手机号）。手机号用来找通讯录里的朋友、确认是真人、发邀请。没有密码。
+- ✅ I have an account → "Welcome back" + 手机号 → 短信验证码 → 直接进 app。之前的密码登录页删掉（注册时从没设过密码）。
+- ✅ 邮箱和 Apple 放在注册之后（学 Hinge）：Settings → Account → Phone and email 里有 Email（Add）和 Sign in with Apple（开 / 关）。新用户的 Profile 上有一张可以关掉的卡片 "Add your email · So you can get back in if you lose your phone."
+- 不做"先用邮箱、之后再绑手机号"：手机号反正必须给，先邮箱只是多一次验证。App Store 4.8：只用自己的账号系统时，不要求提供 Apple 登录。
+- ⬜ 收不到短信：之后加"改用 WhatsApp / 接电话听验证码"（学 Partiful、Bumble）。
+- ✅ 11 You’re in：加了人 → "Theo’s in your bunch. Next time you’re free, they’ll know." + Let’s go；没加人 → "Add a few friends and you’re set." + Add friends（进 Add people）/ Maybe later。
+- ✅ 不做 "How it works" 介绍页（11/16 删）：改成进 app 第一次到地图时，+ 旁边一个黑色小气泡 "Tap + when you’re free / Friends you pick will see it"，点气泡或点 + 后消失，只出现一次。学 Gentler 首页的 "Tap here to switch…" 气泡：用到的时候再教。
+- ✅ 不单独问 @（11/16 删）：我们加人主要靠通讯录、碰手机、二维码，@ 只是备用。学 Duolingo：先自动给，之后再改。
+- ✅ 进度条从 3 名字到 10 加人，分成 **7 段**，做完一步填满一段，不写数字（11/16 改）。
+- ✅ 验证码页 "Resend code" 先显示 60 秒灰色倒计时 "Resend code in 1:00"，到 0 才能点；点了重新倒数（11/16 改）。
+- ✅ 验证码页不放 Edit：改号码用左上角返回键，号码还在框里（11/16 改）。
+- ✅ 有输入框的屏（登录、手机号、验证码、名字）原型里画出键盘（手机号和验证码是数字键盘），按钮和果子都在键盘上面。真手机上不画，用系统键盘。
+- ✅ 果子陪着走：名字、生日两屏，输入框下面放一颗果子（选果子之前是灰色默认果子），每屏一个姿势占位。
+- ✅ 要权限的页面：中间放"开了会怎样"的预览。不加我们自己没定过的规则（之前写的"11 PM–8 AM 静音"删了：和 All night 冲突）。
+- 依据（11/16 看 Gentler / Ahead / Headspace / Duolingo）：四家开始页角色都很大；三家在提问前先讲 app 有什么用；Duolingo / Ahead 先告诉你要问几题。我们不学"先体验再注册"：局只给朋友看，没账号没朋友就没东西可看，所以账号放最前面，和 Headspace 一样。
+
+## 20. 主持人管理 + 举报（11/13 做进原型）
+- ✅ 计划页 ⋯（host）：Edit plan（回到那句话，按钮变 Save changes；改了时间/地点会写进群聊并提示所有人）· Stop new people joining（已在的人不受影响）· Who can join（"Friends join, others ask" 默认 / "Ask me first"）· Call it off（确认：在里面的人会收到通知，聊天保留）。
+- ✅ Wants to join：朋友的朋友或陌生人申请，在计划页顶部 Accept / Decline。Decline 对方只看到"满了"。
+- ✅ 点计划页里的人：Message / Profile；host 多一个 Remove from plan（确认：对方收到一句"你不在这个局里了"，不能再加入）；所有人都有 Report。
+- ✅ 举报分两种，入口不同、理由不同：Report this plan（关于局本身：不符、地点不安全、广告）在 ⋯ 里，host 看不到这一项；Report [人]（关于这个人的行为：让我不安、骚扰、假账号、广告）在点人之后，可以顺便 Block。都写"对方不会知道是你"。
+
+## 21. "How much time" 弹层（11/13 改）
+- ✅ 点 1 hr / 2 hr / 3 hr / Until… 只更新弹层里面，弹层不再重新滑上来。
+- ✅ 下面只写 "Free till 8:45 PM"，不再重复写时长。
+- ✅ Until…：保留原来的三列滚轮（时 / 分 / AM-PM）。超过 12 小时的时间变灰，滚到灰色的会自动弹回最晚能选的时间，所以不需要 "12 hr max" 的提示。
+- ✅ All night / All day 开关下面写清楚：晚上 = 到凌晨 3 点，朋友看到 "free tonight"；白天 = 到晚上 10 点，朋友看到 "free today"。打开后滚轮收起。
+
+## 22. 地图测试：局 = 一串果子 + 时间窗口（11/16 做进原型，测试中）
+- 🧪 Plans 地图 pin 换成一串果子：中间黑色是 host，周围灰色是已经去的人（最多 5 颗，再多写 +N），白色空心是空位（最多 3 个），右上角小圆里是活动图标；下面一行 "7:00 PM · 2 open"。你要去的局下面那行变黑。挤在一起还是合成 "N plans"。
+- 🧪 时间窗口只在**今天地图上有 8 个或更多局**时出现（受欢迎的人、周五晚上）；平常局少，一眼就能看完，不出现。没出现时，"你有空之后才开始的局变淡"照样生效。原型左侧导航 "Busy night (8+ plans)" 可以看到。
+- 🧪 出现时：抽屉上方一个小胶囊 "Now – 9:00 PM"（你有空就到你有空结束；没点有空就到 12 AM）。拖地图时展开成两个把手的时间轴（最晚到 3 AM），停手 2.5 秒收回；点胶囊也能打开。
+- 🧪 拖时间窗口时果子串变化：你开始时已经在进行 → 下面那行变黑；在窗口里开始、能待满 1 小时 → 正常；待不满 1 小时 → 缩小，标 "short"；窗口之后或别的日子 → 变淡缩小。只改地图，不改你的有空状态。
+- 待定：和抽屉里的 "Any time" 筛选重复；抽屉列表不跟着窗口变；抽屉在半高时展开的时间轴会挡住大半地图。
+- ✅ 11/16：时间（Now / Tonight / This week / Any time）和距离两个筛选都从底部弹窗改成**下拉小菜单**。距离（点胶囊，在下面弹出 Within 1 mi / 5 mi / 15 mi / Anywhere，当前项打勾，点一项就关，地图不变暗）。选 Anywhere 时胶囊只写 "Anywhere"。按英里，不改成步行时间。距离筛选现在真的会筛：地图和抽屉列表只留这个范围内的局（自己发起的除外）。
+
+## 23. 改用户名（11/16 修）
+- ✅ 注册时自动生成 @（名字小写；太短或被占用就加两位数字），之后在 Edit profile → Username 里改。
+- ✅ 输入框前面固定一个灰色 "@"，用户删不掉。边打字边整理：转小写，只留字母、数字、. 和 _，空格和其他符号直接去掉。
+- ✅ 输入框下面实时提示："✓ @trevlee is available" / "@jess is taken"（红字）/ "At least 3 characters"（红字）。
+- ✅ 11/16 再改（学 Instagram / TikTok / Hinge）：Edit profile 是一列"标签 · 值 ›"（Name / Username / Bio / Pronouns；Birthday 只显示不能点，下面 "Friends can’t see your birthday."）。每一行点进去单独一页改，右上角 Save；主页只有返回，没有 Cancel / Done。
+- ✅ 顶部分段切换 **Edit | Preview**（学 Hinge），Preview 就是"朋友看到的你"。
+- ✅ 头像右下角小铅笔，点头像或下面 "Edit your berry" 进果子编辑器。
+- ✅ 改用户名那一页要谨慎：输入框下实时提示能不能用，不能用时 Save 变灰；下面一块说明 "You can only change your username once every 30 days. For 14 days, no one else can take @trevor."。改完弹 "You’re now @trev.lee"。30 天内再进去：输入框和 Save 都是灰的，写 "You can change your username again on Dec 16."
+- ✅ Name 不能留空。
+- ✅ Birthday 显示注册时选的日期（之前写死成 Mar 4, 2001）。
+
+## 24. 个人主页 = 朋友看到的你（11/16）
+- ✅ Profile 放朋友能看的内容：果子、名字、@、bio、兴趣、有空状态、三格徽章墙、Hosting。底部 "This is what friends see. Choose what’s shown"。还没做果子时，Edit profile / Share 按钮下面一张卡片 "Make your berry · Friends see it everywhere. · Start"（照 hi-fi G09 的位置）；做完果子卡片消失，改果子用头像右下角的小铅笔。
+- ✅ **徽章墙**（11/16 按社交心理重选）：一排三格，每格显示什么用户自己选，也可以空着。原则：说"你是什么样的人"而不是"你有多厉害"；能引出一次邀请；数字小时不丢人；不制造压力（不做 streak）。选项：
+  - Go-to spot："Leo’s Taqueria"（点开是那家店）
+  - Usually down for："Tacos & climbing"
+  - Best time to catch me："Weeknights after 7"（从你常点"有空"的时间算）
+  - Wants to go："2 places"（点开是列表，朋友可以约你去）
+  - Currently obsessed with："Bouldering"（自己写，最多 24 个字，Edit profile 里一行）
+  - Hosted："5 plans"（host 满 3 次才能选）
+  - Introduced："6 friends to each other"（在你的局上互相认识的朋友）
+  - First to join："8 plans"（第一个加入的次数，满 3 次才能选）
+  - 删掉：plans joined、plans hosted（数字）、new friends（像收集人头）、weeks in a row（streak 压力）。
+  - 数据不够的徽章锁着：挑选页里变浅，写怎么解锁（"Start a few plans"）。新用户什么都没有时，主页显示一格 "New here · Say hi"。默认：Go-to spot / Wants to go / Introduced。11/16 改：文案都写具体（"Hosted 5 plans"），不写抽象的身份名（"The host"）。
+- ✅ **改徽章在 Edit profile 里**（11/16 改成一页挑选）：点 Profile badges 或 "Choose badges" → 新页面：上面三格实时预览（朋友看到的样子），下面所有徽章两列方块，每块直接写自己的数；点一下选上（黑底，角上 1 / 2 / 3 表示顺序），再点取消；满 3 个时其余变淡，再点提示 "Remove one first"；一个不选 = 主页不显示这一排；右上角 Save，返回不保存。旧的写法："Profile badges" 三格，点一格 → 底部弹窗 "Show on your profile"：Plans joined / Plans hosted / New friends / Places to go / Weeks in a row / Go-to spot（旁边写 "Yours: 5"，已在别的格子里的变灰）+ "Don’t show anything here"。空格子显示 "+ Add"。默认：plans joined / plans hosted / places to go。
+- ✅ 做 / 改果子也在 Edit profile 里（头像 + "Make your berry / Edit your berry"）。主页顶部的大果子右下角小铅笔照样能进。
+- ✅ 不做"要不要展示兴趣 / 正在发起的局"的开关（11/16 删）：不想展示兴趣就不选标签；局的可见范围由局自己的 "Who can join" 决定。
+- ✅ 删掉 Edit profile 里的 Preview：Profile 本身就是朋友看到的样子。
+- ✅ 11/16：主页上点徽章 = 在当前页弹出一个小 sheet 看详情，不跳到别的页面：Go-to spot → 那家店一行（点这一行才去地点页）；Usually down for → 两个类型和次数；Best time to catch me → 一周七天的小柱状图；Wants to go → 地点列表；Hosted → 最近 3 个局；Introduced → 谁和谁在哪个局认识；First to join / Currently obsessed with → 一句话。底部 "Friends see this when they tap it on your profile."
+
+## 25. 果子编辑器：老师 11/16 意见
+- ✅ Color 只用一排圆形色块，不再在下面重复画一排果子（老师："could be just color switches"）。
+- ✅ 付费款（老师："upsell them on items they have to upgrade to premium"）：Top 里有 Top hat、Crown，Berry 里有 Starfruit，放在每页最后，右上角小锁。可以点了先试戴，预览下面出现 "Top hat is Premium. Try it on, keep it with Premium. · See Premium"。点 Done 时弹 "Keep the Top hat?"：See Premium / Save without it（只去掉付费那一样，其他保留）。有 Premium 就直接保存。免费款不能做丑。
+- ✅ 编辑器的 6 个标签一行放得下，Background 不再被切掉。
+- ⬜ 配件画得更夸张、超出果子轮廓（老师："glasses should extend beyond the berry face"）：交给插画，见 ILLUSTRATION-BRIEF H 节。
+- ⬜ hi-fi：Blush、Freckles 从 Extras 挪到 Face；"Pineberry" 不是颜色，改成色块后去掉；"Small spots…" 那句只放在 Top 和 Extras 两页。
+- ✅ 11/16 再改：点徽章弹出的是一张**徽章页**：中间一个大徽章图标（96 pt 圆角方块，以后换插画），下面小字徽章名、大字内容、一句"怎么得来的"（"Trevor has been here more than anywhere else: 4 times."），再下面是能用的东西（地点一行、一周柱状图、想去的地方列表、正在组的局）。
+- ✅ 隐私：徽章页**不给朋友看第三方的名字、不列过去的局**。Hosted 只写次数（正在组局才多一行 "Hosting now · Join"）；Introduced 朋友只看到 "6 friends met each other at Trevor’s plans."，名单只有自己看得到（标 "Only you see the names"，底部 "Friends see the number, not the names."）。
