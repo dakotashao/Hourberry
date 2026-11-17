@@ -1,8 +1,8 @@
 # Hourberry core · 改动记录
 
-## 11/13 – 11/17（这次提交）
+## 11/13 – 11/17 · 提交 cab4492
 
-上次提交是 7ba2193。这次一起提交的改动如下，规则细节都在 `RULES.md` 对应的节里。
+上次提交是 7ba2193。这一次一起提交的改动如下，规则细节都在 `RULES.md` 对应的节里。
 
 ### 注册和登录（§19）
 - 只用手机号注册和登录，没有密码。参考 Hinge、Bumble、Bump、Partiful：这几个都必须验证手机号。开始页只有一个 Get started，加一个文字链接 I have an account，下面一行条款小字。
@@ -41,7 +41,7 @@
 
 ### 果子编辑器（§25，老师 11/16 意见）
 - Color 只用色块。
-- 付费款：Top hat、Crown、Starfruit 带锁，可以先试戴，保存时提示 Premium。Starfruit 不是莓果，待换成 Pineberry。
+- 付费款：Top hat、Crown、Starfruit 带锁，可以先试戴，保存时提示 Premium（Starfruit 后来换掉了，见下）。
 - 6 个标签一行放得下。
 
 ### 别的
@@ -51,9 +51,20 @@
 - 新加载页：几颗彩色果子跑进来（另一个对话做的）。
 - `research/ILLUSTRATION-BRIEF.md`：G 注册时陪着的果子、H 配件要夸张、I 徽章图标。
 
+## 11/17 · 第二次提交
+- 付费款果子：Starfruit 换成三个真莓果，Pineberry（白草莓）、Golden raspberry、Blackcurrant。
+- 付费果子排在 Berry 页最后。Pineberry 是白身体、黑眼睛。
+- 定了："Best time to catch me" 不加"只给好友看"。徽章是用户自己选的，选了就是愿意给人看。
+- 挑徽章页底部："Based on your plans. Updates on its own."（交代这些是系统总结的）。
+- Edit profile：徽章标题 "My badges · up to 3"；Birthday 行标灰色小标签 "Hidden"，删掉下面那句话。
+- Profile 底部改成一个小链接 "Edit what friends see"。
+- 收不到短信的备用方式：先不做，hi-fi 时在验证码页加 "Didn’t get it? Call me instead"（学 Bumble）。
+- 试戴付费款的提示缩短成 "Golden raspberry · Premium" + Unlock。
+- 徽章页（点开徽章看到的）：中间大图标，下面是一句"怎么得来的"。Introduced 的名单只有自己看得到，朋友只看到人数；Hosted 不列过去的局。
+- 资料页里的说明文字参考 Bumble 和 Hinge 的写法：标题用名词，数量限制只写半句，不写操作说明。
+
 ### 还没定
-- 付费款 Starfruit 要不要换成 Pineberry。
-- 挑徽章页底部要不要加一句 "Based on your plans. Updates on its own."
-- "Best time to catch me" 要不要只给好友看。
-- 编辑资料页：标题改成 "My badges · up to 3"，生日那一行标 "Hidden"，删掉主页底部那句话。
-- 收不到短信时改用 WhatsApp 或电话验证。
+- 收不到短信的备用方式：hi-fi 时再做。
+
+### 以后的规矩
+每次改原型都记在这里，提交的时候把这一节的标题改成提交号。

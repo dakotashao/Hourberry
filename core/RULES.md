@@ -283,9 +283,12 @@
 
 ## 25. 果子编辑器：老师 11/16 意见
 - ✅ Color 只用一排圆形色块，不再在下面重复画一排果子（老师："could be just color switches"）。
-- ✅ 付费款（老师："upsell them on items they have to upgrade to premium"）：Top 里有 Top hat、Crown，Berry 里有 Starfruit，放在每页最后，右上角小锁。可以点了先试戴，预览下面出现 "Top hat is Premium. Try it on, keep it with Premium. · See Premium"。点 Done 时弹 "Keep the Top hat?"：See Premium / Save without it（只去掉付费那一样，其他保留）。有 Premium 就直接保存。免费款不能做丑。
+- ✅ 付费款（老师："upsell them on items they have to upgrade to premium"）：Top 里有 Top hat、Crown，Berry 里有 Pineberry（白草莓）、Golden raspberry、Blackcurrant（11/17：Starfruit 不是莓果，换掉），放在每页最后，右上角小锁。可以点了先试戴，预览下面出现 "Top hat is Premium. Try it on, keep it with Premium. · See Premium"。点 Done 时弹 "Keep the Top hat?"：See Premium / Save without it（只去掉付费那一样，其他保留）。有 Premium 就直接保存。免费款不能做丑。
 - ✅ 编辑器的 6 个标签一行放得下，Background 不再被切掉。
 - ⬜ 配件画得更夸张、超出果子轮廓（老师："glasses should extend beyond the berry face"）：交给插画，见 ILLUSTRATION-BRIEF H 节。
 - ⬜ hi-fi：Blush、Freckles 从 Extras 挪到 Face；"Pineberry" 不是颜色，改成色块后去掉；"Small spots…" 那句只放在 Top 和 Extras 两页。
 - ✅ 11/16 再改：点徽章弹出的是一张**徽章页**：中间一个大徽章图标（96 pt 圆角方块，以后换插画），下面小字徽章名、大字内容、一句"怎么得来的"（"Trevor has been here more than anywhere else: 4 times."），再下面是能用的东西（地点一行、一周柱状图、想去的地方列表、正在组的局）。
 - ✅ 隐私：徽章页**不给朋友看第三方的名字、不列过去的局**。Hosted 只写次数（正在组局才多一行 "Hosting now · Join"）；Introduced 朋友只看到 "6 friends met each other at Trevor’s plans."，名单只有自己看得到（标 "Only you see the names"，底部 "Friends see the number, not the names."）。
+- ✅ 11/17 定：徽章不另设"只给好友看"。用户自己挑的，挑了就代表愿意展示（包括 Best time to catch me）。
+- ✅ 11/17：挑徽章页底部 "Based on your plans. Updates on its own."；Edit profile 徽章标题 "My badges · up to 3"；Birthday 行右边灰色标签 "Hidden"；Profile 底部只有一个小链接 "Edit what friends see"。
+- ✅ 11/17：试戴付费款时预览下面只写 "Golden raspberry · Premium" + Unlock 按钮。
