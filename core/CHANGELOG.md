@@ -51,7 +51,7 @@
 - 新加载页：几颗彩色果子跑进来（另一个对话做的）。
 - `research/ILLUSTRATION-BRIEF.md`：G 注册时陪着的果子、H 配件要夸张、I 徽章图标。
 
-## 11/17 · 第二次提交
+## 11/17 · 提交 9e31183
 - 付费款果子：Starfruit 换成三个真莓果，Pineberry（白草莓）、Golden raspberry、Blackcurrant。
 - 付费果子排在 Berry 页最后。Pineberry 是白身体、黑眼睛。
 - 定了："Best time to catch me" 不加"只给好友看"。徽章是用户自己选的，选了就是愿意给人看。
