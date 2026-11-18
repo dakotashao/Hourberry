@@ -69,7 +69,7 @@
 ### 以后的规矩
 每次改原型都记在这里，提交的时候把这一节的标题改成提交号。
 
-## 11/17 · 地图（老师意见）
+## 11/17 · 地图（老师意见）· 提交 21d6dfd
 - 删掉 "Any time" 时间筛选，只留距离。
 - 时间窗口出现的规定：今天、范围内、没结束、没藏、没取消的局 ≥ 8 个；出现后这次一直留着。
 - Discover 按钮去掉数字；"Make a plan" 改成 "+ Plan"，跟 hi-fi v3 一样。
@@ -79,7 +79,7 @@
 - Who sees you 重做：原来三个分组并列多选，没选的灰圆看起来像不能点，还会出现 "0 people"。改成单选 All friends / Close friends / Only these people + 单独一行 Hidden from。挑人页有搜索、Groups（一行一组，能整组选、能进去改、能新建）、Friends 列表。没选人 Done 点不了。+ Me 弹层里的 "Visible to" 跟着这里显示。
 - 分组可以从 Who sees you 进去改（之前规定只能在 People 和个人页改）。
 
-## 11/18
+## 11/18 · 提交 21d6dfd
 - People 页：分组从底下的 Groups 区改成搜索框下面一排小标签（All / Close friends / Climbing / +）。点一个 = 只看这组；上面一行人数 + Edit 进分组页。参考 WhatsApp Lists、Telegram 文件夹。
 - 删掉 Notifications 里的 Quiet hours（11 PM–8 AM 写死、不能改），Settings 那一行也不再写 "Quiet 11 PM–8 AM"。理由：手机自带勿扰；我们允许 All night 有空。
 - 列表（灰色块里的每一行）之间加分隔线：1px 浅灰，从文字左边开始，跟 iOS 设置一样。不是描边框，灰色块分区的规矩不变。
