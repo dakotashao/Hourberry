@@ -89,7 +89,7 @@
 - Who sees you：删掉顶部副标题 "When you tap + Me…" 和 All friends 下面那句说明，只留底部 "5 people will see you’re free."
 - Who sees you：去掉 All friends / Choose 分段（像在切页面，"Choose" 也说不清）。改成一个列表：All friends 在最上面当"全选"，下面直接是分组，都用方框。
 
-## 11/18 · Settings
+## 11/18 · Settings · 提交 309c77e
 - 重新分组（参考 Hinge、Bumble、Tinder）：Premium 卡放最上面；Privacy / Preferences / Account / Support；Log out 和 Delete account 放最底下。
 - Pause 从 "When you’re free" 挪到 Account；Delete account 弹窗加 "Pause instead"。
 - 删掉 "Settings" 里叫 "Settings" 的分组、灰掉的 Show my badge（挪进 Premium 页）、Invite friends、Contact us。Delete account 从 Phone and email 页里挪出来。
