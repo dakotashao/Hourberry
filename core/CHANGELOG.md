@@ -68,3 +68,23 @@
 
 ### 以后的规矩
 每次改原型都记在这里，提交的时候把这一节的标题改成提交号。
+
+## 11/17 · 地图（老师意见）
+- 删掉 "Any time" 时间筛选，只留距离。
+- 时间窗口出现的规定：今天、范围内、没结束、没藏、没取消的局 ≥ 8 个；出现后这次一直留着。
+- Discover 按钮去掉数字；"Make a plan" 改成 "+ Plan"，跟 hi-fi v3 一样。
+- 地图 pin（老师意见：像人名、真地图上看不清、多了会挤）：对比了 P1–P6，选 P4 的方向。平时是白底小气泡 "host 果子 + Tacos · 7:00 PM"；点了气泡变黑、原地长出果子串，底部抽屉只剩这个局，用跟主页列表一样的那一行，点它才进完整的局。原型和对比页都改了。
+- 赶不上的局：字变灰，白底不变（以前是整个变透明 + 缩小）。
+- 有空的人那一列（老师意见：要不要数字、40 个人怎么办、没朋友怎么办）：去掉人数，最多 3 颗果子，超过写 "+N"，下面小字 free。熟的排前面，再按距离。没人有空时只剩 +。展开面板不分段、不写 Close friend（§11 早就定了不写），去掉 "Closest first · within 5 mi"，每人一行写 "till 10:00 PM · 0.4 mi"。
+- Who sees you 重做：原来三个分组并列多选，没选的灰圆看起来像不能点，还会出现 "0 people"。改成单选 All friends / Close friends / Only these people + 单独一行 Hidden from。挑人页有搜索、Groups（一行一组，能整组选、能进去改、能新建）、Friends 列表。没选人 Done 点不了。+ Me 弹层里的 "Visible to" 跟着这里显示。
+- 分组可以从 Who sees you 进去改（之前规定只能在 People 和个人页改）。
+
+## 11/18
+- People 页：分组从底下的 Groups 区改成搜索框下面一排小标签（All / Close friends / Climbing / +）。点一个 = 只看这组；上面一行人数 + Edit 进分组页。参考 WhatsApp Lists、Telegram 文件夹。
+- 删掉 Notifications 里的 Quiet hours（11 PM–8 AM 写死、不能改），Settings 那一行也不再写 "Quiet 11 PM–8 AM"。理由：手机自带勿扰；我们允许 All night 有空。
+- 列表（灰色块里的每一行）之间加分隔线：1px 浅灰，从文字左边开始，跟 iOS 设置一样。不是描边框，灰色块分区的规矩不变。
+- Appearance 弹层：标题和列表之间加了间距；选项改成白圆点（没选的不再是灰圆，灰圆看起来像不能点）。
+- Who sees you 又改一版（Dakota：本来就可以多选，还能直接搜索加人）：去掉 "Only these people" 和它的挑人页。顶部搜索直接加人；All friends 单独一块；下面分组和单个人都是多选方框，分组能进去改、能新建。最后一个不能取消，不会 0 人。
+- Who sees you：All friends 和下面的方框长得一样、看着像能一起勾，而且选 All 时下面的组全是空的，像是 Jess 看不到你。改成顶部分段 All friends / Choose，只有 Choose 才出现搜索和分组。
+- Who sees you：删掉顶部副标题 "When you tap + Me…" 和 All friends 下面那句说明，只留底部 "5 people will see you’re free."
+- Who sees you：去掉 All friends / Choose 分段（像在切页面，"Choose" 也说不清）。改成一个列表：All friends 在最上面当"全选"，下面直接是分组，都用方框。

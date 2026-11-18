@@ -8,7 +8,7 @@
 ## 1. 结构
 - ✅ 主角是 plan：卡片、地图 pin、列表都是 plan。人只出现在 plan 上（谁 host、谁在）。
 - ⬜ 地图上只有 plan，不显示人的实时位置。地图上的 plan 是公开的局（比较大、需要人）；小的隐藏局在 Discover 里翻。
-- ⬜ 有空的人在地图右上角、搜索按钮下面，竖着排成 **free 那一堆**：一个胶囊，最上面一格是 +（你的位置），下面是有空的人的果子，最下面大字人数 + 小字 free。说了有空以后，+ 变成你的果子。点胶囊原地展开，看所有有空的人和各自到几点；你永远排第一行（Edit），别人右边 Hang?（发私信约）。Plans 和 Spots 两个图层都有。
+- ⬜ 有空的人在地图右上角、搜索按钮下面，竖着排成 **free 那一堆**：一个胶囊，最上面一格是 +（你的位置），下面是有空的人的果子，最下面小字 free（11/17 改，老师意见：不写人数。最多 3 颗果子，超过 3 个第 4 格写 "+N"。前 3 颗先放跟你熟的，再按离你近的排。没人有空或还没有朋友时，只剩 +）。说了有空以后，+ 变成你的果子。点胶囊原地展开，看所有有空的人和各自到几点（顶部搜索；熟的排前面，再按距离，不分段、不写 Close friend；每行 "till 10:00 PM · 0.4 mi"）；你永远排第一行（Edit），别人右边 Hang?（发私信约）。Plans 和 Spots 两个图层都有。
 - ✅ 导航：Map、Plans、Chats、People 四个 tab；Account 在头像后面。（11/10 确认：把 Chats 加回来，原型之前只做了 3 个。）
 - ✅ Chats：分两段。**Plans**：你加入或发起的局的群聊，按开始时间排；**Friends**：私聊，有未读的排前面。结束的局不在 Chats 里，去 Plans → Past 打开那个局，里面有它的聊天（只读）。
 - ✅ Plan 群聊：顶部固定一条，随时间变（开始前 "Tonight 7:00 · leave by 6:52" + Directions；进行中 "Happening now"；结束后关掉输入框）。输入框上面一排快捷回复：On my way / Here / 10 min late / Can’t make it（走退出流程）。标题点了进 plan 页；⋯：See the plan / Mute this chat / Leave plan。
@@ -158,7 +158,9 @@
 - ✅ 列表：有空的排前面，每个人只出现一次。第二行写"什么时候能找他"：有空写 "Free till 10" / "Free tonight" + 绿点；没空写最近一起去的局（"Rooftop hang · Fri"）；没去过写怎么认识的（"Met at Boulder gym · Oct 28"），通讯录加的写 "From your contacts"。不写分组、不写 Close friend。
 - ✅ 点一个人进个人页（11/11 定，参考微信 / IG / TikTok 的结构，但用我们自己的视觉）：头像 + 名字 + "@sam · Free till 9:30" → Message / Make a plan → Note（只有你看得到；Add people 成功页写的笔记也存在这里）→ Groups（chip 就地加减、+ New；"Sam won’t know which groups they’re in."）→ You two（一起去过的局、都想去的地方，没有就不显示）→ Hide when I’m free（只对这个人隐藏你有空，对方不知道；Who sees you 里会写 Hidden from Sam）→ Mute / Restrict / Remove friend / Block / Report（直接摆出来，不藏在 ⋯ 里；Block 和 Report 红字）。Block 先弹确认（"Block Sam? … They may notice."）；Block 之后个人页不显示有空状态，也没有 Message / Make a plan。私聊右上角 ⋯ 也进这一页。不做：聊天气泡、壁纸、提示音、阅后即焚、通话、清空聊天、置顶、推荐给朋友。
 - ✅ Close friends 固定：永远第一个，不能删、不能改名（Who sees you 默认值和 Make a plan 的 "from Close friends" 靠它）。其他组可以自由建、删。
-- ✅ 分组只在 People 和个人页编辑；Account → Who sees you 只勾选。
+- 🧪 （11/17 改）分组在 People、个人页、Who sees you 三个地方都能进去改，进去都是同一个分组页（Add / Remove / 删组），新建都是同一个 New group 弹层。
+- 🧪 （11/18 改，参考 WhatsApp Lists / Telegram 文件夹）People 页去掉底下的 Groups 区。搜索框下面一排小标签：All / 各个分组 / +。点一个分组 = 筛选列表；这时上面一行 "3 people · only you see this group" + Edit（进分组页）。+ 新建分组，建好自动选上。
+- 🧪 Who sees you（11/18 改，学微信"部分可见"）：顶部搜索 "Add someone"（搜到点 Add 加进来，已经能看到的写 "Already sees you"）。下面一个列表全是方框：All friends、每个分组（组名 + 名字，› 进分组页）、加进来的人、+ New group（建好自动勾上）。All friends 就是"全选"：勾上时所有组也显示勾上；在全选状态取消一个组，All friends 自动取消；取消 All friends，所有组保持勾上。最后一个不能取消，不会 0 人。下面单独一行 Hidden from（挑人页）。底部 "N people will see you’re free."，不写别的说明。
 - ✅ Add 是一整页（见 §1 Add people）。
 - ⬜ 改组名。
 - ✅ 新用户 0 个朋友时：点 Discover 或 + Me 先引导加人或探索地点。
@@ -244,10 +246,11 @@
 - ✅ All night / All day 开关下面写清楚：晚上 = 到凌晨 3 点，朋友看到 "free tonight"；白天 = 到晚上 10 点，朋友看到 "free today"。打开后滚轮收起。
 
 ## 22. 地图测试：局 = 一串果子 + 时间窗口（11/16 做进原型，测试中）
-- 🧪 Plans 地图 pin 换成一串果子：中间黑色是 host，周围灰色是已经去的人（最多 5 颗，再多写 +N），白色空心是空位（最多 3 个），右上角小圆里是活动图标；下面一行 "7:00 PM · 2 open"。你要去的局下面那行变黑。挤在一起还是合成 "N plans"。
+- 🧪 （11/17 改，老师意见：原来的标签看起来像人名，真地图上看不清）Plans 地图 pin 平时是一个白底小气泡，带小尾巴指到地点：host 果子 + "Tacos · 7:00 PM"（做什么 + 几点，谁靠果子）。满了写 "· Full"，不写几个空位。你要去的局气泡加一圈黑边。挤在一起还是合成 "N plans"。
+- 🧪 点气泡：气泡变黑，原地长出一串果子（中间 host，周围去的人最多 5 颗再多写 +N，空心是空位最多 3 个，右上角活动图标）；底部抽屉只剩这一个局，用跟主页列表一样的那一行（果子方块 + 名字 + "Noor · 4 mi" + 右边时间）。点这一行或再点一次气泡，才打开完整的局。点地图空白处收回。
 - 🧪 时间窗口只在**今天地图上有 8 个或更多局**时出现（受欢迎的人、周五晚上）；平常局少，一眼就能看完，不出现。没出现时，"你有空之后才开始的局变淡"照样生效。原型左侧导航 "Busy night (8+ plans)" 可以看到。
 - 🧪 出现时：抽屉上方一个小胶囊 "Now – 9:00 PM"（你有空就到你有空结束；没点有空就到 12 AM）。拖地图时展开成两个把手的时间轴（最晚到 3 AM），停手 2.5 秒收回；点胶囊也能打开。
-- 🧪 拖时间窗口时果子串变化：你开始时已经在进行 → 下面那行变黑；在窗口里开始、能待满 1 小时 → 正常；待不满 1 小时 → 缩小，标 "short"；窗口之后或别的日子 → 变淡缩小。只改地图，不改你的有空状态。
+- 🧪 拖时间窗口时气泡变化：在窗口里开始、能待满 1 小时 → 正常；待不满 1 小时 → 标 "short"；窗口之后或别的日子 → 字变灰，白底不变（变透明会让街名透出来）。只改地图，不改你的有空状态。
 - 待定：和抽屉里的 "Any time" 筛选重复；抽屉列表不跟着窗口变；抽屉在半高时展开的时间轴会挡住大半地图。
 - ✅ 11/16：时间（Now / Tonight / This week / Any time）和距离两个筛选都从底部弹窗改成**下拉小菜单**。距离（点胶囊，在下面弹出 Within 1 mi / 5 mi / 15 mi / Anywhere，当前项打勾，点一项就关，地图不变暗）。选 Anywhere 时胶囊只写 "Anywhere"。按英里，不改成步行时间。距离筛选现在真的会筛：地图和抽屉列表只留这个范围内的局（自己发起的除外）。
 
@@ -292,3 +295,10 @@
 - ✅ 11/17 定：徽章不另设"只给好友看"。用户自己挑的，挑了就代表愿意展示（包括 Best time to catch me）。
 - ✅ 11/17：挑徽章页底部 "Based on your plans. Updates on its own."；Edit profile 徽章标题 "My badges · up to 3"；Birthday 行右边灰色标签 "Hidden"；Profile 底部只有一个小链接 "Edit what friends see"。
 - ✅ 11/17：试戴付费款时预览下面只写 "Golden raspberry · Premium" + Unlock 按钮。
+
+## 26. 地图筛选（11/17，老师意见）
+- ✅ 删掉时间筛选 "Any time"（老师："if there is only going to be three don’t need a time filter"）。列表本来就按 Tonight / Tomorrow 分组。只留距离筛选。
+- ✅ **"局多"的规定**：今天的局，在你选的距离范围内、还没结束、你没藏起来、没取消的，**≥ 8 个**，才出现时间窗口胶囊。8 的理由：抽屉半高时列表一屏大约 4 行，8 个就是两屏，开始要翻；地图默认缩放下超过 8 串果子会挤。出现以后这次打开 app 一直留着，不会因为有局结束、数字掉到 7 就消失再出现。
+- ✅ Discover 按钮不带数字（老师问 "why is there only three"，数字没单位看不懂）；进 Discover 里写 "Today’s picks · 3 to decide"。旁边按钮改成 "+ Plan"（跟 hi-fi v3 一样）。
+
+- ✅ （11/18）设置里不做 Quiet hours。iPhone 的勿扰 / 专注模式已经管这件事；我们的 "有空到 All night" 本来就允许半夜收到。
