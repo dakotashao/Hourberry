@@ -94,3 +94,17 @@
 - Pause 从 "When you’re free" 挪到 Account；Delete account 弹窗加 "Pause instead"。
 - 删掉 "Settings" 里叫 "Settings" 的分组、灰掉的 Show my badge（挪进 Premium 页）、Invite friends、Contact us。Delete account 从 Phone and email 页里挪出来。
 - Premium 黑卡改回普通一行 "Hourberry Premium ›"（右边不写 "Get"，买了写 "Active"）（参考 Snapchat：设置里只是一行，推销放在 Discover 用完和试戴付费款的时候）。
+
+## 11/18 · 删号
+- 删掉 Pause Hourberry（理由：不点 + Me 就已经是隐身；对某个人隐身有 Hidden from）。
+- 删除弹窗改学 Snapchat：先停用 30 天，30 天内重新登录就恢复；去掉 "Pause instead"。
+
+## 11/18 · Plans（老师意见）
+- "N more invites" 点进新的 Invites 页（之前点了没反应）：分 Tonight / This week / Later，处理完自动返回。左侧导航加了 "Lots of invites (8)"。
+- Past：去掉 "Show 45 older plans" 和 "Past · 48" 的数字；按月分组，加了 10 月、9 月的假数据；搜索能用了；长按 / 右键 → Hide from my past（可撤销）。
+- Plans 页 v2（RULES §27）：邀请放进时间线；All / Invited / Going / Hosting 筛选；本周日期条，可以展开成月历，点一天只看那天；Upcoming / Past 选中加描边和粗体。旧版留在左侧导航 "Plans · old version"。
+- Plans 页 v3（定）：v2 太复杂，砍掉日历和筛选。只剩 Upcoming | Past + 按天的列表；邀请放在当天；5 个以上邀请收成一行 "8 invites ›"。
+- Invites 区（B 一摞 + C 收件箱，RULES §27 写清楚了每种数量的样子）：1 个 = 普通卡；2 个以上 = 一摞，最早的在上面能直接 Join，点一摞或 "N−1 more" 进 Invites 页。邀请不再放进时间线。
+- 邀请卡第二行改成 "Lena · Wed 7:30 PM · 0.8 mi"，不再折行；局卡上的距离也从 "15 min walk" 改成英里。
+- Chats：删掉已结束的 "Rooftop hang · Ended Fri · read only" 和 "Plan chats close 24 hours…" 那句。结束的局只在 Plans → Past 里看（RULES §13 本来就是这样定的，原型没跟上）。
+- 邀请卡：头像不再套方块；Join / Not this time 两个等宽按钮铺满卡片（以前按钮缩进、Not this time 只是一行字）。

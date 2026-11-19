@@ -15,14 +15,17 @@
 - ✅ 私聊（11/11 改）：标题下只在对方有空时写 "● Free till 9:30"。怎么认识的放在聊天记录最上面（大果子 + 名字 + "You met at Rooftop hang · Fri"），会跟着聊天往上滚走。Make a plan 不放顶部：输入框左边一个 + 随时可以发起；对方有空时输入框上方多一条 "Sam is free till 9:30 · Make a plan"。⋯ 是个人菜单（Mute / Remove / Restrict / Block / Report）。点别人的消息可以举报。
 - ⬜ 先不做：共享实时位置的单独地图页、Chat settings 页、Bingo、搜索聊天、New chat 按钮、Chats 里的 Archived。
 - ✅ Plans（11/11 定）：右上角只有一个 + 。顶部 **Invites**（有邀请才出现）：每个邀请是一张计划卡（谁邀请、时间、多远），Join / Not this time；不回答就一直留着，Not this time 对方不知道。下面 **Upcoming | Past**：Upcoming 是你加入的 + 你发起的（标 Hosting），按天分组，右边时间，下面一行状态（N going / Waiting on Kai / No one yet / 改动）；没人加入时多一行 Invite more / Call it off。Past：点开看谁去了、聊天（只读）、How was it?。没有 New 区，聊天消息只在 Chats。
+- 🧪 （11/18 改，老师意见）Invites 最多放 2 张，多的写 "N more invites ›"，点进 **Invites** 页（学 Instagram 的 Message requests）：按开始时间排，分 Tonight / This week / Later，每张都能 Join / Not this time；处理完最后一个自动回到 Plans。局开始了邀请自动消失，所以不会一直堆。
+- 🧪 （11/18 改）Past 不折叠、不分页：按月分组（This month / October / …），往下滑就是更早的（真实 app 滑到底自动加载）。顶部搜索能搜局名、人、地点。长按（电脑上右键）一个局 → "Hide from my past"，只对自己隐藏，"Others who went still see it."，可撤销。标签不写数字（"Past"，不是 "Past · 48"）。
 - ✅ Add people（11/11 第二版，参考微信 / IG / Bump / TikTok 的结构，用我们的视觉）：一页，很短。Search by @username（最上面）→ 三个灰色方块按钮 Hold phones / My code / Scan → 一个灰块：Contacts（Find friends who are already here ›）、Share invite link（打开系统分享面板）→ Suggested friends（放最下面，学 Bump：每个人一行，写为什么推荐他。理由按优先级：一起去过局 "Met at Zine fair · Sat"（最近 7 天，Add 直接成为朋友）→ 共同朋友 "Knows Jess"（Add = 请求）→ 通讯录 "In your contacts"（授权后，Add = 请求）。灰色 Add。）
   - Hold phones：单独一屏，插画 + "Hold your phones together · Both open this screen · Looking for phones nearby…"，找到后 "Found Priya" + Add Priya / Not them；底部 Show my code instead。
   - My code：底部弹层，二维码 + @miachen + Scan theirs instead。Scan：相机页，底部 Show my code。
   - Contacts：第一次是授权页（插画 · Find friends who are already here · We only check who’s on Hourberry. We never text anyone without you. · Continue → 系统弹窗 / Not now），之后是 On Hourberry（Add = 请求）+ Invite to Hourberry（Invite）。
 - ✅ 好友规则（11/11 定）：面对面（Hold phones、扫码）和一起去过局的人，点 Add 直接成为朋友，进成功页 "Priya’s in your bunch!"。搜用户名、从联系人加的，发请求，按钮变 Requested（可以取消），对方同意后才是朋友。成功页：怎么认识的 + Add a note + Done / Make a plan with Priya。不显示对方的习惯。
 - ✅ 11/11 改：点地图左上角自己的果子先进 **My profile**（朋友看到的你：顶部一块你的背景色 + 大果子 + ✎；名字、@ · Joined、Free 状态；Edit profile / Share；Make your berry 卡片；3 个数字 hangs / people met / spots to try，"Only you see these numbers."；Into）。Edit profile 右上角是 Preview（学小红书），返回时自动保存，不要 Save 按钮。不放 Recent hangs（和谁出去过是隐私，回顾去 Plans → Past）。朋友看你的 profile = 果子、名字、@、代词、Bio、有空时的 Free till、Into，加上 **You two**（你们一起去过的局、都喜欢的、都想去的、共同朋友，"Only you two see this."），右上齿轮进 Settings（下面原来的 Account 内容，标题改叫 Settings）。Edit profile：果子 + Edit your berry、Name、Birthday（只读）、Username、Bio（一句话，选填）、Pronouns（选填）、What you’re into。不加性别、地区、学校、链接。
-- 🧪 Settings（11/18 改，参考 Hinge / Bumble / Tinder）：最上面普通一行 "Hourberry Premium ›"（没买右边不写字，买了写 "Active"），学 Snapchat；不做大卡，推销放在用到的时候（Discover 用完、果子编辑器试戴）→ Privacy（Who sees you、Blocked and muted）→ Preferences（Notifications、Appearance）→ Account（Phone and email、Pause Hourberry 开关、Download my data）→ Support（Help center、Report a problem、Rate Hourberry、Terms、Privacy Policy）→ Log out、Delete account（红字，最底下）。Show my badge 挪进 Premium 页。不放 Invite friends（People → Add 有）和 Contact us（在 Help center 里）。
-- 🧪 Delete account 确认弹窗多一个 "Pause instead"（学 Tinder），点了直接暂停。
+- 🧪 Settings（11/18 改，参考 Hinge / Bumble / Tinder）：最上面普通一行 "Hourberry Premium ›"（没买右边不写字，买了写 "Active"），学 Snapchat；不做大卡，推销放在用到的时候（Discover 用完、果子编辑器试戴）→ Privacy（Who sees you、Blocked and muted）→ Preferences（Notifications、Appearance）→ Account（Phone and email、Download my data）→ Support（Help center、Report a problem、Rate Hourberry、Terms、Privacy Policy）→ Log out、Delete account（红字，最底下）。Show my badge 挪进 Premium 页。不放 Invite friends（People → Add 有）和 Contact us（在 Help center 里）。
+- 🧪 （11/18 改，学 Snapchat）不做 Pause，也不单独做 Deactivate。Delete account = 先停用 30 天，期间朋友看不到你；30 天内重新登录就恢复。弹窗："Your account turns off now and is deleted in 30 days. Log back in before then to undo."
+- ✅ 不做 Pause 的理由：有空本来就要自己点 + Me 才出现、到时间自动消失（= Snapchat 定时隐身）；对某个人隐身用 Hidden from（= Bump 的 Ghost Mode）。
 - （旧）✅ Settings（原 Account）：头像 / 名字 / @用户名 + Edit profile → When you’re free（Who sees you、Pause Hourberry）→ Settings（Notifications、Blocked and muted、Appearance）→ Premium（Get Premium、Show my badge）→ Friends（Invite friends、Rate）→ Help and legal（Help center、Contact us、Report a problem、Terms、Privacy）→ Account（Phone and email → Delete account、Download my data）→ Log out → 版本号。分组只在 People 里编辑，Who sees you 只勾选。
 - ✅ People：只管"我的人"，不放聊天。按分组列出，有空的人排在组里前面、带绿点。
 - ⬜ People 顶部放分组（Close friends、自建的组、+ New group）；点人进他的页面，看/改他在哪些组，Message、Plan with。
@@ -304,3 +307,27 @@
 - ✅ Discover 按钮不带数字（老师问 "why is there only three"，数字没单位看不懂）；进 Discover 里写 "Today’s picks · 3 to decide"。旁边按钮改成 "+ Plan"（跟 hi-fi v3 一样）。
 
 - ✅ （11/18）设置里不做 Quiet hours。iPhone 的勿扰 / 专注模式已经管这件事；我们的 "有空到 All night" 本来就允许半夜收到。
+
+## 27. Plans 页（11/18 定，老师意见：邀请多了怎么办、能看多远、对比度）
+
+### 结构
+- 🧪 从上到下：标题 Plans + 右上 ＋ → Upcoming | Past 分段 → **Invites 区**（有邀请才出现）→ 按天分组的列表（Tonight / Tomorrow · Wed, Nov 11 / …）。
+- 🧪 列表只放你加入的和你发起的局（发起的第二行写 "Hosting · …"）。邀请不进列表，只在 Invites 区。
+- 🧪 有多远的局就列多远。不做日历、不做筛选小标签（v2 试过，四层控件才看到内容，太复杂）。
+
+### Invites 区
+- 🧪 标题 "INVITES · N"（N = 还没回复的邀请数）。
+- 🧪 邀请卡样式（学 Instagram / Facebook 的好友请求）：左边一个圆形 host 果子（不套方块）；下面两个等宽按钮铺满卡片：Join 深色、Not this time 浅色底。
+- 🧪 邀请卡文字两行，不折行：第一行局名；第二行 "Lena · Wed 7:30 PM · 0.8 mi"（区标题已经是 Invites，不再写 "invited you"；距离统一写英里，不写 "15 min walk"）。
+- 🧪 **1 个邀请**：一张普通邀请卡（谁邀请、几点、多远），卡上直接 Join / Not this time。点卡片本身 → 打开这个局。
+- 🧪 **2 个及以上**：叠成一摞。最上面是最早开始的那个，能直接 Join / Not this time；下面露出边（2 个露一层，3 个及以上露两层，不会更多）；下面一行 "N−1 more ›"。
+- 🧪 点这一摞的卡片本身或 "N−1 more ›" → 进 **Invites 页**；不在原地展开，所以 Upcoming 永远不会被推下去，100 个邀请时 Plans 页也只多这一张卡的高度。
+- 🧪 在最上面那张点 Join 或 Not this time → 它离开，下一个最早的顶上来；N 跟着变；只剩 1 个时变回普通卡；0 个时整个 Invites 区消失。
+- 🧪 Invites 页：标题 "Invites"，左上返回；按开始时间排，分 Tonight / This week / Later；每张都能 Join / Not this time；处理完最后一个自动回到 Plans。
+- 🧪 局开始了，它的邀请自动消失（不会越积越多）。Not this time 对方不知道（沿用 §17）。
+- 🧪 底部 Plans 标签上的红色数字 = 还没回复的邀请数。
+
+### 别的
+- 🧪 Upcoming | Past 分段：选中 = 白底 + 深色描边 + 粗体，没选中 = 灰字，不只靠颜色（老师：色弱分不出）。
+- 🧪 Past：按月分组、搜索（局名 / 人 / 地点）、长按隐藏（"Others who went still see it."，可撤销）。
+- 试过的：v1 顶部最多 2 张卡 + "N more invites"；v2 日期条 + 月历 + 筛选；v3 前半段 "5 个以上收成一行"。左侧导航 "Plans · old version" / "Plans · v2 (calendar)" 还能看。对比页：Invites 放在哪（A 横排 / B 一摞 / C 收件箱），选了 B + C。
