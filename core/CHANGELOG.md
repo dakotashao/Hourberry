@@ -95,11 +95,11 @@
 - 删掉 "Settings" 里叫 "Settings" 的分组、灰掉的 Show my badge（挪进 Premium 页）、Invite friends、Contact us。Delete account 从 Phone and email 页里挪出来。
 - Premium 黑卡改回普通一行 "Hourberry Premium ›"（右边不写 "Get"，买了写 "Active"）（参考 Snapchat：设置里只是一行，推销放在 Discover 用完和试戴付费款的时候）。
 
-## 11/18 · 删号
+## 11/18 · 删号 · 提交 6ec46ac
 - 删掉 Pause Hourberry（理由：不点 + Me 就已经是隐身；对某个人隐身有 Hidden from）。
 - 删除弹窗改学 Snapchat：先停用 30 天，30 天内重新登录就恢复；去掉 "Pause instead"。
 
-## 11/18 · Plans（老师意见）
+## 11/18 · Plans（老师意见）· 提交 6ec46ac
 - "N more invites" 点进新的 Invites 页（之前点了没反应）：分 Tonight / This week / Later，处理完自动返回。左侧导航加了 "Lots of invites (8)"。
 - Past：去掉 "Show 45 older plans" 和 "Past · 48" 的数字；按月分组，加了 10 月、9 月的假数据；搜索能用了；长按 / 右键 → Hide from my past（可撤销）。
 - Plans 页 v2（RULES §27）：邀请放进时间线；All / Invited / Going / Hosting 筛选；本周日期条，可以展开成月历，点一天只看那天；Upcoming / Past 选中加描边和粗体。旧版留在左侧导航 "Plans · old version"。
