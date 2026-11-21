@@ -323,6 +323,7 @@
 - 🧪 **2 个及以上**：叠成一摞。最上面是最早开始的那个，能直接 Join / Not this time；下面露出边（2 个露一层，3 个及以上露两层，不会更多）；下面一行 "N−1 more ›"。
 - 🧪 点这一摞的卡片本身或 "N−1 more ›" → 进 **Invites 页**；不在原地展开，所以 Upcoming 永远不会被推下去，100 个邀请时 Plans 页也只多这一张卡的高度。
 - 🧪 在最上面那张点 Join 或 Not this time → 它离开，下一个最早的顶上来；N 跟着变；只剩 1 个时变回普通卡；0 个时整个 Invites 区消失。
+- 🧪 从邀请点开局的卡片：底部也是 Join + Not this time 两个等宽按钮（不是只有 Join）；Not this time 后卡片关掉。
 - 🧪 Invites 页：标题 "Invites"，左上返回；按开始时间排，分 Tonight / This week / Later；每张都能 Join / Not this time；处理完最后一个自动回到 Plans。
 - 🧪 局开始了，它的邀请自动消失（不会越积越多）。Not this time 对方不知道（沿用 §17）。
 - 🧪 底部 Plans 标签上的红色数字 = 还没回复的邀请数。
@@ -331,3 +332,4 @@
 - 🧪 Upcoming | Past 分段：选中 = 白底 + 深色描边 + 粗体，没选中 = 灰字，不只靠颜色（老师：色弱分不出）。
 - 🧪 Past：按月分组、搜索（局名 / 人 / 地点）、长按隐藏（"Others who went still see it."，可撤销）。
 - 试过的：v1 顶部最多 2 张卡 + "N more invites"；v2 日期条 + 月历 + 筛选；v3 前半段 "5 个以上收成一行"。左侧导航 "Plans · old version" / "Plans · v2 (calendar)" 还能看。对比页：Invites 放在哪（A 横排 / B 一摞 / C 收件箱），选了 B + C。
+- ✅ （11/18）所有给用户看的距离都写英里（"0.8 mi"），不写 "15 min walk / 12 min drive"：邀请卡、局卡片、Directions 弹层、地点页、搜索的 Recent。

@@ -108,3 +108,8 @@
 - 邀请卡第二行改成 "Lena · Wed 7:30 PM · 0.8 mi"，不再折行；局卡上的距离也从 "15 min walk" 改成英里。
 - Chats：删掉已结束的 "Rooftop hang · Ended Fri · read only" 和 "Plan chats close 24 hours…" 那句。结束的局只在 Plans → Past 里看（RULES §13 本来就是这样定的，原型没跟上）。
 - 邀请卡：头像不再套方块；Join / Not this time 两个等宽按钮铺满卡片（以前按钮缩进、Not this time 只是一行字）。
+
+## 11/18 · 晚
+- 从邀请点开的局卡片加 Not this time（之前只有 Join）。
+- 剩下的 "min walk" 全换成英里：Directions 弹层、局卡片里的地点、地点页、搜索 Recent。
+- 修：没有已加入的局又没有邀请时，Upcoming 是空白（空状态没出来）。
