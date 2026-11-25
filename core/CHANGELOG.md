@@ -115,12 +115,12 @@
 - 剩下的 "min walk" 全换成英里：Directions 弹层、局卡片里的地点、地点页、搜索 Recent。
 - 修：没有已加入的局又没有邀请时，Upcoming 是空白（空状态没出来）。
 
-## 11/24 · 地图 pin 和权限 · 未提交
+## 11/24 · 地图 pin 和权限 · 提交 4c6cab6
 - 地图 pin 改成两行：“Jess’s tacos” / “7:00 PM · 3/6”（去的人/座位数）。30 分钟内开始的时间标蓝。满了显示 6/6，不再写 Full。（§22）
 - 注册流程去掉定位和通知两步，进度条 7 段改 5 段。第一次进地图时弹定位；拒绝后地图照常用，顶部横幅 “Turn on location to see plans near you”，点了去设置。通知还是第一次加入后再问。（§19）
 - 点 pin 后不再在上方长出一串果子，只是气泡变黑，host 果子留在气泡里。（§22）
 
-## 11/25 · 未提交
+## 11/25 · 登录 · 提交 4c6cab6
 
 ### 登录（§19）
 - 补规则：Get started 用已注册的号码 → 直接进地图 + "Welcome back"；I have an account 用没注册的号码 → "No account with this number" + Create one。原型的主路径本来就是手机号 + 验证码。
