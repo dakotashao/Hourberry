@@ -224,19 +224,21 @@
 - ✅ 0 欢迎（大插画 + 一个主按钮 Get started〔手机号〕+ 文字链接 I have an account，最下面一行小灰字：Terms 和 Privacy Policy）→ 1 手机号 → 2 验证码（输满 6 位自动下一步）→ 3 名字（@ 自动生成：名字小写，太短或被占用就加两位数字，以后在 Edit profile 里改）→ 4 选果子（"Pick your berry, Trevor" / "This little guy is you on the map." / 按钮下小灰字 "Dress it up anytime from your profile."）→ 6 生日（三列滚轮：月 / 日 / 年，停在 2000 年 1 月 1 日但不算选了：没滚动过，按钮是灰的 "Scroll to your birthday"；不满 18 → "Hourberry is for 18 and up"）→ 7 兴趣（不设最少数量；一个都没选时按钮是灰色的 "Skip for now"，选了就变成黑色的 "Continue"，只有这一个按钮）→ 8 定位（中间是小地图预览，用真的 plan pin；按钮下小灰字 "Your exact location is never shown to anyone."；系统弹窗照 iOS：小地图 + Precise: On，Allow Once / Allow While Using App / Don’t Allow。Allow Once 下次打开 app 会再问）→ 9 通知（中间是两条通知预览，按钮下不放字）→ 10 加人（可跳过）→ 11 You’re in。
 - ✅ 11/16 改：**只用手机号注册和登录**（参考 Hinge、Bumble、Bump、Partiful：都必须验证手机号）。手机号用来找通讯录里的朋友、确认是真人、发邀请。没有密码。
 - ✅ I have an account → "Welcome back" + 手机号 → 短信验证码 → 直接进 app。之前的密码登录页删掉（注册时从没设过密码）。
+- ✅ 11/25 补：两个入口后面是同一条「手机号 → 验证码」，验证完由系统判断新老用户。Get started 输了已注册的号码 → 直接进地图，顶部 toast "Welcome back, Trevor"（号码已验证过，不拦）。I have an account 输了没注册的号码 → 验证码页下面 "No account with this number" + 按钮 Create one → 接着走 3 名字。账号建了但没起名字就退出的，下次进来接着从 3 名字走。
 - ✅ 邮箱和 Apple 放在注册之后（学 Hinge）：Settings → Account → Phone and email 里有 Email（Add）和 Sign in with Apple（开 / 关）。新用户的 Profile 上有一张可以关掉的卡片 "Add your email · So you can get back in if you lose your phone."
 - 不做"先用邮箱、之后再绑手机号"：手机号反正必须给，先邮箱只是多一次验证。App Store 4.8：只用自己的账号系统时，不要求提供 Apple 登录。
 - ⬜ 收不到短信：之后加"改用 WhatsApp / 接电话听验证码"（学 Partiful、Bumble）。
 - ✅ 11 You’re in：加了人 → "Theo’s in your bunch. Next time you’re free, they’ll know." + Let’s go；没加人 → "Add a few friends and you’re set." + Add friends（进 Add people）/ Maybe later。
 - ✅ 不做 "How it works" 介绍页（11/16 删）：改成进 app 第一次到地图时，+ 旁边一个黑色小气泡 "Tap + when you’re free / Friends you pick will see it"，点气泡或点 + 后消失，只出现一次。学 Gentler 首页的 "Tap here to switch…" 气泡：用到的时候再教。
 - ✅ 不单独问 @（11/16 删）：我们加人主要靠通讯录、碰手机、二维码，@ 只是备用。学 Duolingo：先自动给，之后再改。
-- ✅ 进度条从 3 名字到 10 加人，分成 **7 段**，做完一步填满一段，不写数字（11/16 改）。
+- ✅ 进度条从 3 名字到 10 加人，分成 **5 段**（11/24：定位和通知移出注册后从 7 段改成 5 段），做完一步填满一段，不写数字（11/16 改）。
 - ✅ 验证码页 "Resend code" 先显示 60 秒灰色倒计时 "Resend code in 1:00"，到 0 才能点；点了重新倒数（11/16 改）。
 - ✅ 验证码页不放 Edit：改号码用左上角返回键，号码还在框里（11/16 改）。
 - ✅ 有输入框的屏（登录、手机号、验证码、名字）原型里画出键盘（手机号和验证码是数字键盘），按钮和果子都在键盘上面。真手机上不画，用系统键盘。
 - ✅ 果子陪着走：名字、生日两屏，输入框下面放一颗果子（选果子之前是灰色默认果子），每屏一个姿势占位。
 - ✅ 要权限的页面：中间放"开了会怎样"的预览。不加我们自己没定过的规则（之前写的"11 PM–8 AM 静音"删了：和 All night 冲突）。
 - 依据（11/16 看 Gentler / Ahead / Headspace / Duolingo）：四家开始页角色都很大；三家在提问前先讲 app 有什么用；Duolingo / Ahead 先告诉你要问几题。我们不学"先体验再注册"：局只给朋友看，没账号没朋友就没东西可看，所以账号放最前面，和 Headspace 一样。
+- ✅ 11/24 改：**注册里不再问定位和通知**（原第 8、9 步删掉）。注册完第一次进地图，地图先出来，半秒后弹 iOS 定位弹窗。Don’t Allow → 地图照常能用，顶部一条黑色横幅 "Turn on location to see plans near you · Settings"，点了跳到 iOS 设置里 Hourberry 的定位；横幅在的时候不出 "Tap + when you’re free" 小气泡。通知不在这里问，还是第一次加入、Undo 消失后再问（§4）：用到的时候再问，同意的人更多，而且通知弹窗被拒后就不能再弹。
 
 ## 20. 主持人管理 + 举报（11/13 做进原型）
 - ✅ 计划页 ⋯（host）：Edit plan（回到那句话，按钮变 Save changes；改了时间/地点会写进群聊并提示所有人）· Stop new people joining（已在的人不受影响）· Who can join（"Friends join, others ask" 默认 / "Ask me first"）· Call it off（确认：在里面的人会收到通知，聊天保留）。
@@ -252,7 +254,8 @@
 
 ## 22. 地图测试：局 = 一串果子 + 时间窗口（11/16 做进原型，测试中）
 - 🧪 （11/17 改，老师意见：原来的标签看起来像人名，真地图上看不清）Plans 地图 pin 平时是一个白底小气泡，带小尾巴指到地点：host 果子 + "Tacos · 7:00 PM"（做什么 + 几点，谁靠果子）。满了写 "· Full"，不写几个空位。你要去的局气泡加一圈黑边。挤在一起还是合成 "N plans"。
-- 🧪 点气泡：气泡变黑，原地长出一串果子（中间 host，周围去的人最多 5 颗再多写 +N，空心是空位最多 3 个，右上角活动图标）；底部抽屉只剩这一个局，用跟主页列表一样的那一行（果子方块 + 名字 + "Noor · 4 mi" + 右边时间）。点这一行或再点一次气泡，才打开完整的局。点地图空白处收回。
+- ✅ （11/24 改，照 Figma pin 探索 B1 · Host pill）气泡两行：第一行 "Jess’s tacos"（谁的 + 做什么）；第二行 "7:00 PM · 3/6"（几点 + 去的人/座位数，满了就是 6/6，不再写 "Full"）。30 分钟内开始（到开始后 15 分钟）的时间标蓝加粗。你要去的局还是一圈黑边。点开后的样子不变。
+- ✅ 点气泡（11/24 改）：气泡变黑，**不再长出一串果子**，host 果子留在气泡里；底部抽屉只剩这一个局，用跟主页列表一样的那一行（果子方块 + 名字 + "Noor · 4 mi" + 右边时间）。点这一行或再点一次气泡，才打开完整的局。点地图空白处收回。
 - 🧪 时间窗口只在**今天地图上有 8 个或更多局**时出现（受欢迎的人、周五晚上）；平常局少，一眼就能看完，不出现。没出现时，"你有空之后才开始的局变淡"照样生效。原型左侧导航 "Busy night (8+ plans)" 可以看到。
 - 🧪 出现时：抽屉上方一个小胶囊 "Now – 9:00 PM"（你有空就到你有空结束；没点有空就到 12 AM）。拖地图时展开成两个把手的时间轴（最晚到 3 AM），停手 2.5 秒收回；点胶囊也能打开。
 - 🧪 拖时间窗口时气泡变化：在窗口里开始、能待满 1 小时 → 正常；待不满 1 小时 → 标 "short"；窗口之后或别的日子 → 字变灰，白底不变（变透明会让街名透出来）。只改地图，不改你的有空状态。
