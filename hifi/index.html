@@ -720,6 +720,43 @@ img.bemb{display:block;width:auto;height:150px;max-width:220px;object-fit:contai
 .bprev3 .bber img.bimg{height:214px!important;margin-top:44px!important}
 /* Premium: Figma M16 hero (berry hugging a star) */
 .ahead img.premhug{width:120px;height:120px;display:block;margin:0 auto}
+/* 11/25 plan card hero (Dakota): note bubble with tail → host's running berry → "X is hosting" → why → one pill */
+.vhero:has(.bunch4){flex:none!important;min-height:0!important;display:flex;flex-direction:column;align-items:center;padding:16px 16px 18px!important}
+.vhero:has(.bunch4) .vnote{position:relative!important;left:auto!important;top:auto!important;transform:none!important;margin:0 auto 10px!important;border-radius:999px!important;max-width:100%;overflow:visible!important;white-space:nowrap;text-overflow:clip}
+.vhero:has(.bunch4) .vnote::after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;background:#fff;border-radius:2px;transform:translateX(-50%) rotate(45deg)}
+.bunch4{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;position:static!important;height:auto!important;transform:none!important}
+.bunch4 img.hrun{height:84px;width:auto;max-width:none!important;display:block;margin:4px 0 10px}
+.bhero4{display:flex;flex-direction:column;align-items:center;gap:2px}
+.bhero4 b{font-size:17px;font-weight:700;letter-spacing:-.2px}
+.bhero4 small{font-size:13px;color:var(--mute)}
+.bpill4{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 14px 5px 5px;margin-top:12px;font-size:14px;white-space:nowrap}
+.bpill4:not(:has(.fc)){padding-left:14px}
+.bpill4 b{font-weight:700}
+.bunch4.squeeze .bpill4{animation:pillpop .4s cubic-bezier(.3,1.5,.5,1)}@keyframes pillpop{50%{transform:scale(1.06)}}
+/* people count: stepper */
+.nstep{display:flex;align-items:center;justify-content:center;gap:28px;margin:22px 0 22px}
+.nstep button{width:52px;height:52px;border-radius:50%;background:var(--g1);display:grid;place-items:center;color:var(--ink)}
+.nstep button[disabled]{opacity:.3}
+.nstep b{font-family:var(--round);font-size:48px;font-weight:800;min-width:72px;text-align:center;font-variant-numeric:tabular-nums}
+.bpill4 .fc{flex:none}.bpill4 .fc i{flex:none!important;width:26px!important;height:26px!important}.bpill4 .fc i+i{margin-left:-8px!important}
+/* friend profile: full berry with their look, on their background */
+.fhero{height:200px;border-radius:24px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden;margin-top:4px}
+.fhero img.bimg{height:190px!important;margin-bottom:-8px}
+.fhero{align-items:center}.fhero img.bimg{height:172px!important;margin:6px 0 0}
+/* You two: one compact group */
+.yrows{background:var(--g1);border-radius:16px;overflow:hidden}
+.yrow{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:8px 14px;text-align:left;position:relative}
+.yrow+.yrow::before{content:"";position:absolute;left:54px;right:0;top:0;height:1px;background:rgba(60,60,67,.12)}
+.yrow img.yic{width:28px;height:28px;flex:none;max-width:none}
+.yrow .ypair{display:flex;width:28px;flex:none;position:relative;height:28px}
+.yrow .ypair svg{width:20px!important;height:20px!important;flex:none;position:absolute;top:4px}
+.yrow .ypair svg:first-child{left:-2px}.yrow .ypair svg+svg{left:10px}
+.yrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.yrow .tx b{font-size:16px;font-weight:600}.yrow .tx small{font-size:13px;color:var(--mute)}
+.yrow>svg,.ychev svg{color:#c7c7cc;flex:none;width:16px;height:16px}
+.ychev{display:grid;place-items:center;transform:rotate(90deg);transition:transform .2s}.ychev.up{transform:rotate(-90deg)}
+.yrow.ysub{padding-left:54px;min-height:52px}.yrow.ysub img.yic{width:24px;height:24px}
+.yrow .yplan{width:auto!important;height:32px!important;padding:0 14px!important;font-size:14px!important;flex:none}
 </style></head><body>
 <button class="pnbtn" onclick="document.querySelector('.pnav').classList.toggle('open')">Pages</button><nav class="pnav" aria-label="Prototype pages"><b class="pnt">Hourberry · hi-fi</b>
 <div class="png"><small>Start</small><button data-j="reload">Loading page</button><button data-j="signup">Sign up</button><button data-j="fresh">New user (empty)</button></div>
@@ -790,6 +827,8 @@ const SQSof=k=>SQS(k==="mia"?MYB():PB[k]||"blue");
 /* round version of the same face (map profile button) */
 const SQR=(b)=>SQ(b).replace('class="hbq','class="hbq round').replace(/rx="14"/g,'rx="26"');
 /* who is which berry (same as the Figma cast) */
+/* HI-FI 11/25: friends’ berry looks (hat + background) — shown in full on their profile, so what people pick (and pay for) is seen */
+const FLOOK={jess:{top:1,bg:1},sam:{top:2,bg:3},lena:{top:3,bg:2},noor:{top:5,bg:3},ana:{top:4,bg:1},kai:{top:0,bg:4},theo:{top:0,bg:5},priya:{top:2,bg:5},ren:{top:3,bg:4},omar:{top:1,bg:1},bea:{top:0,bg:3}};
 const PB={mia:"blue",jess:"straw",sam:"gold",lena:"rasp",kai:"black",ren:"black",noor:"gold",ana:"rasp",theo:"black",priya:"blue",omar:"straw",bea:"gold"};
 /* light hero tint from the host’s berry (HIFI-STYLE 3.5) */
 const HTC={blue:"#efeefc",straw:"#fde8eb",rasp:"#fdf0f4",black:"#f3ebf1",gold:"#fff3e3"};
@@ -1109,13 +1148,15 @@ const clash=k=>Object.keys(S.joined).some(j=>j!==k&&PL[j].day===PL[k].day&&PL[k]
 function pickList(){return PICKS.slice(0,QUOTA()).filter(k=>!S.skipped[k])}
 const clashWith=k=>Object.keys(S.joined).find(j=>j!==k&&PL[j].day===PL[k].day&&PL[k].s<PL[j].e&&PL[k].e>PL[j].s);
 function bunch(k,joining,mode){const p=PL[k],others=byClose(p.ppl.filter(x=>x!==p.host&&x!=="mia")),L=left(k)+(joining?1:0);
- /* HI-FI: one row like Figma M11/M17 — host tile, then people, then your seat */
- const seatTx=L<=0?"Full · waitlist":`${L} left`;
- const host=`<div class="bh2"><span class="vb2">${P[p.host].i}</span><b>${P[p.host].n}</b><small>HOST</small>${P[p.host].fof?`<small class="via">via ${P[p.host].fof}</small>`:""}</div>`;
- const showSeat=L>0||joining,room=showSeat?2:3,R=others.length>room?others.slice(0,room-1):others;
- const ppl=R.map(id=>`<span class="bs2"><span class="vb2">${P[id].i}</span><b>${P[id].n}</b></span>`).join("")+(others.length>room?`<button class="bs2" data-a="${mode==="sheet"?"allppl:"+k:"opencard"}" aria-label="See everyone"><span class="vb2 more">+${others.length-R.length}</span><b>See all</b></button>`:"");
- const seat=joining?`<span class="bs2 me"><span class="vb2 drop">${P.mia.i}</span><b>You</b></span>`:L>0?`<span class="bs2 seat"><span class="vb2 open">${I.plus}</span><b>Your seat</b><small class="${L<=2?"urg":""}">${seatTx}</small></span>`:`<span class="bs2 seat full"><small class="urg">${seatTx}</small></span>`;
- return `<div class="bunch3 ${joining?"squeeze":""}">${host}${ppl}${seat}</div>`}
+ /* HI-FI 11/25 (Dakota): one hero — the host's running berry, "X is hosting", why line, then everyone else as one pill */
+ const me=joining||(S.joined[k]&&p.host!=="mia");
+ const seatTx=L<=0?"Full · waitlist":L===1?"1 seat left":`${L} seats left`;
+ const n=others.length+(me?1:0),faces=(me?["mia"]:[]).concat(others).slice(0,3);
+ const sub=p.why||(P[p.host].fof?"via "+P[p.host].fof:"");
+ const who=p.host==="mia"?"You’re":P[p.host].n+" is";
+ const hero=`<div class="bhero4">${ART("run-"+(p.host==="mia"?MYB():PB[p.host]),"hrun")}<b>${who} hosting</b>${sub?`<small>${sub}</small>`:""}</div>`;
+ const pill=`<button class="bpill4" data-a="${mode==="sheet"?"allppl:"+k:"opencard"}" aria-label="See everyone going">${n?fc(faces,26):""}<span>${n?n+" going · ":""}<b>${seatTx}</b></span></button>`;
+ return `<div class="bunch4 ${joining?"squeeze":""}">${hero}${pill}</div>`}
 function placeRowV(k){const p=PL[k],before=p.home&&!S.joined[k];const askFirst=p.home&&P[p.host].fof;
  return before?`<div class="vplace"><span class="ic">${I.pin}</span><span class="tx"><b>${p.area}</b><small>${askFirst?"Address after "+P[p.host].n+" says yes":"Address after you join"}</small></span></div>`
   :`<button class="vplace" data-a="dir:${k}" aria-label="Directions to ${p.place}"><span class="ic">${I.pin}</span><span class="tx"><b>${p.place}</b><small>${p.addr}</small></span><span class="go">Directions</span></button>`}
@@ -1126,7 +1167,7 @@ function vcard(k,joining,mode){const p=PL[k],L=left(k),fT=S.free,past=fT&&p.day=
  const warn=!S.joined[k]&&clashWith(k)?`Overlaps ${PL[clashWith(k)].short}`:past?`Runs past ${hm(fT)}`:"";
  const when=p.day===0?(started?"Started "+Math.round((NOW-p.s)*60)+" min ago":"Tonight "+span(p)):dShort(offOf(p))+" "+span(p);
  const ext=[p.cost,p.age].filter(Boolean);
- return `<div class="vcard ${sheet?"insheet":""}" style="--ht:${HT(p.host)}" ${sheet?"":`data-a="opencard" id="vcard"`}><div class="vhero">${note}${bunch(k,joining,mode)}${why}</div><div class="vbot"><div class="vtt"><span class="t">${p.t}</span>${sheet?"":`<button class="vsave ${S.saved[k]?"on":""}" data-a="save:${k}" aria-label="${S.saved[k]?"Saved to your map. Remove":"Save to map, decide later"}">${I.pinplus}</button>`}</div><span class="vmeta"><span>${I.clock}${when}</span><span>·</span><span>${goIcon(p)}${miOf(p)}</span></span>${warn||ext.length?`<span class="vext2">${warn?`<em>${warn}</em>`:""}${ext.map(e=>`<i>${e}</i>`).join("")}</span>`:""}${placeRowV(k)}</div></div>`}
+ return `<div class="vcard ${sheet?"insheet":""}" style="--ht:${HT(p.host)}" ${sheet?"":`data-a="opencard" id="vcard"`}><div class="vhero">${note}${bunch(k,joining,mode)}</div><div class="vbot"><div class="vtt"><span class="t">${p.t}</span>${sheet?"":`<button class="vsave ${S.saved[k]?"on":""}" data-a="save:${k}" aria-label="${S.saved[k]?"Saved to your map. Remove":"Save to map, decide later"}">${I.pinplus}</button>`}</div><span class="vmeta"><span>${I.clock}${when}</span><span>·</span><span>${goIcon(p)}${miOf(p)}</span></span>${warn||ext.length?`<span class="vext2">${warn?`<em>${warn}</em>`:""}${ext.map(e=>`<i>${e}</i>`).join("")}</span>`:""}${placeRowV(k)}</div></div>`}
 function picks(){const L=pickList(),i=Math.min(S.pick,Math.max(0,L.length-1)),k=L[i];
  if(L.length)S.picksSeen=true;const freeTx=S.freeAll?"Free tonight":"Free till "+hm(S.free);
  const head=`<div class="pktop"><button class="circ" data-a="pkclose" aria-label="Close picks">${I.x}</button>${L.length?`<span class="small">${i+1} of ${L.length}</span>`:""}</div><div class="pkh"><p class="kick">Today’s picks${dLeft()?" · "+dLeft()+" to decide":""}</p><h1><button data-a="sheet:free:disc" aria-label="${freeTx}. Change time">${freeTx}${I.chev}</button></h1></div>`;
@@ -1194,7 +1235,7 @@ const SCR={
  person({id}){const p=P[id],gs=S.groups,past=ARCH.map((a,i)=>[a,i]).filter(([a])=>a.ppl.includes(id)),both=PLACES.filter(pl=>(pl.wf||[]).includes(id)&&S.want&&S.want[pl.n]),r=(S.rel||{})[id],note=S.notes[id];
   const rc=(k,t,red)=>`<button class="cell ${red?"red":""}" data-a="${r===k?"unrel:"+id:"rel:"+id+":"+k}"><span class="ct">${t}</span><span class="v">${r===k?"On":""}</span></button>`;
   return `<div class="view"><div class="nav"><div class="side"><button class="circ" data-a="back" aria-label="Back">${I.back}</button></div><h1></h1><div class="side r"></div></div><div class="scroll set">
-  <div class="ahead" style="margin-top:0"><div style="display:flex;justify-content:center">${fc([id],96)}</div><b>${p.n}</b><small>@${p.n.toLowerCase()}${r==="blocked"?"":" · "}${r==="blocked"?"":p.free?`<span class="dot" style="background:#34c759;display:inline-block;margin:0 4px 1px 0;vertical-align:middle"></span>`:""}${r==="blocked"?"":pStatus(id)}</small></div>
+  ${(()=>{const L=FLOOK[id]||{top:0,bg:0};return `<div class="fhero" style="background:${BBG[L.bg]}">${berrySVG({shape:PB[id]||"blue",top:L.top},118)}</div>`})()}<div class="ahead" style="margin-top:12px"><b>${p.n}</b><small>@${p.n.toLowerCase()}${r==="blocked"?"":" · "}${r==="blocked"?"":p.free?`<span class="dot" style="background:#34c759;display:inline-block;margin:0 4px 1px 0;vertical-align:middle"></span>`:""}${r==="blocked"?"":pStatus(id)}</small></div>
   ${r?`<div class="card" style="margin-top:16px"><b>${RELN[r]}</b><p class="small">${RELD[r].replace(/%/g,p.n)}</p></div>`:""}
   ${r==="blocked"?"":`<div style="display:flex;gap:10px;margin-top:20px"><button class="btn s" data-a="dm:${id}">${I.msg}Message</button><button class="btn" data-a="make:${id}">${I.plus}Make a plan</button></div>`}
   <div class="lab">Note</div><div class="grp">${cell(note?esc(note):`<span style="color:var(--mute)">Add a note so you remember ${p.n}</span>`,"sheet:note:"+id,{noch:1,v:note?"Edit":""})}</div><p class="foot" style="margin:6px 0 0">Only you see this.</p>
@@ -1228,7 +1269,7 @@ const SH={
  mkwhat(){const sug=["Tacos","Coffee","Drinks","Dinner","Karaoke","Climbing","Board games","Walk"];return `<div class="grab"><i></i></div><div class="scroll"><h2>What are you doing?</h2><input class="tin" id="mkw" value="${esc(S.mk.what)}" placeholder="Tacos, a walk, anything" maxlength="40" autocomplete="off"><div class="crow" style="flex-wrap:wrap;margin-top:12px">${sug.map(x=>`<button class="fchip ${S.mk.what===x?"on":""}" data-a="mkwhatset:${x}">${x}</button>`).join("")}</div><button class="btn" style="margin-top:16px" data-a="mkwhatok">Done</button></div>`},
  mkpl(){const pl=mkPl();return `<div class="grab"><i></i></div><div class="scroll"><button class="btn t sm" style="padding:0;height:32px" data-a="sheet:mkwhere">${I.back} Back</button>${placeBody(pl.n).replace(/data-a="(close|psel:[^"]*|selclose)"/g,'data-a="sheet:mkwhere"')}</div>`},
  mktime(){const m=S.mk,lo=m.off===0?nextSlot():8,sl=[];for(let h=lo;h<=23.75;h+=.25)sl.push(h);return `<div class="grab"><i></i></div><div class="wheel" id="wheel"><div class="wband"></div><div class="wpad"></div>${sl.map(h=>`<div class="wi ${h===m.s?"on":""}" data-h="${h}">${hm0(h)} <small>${h<12?"AM":"PM"}</small></div>`).join("")}<div class="wpad"></div></div>`},
- mkn(){const m=S.mk,min=Math.max(2,m.who.length+1);return `<div class="grab"><i></i></div><div class="scroll"><h2>How many people?</h2><p class="small" style="margin-top:4px">Including you.</p><div class="ngrid">${[2,3,4,5,6,8,10,12].map(n=>`<button class="${m.ppl===n?"on":""}" ${n<min?"disabled":""} data-a="mknset:${n}">${n}</button>`).join("")}</div></div>`},
+ mkn(){const m=S.mk,min=Math.max(2,m.who.length+1);return `<div class="grab"><i></i></div><div class="scroll"><h2>How many people?</h2><p class="small" style="margin-top:4px">Including you.</p><div class="nstep"><button data-a="mknstep:-1" aria-label="Fewer" ${m.ppl<=min?"disabled":""}><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></button><b aria-live="polite">${m.ppl}</b><button data-a="mknstep:1" aria-label="More" ${m.ppl>=12?"disabled":""}>${I.plus}</button></div><button class="btn" data-a="mknset:${m.ppl}">Done</button></div>`},
  mkwhere(){const q=(S.mkq||"").trim().toLowerCase();
   const row=p=>`<button class="res" data-a="mkwhereset:${p.n}"><span class="ic">${S.mk.place===p.n?I.check:I.pin}</span><span class="tx"><b>${p.n}</b><small>${p.spon?"Sponsored · ":""}${(p.wf||[]).length?wantTx(p)+" · ":p.k+" · "}${p.mi}</small></span></button>`;
   const grp=(t,a)=>a.length?`<div class="lab">${t}</div>`+a.map(row).join(""):"";
@@ -1533,7 +1574,7 @@ Object.assign(SCR,{
   <p class="foot" style="margin:8px 0 0">${hide?(n?n+" won’t see you’re free, and won’t know.":"Everyone you picked above can see you."):n+" selected"}</p>`,`<button class="navt b" data-a="whodone" ${!hide&&!n?"disabled":""}>Done</button>`)},
  anotif(){return sub("Notifications",`<div class="lab">Plans</div><div class="grp">${tcell("Invites","n_inv","When someone invites you")}${tcell("Someone joins","n_join","When someone joins your plan")}${tcell("Plan changes","n_chg","New time, place, or someone drops out")}${tcell("Time to leave","n_leave","Based on how far you are")}</div>
   <div class="lab">People</div><div class="grp">${tcell("Friends are free","n_free","When close friends tap + Me")}${tcell("Messages","n_chat","Plan chats and friends")}${tcell("Morning recap","n_recap","Who you met, the next morning")}</div>`)},
- ablock(){const ks=Object.keys(S.rel||{});return sub("Blocked and muted",ks.length?`<div class="grp">${ks.map(id=>`<div class="cell"><span class="ct">${P[id].n}<small>${RELN[S.rel[id]]}</small></span><button class="btn s sm" style="background:#fff;height:34px" data-a="unrel:${id}">${S.rel[id]==="blocked"?"Unblock":S.rel[id]==="muted"?"Unmute":"Undo"}</button></div>`).join("")}</div>`:`<p class="small" style="margin:8px 0 0">No one here. To block or mute someone, open their profile and tap ⋯.</p>`)},
+ ablock(){const ks=Object.keys(S.rel||{});return sub("Blocked and muted",ks.length?`<div class="grp">${ks.map(id=>`<div class="cell"><span class="ct">${P[id].n}<small>${RELN[S.rel[id]]}</small></span><button class="btn s sm" style="background:#fff;height:34px" data-a="unrel:${id}">${S.rel[id]==="blocked"?"Unblock":S.rel[id]==="muted"?"Unmute":"Undo"}</button></div>`).join("")}</div>`:`<p class="small" style="margin:8px 0 0">No one here.</p>`)},
  amanage(){return sub("Phone and email",`<div class="grp">${cell("Phone",'ext:Change phone',{v:ME.phone})}${cell("Email",S.set.email===false?"addemail":"ext:Change email",{v:S.set.email===false?"Add":ME.email})}${cell("Sign in with Apple","applelink",{v:S.set.apple?"On":"Off"})}</div><p class="foot" style="margin:6px 0 0">Your phone number is required. Email helps you get back in if you lose your phone. Friends can’t see either.</p>
 `)},
  aprem(){return sub("",`<div class="ahead" style="margin-top:8px"><img class="premhug" src="/hifi/assets/prem-hug.png" alt=""><b style="font-size:26px">Hourberry Premium</b></div>
@@ -1566,8 +1607,17 @@ const reqRow=k=>{const F=friendsList();return `<div class="row">${fc([k],44)}<sp
 const qrH=()=>`<span class="qr">${Array.from({length:49},(_,i)=>`<i class="${[0,1,2,3,4,5,6,7,13,14,20,21,27,28,34,35,41,42,43,44,45,46,47,48,9,17,24,31,38,11,19,30,25,23].includes(i)?"on":""}"></i>`).join("")}</span>`;
 const PINTO={sam:["Climbing","Food"],jess:["Food","Art"],lena:["Food","Drinks"],kai:["Climbing","Hikes"],ren:["Climbing","Art"],theo:["Art"],noor:["Art","Shows"]};
 function youTwo(id){const past=ARCH.map((a,i)=>[a,i]).filter(([a])=>a.ppl.includes(id)),both=PLACES.filter(pl=>(pl.wf||[]).includes(id)&&S.want&&S.want[pl.n]),ints=(PINTO[id]||[]).filter(x=>S.set.into[x]),mut=[...new Set(past.flatMap(([a])=>a.ppl).filter(x=>x!==id&&friendsList().includes(x)))];
- const rows=past.map(([a,i])=>cell(a.t,"apg:pastp:"+i,{v:a.d,sub:"You went together"})).join("")+(ints.length?`<div class="cell"><span class="ct">Both into<small>${ints.join(", ")}</small></span></div>`:"")+(both.length?`<div class="cell"><span class="ct">Both want to go<small>${both.map(x=>x.n).join(", ")}</small></span></div>`:"")+(mut.length?`<div class="cell"><span class="ct">Friends in common<small>${mut.map(x=>P[x].n).join(", ")}</small></span></div>`:"");
- return rows?`<div class="lab">You two</div><div class="grp">${rows}</div><p class="foot" style="margin:6px 0 0">Only you two see this.</p>`:""}
+ /* HI-FI 11/25 (Dakota): one compact group — hangs fold into a single summary row (tap to open), small object icons, Plan it on shared places */
+ const ic=k=>`<img class="yic" src="/hifi/assets/bi-${k}.png" alt="">`;
+ const row=(lead,t,sub,a,end,cls="")=>`<${a?`button data-a="${a}"`:"div"} class="yrow ${cls}">${lead}<span class="tx"><b>${t}</b><small>${sub}</small></span>${end||""}</${a?"button":"div"}>`;
+ const open=S.y2open===id;
+ const sum=past.length?row(`<span class="ypair">${SQ(PB[id]||"blue")}${SQ(MYB())}</span>`,`${past.length} hang${past.length>1?"s":""}`,`Last one ${past[0][0].d}`,"y2tog:"+id,`<span class="ychev ${open?"up":""}">${I.chr}</span>`):"";
+ const hangs=open?past.map(([a,i])=>row(ic("spot"),a.t,a.d,"apg:pastp:"+i,I.chr,"ysub")).join(""):"";
+ const rows=sum+hangs
+  +(ints.length?row(ic("down"),ints.join(", "),"Both into"):"")
+  +both.map(x=>row(ic("want"),x.n,"Both want to go","",`<button class="btn sm yplan" data-a="maketw:${id}|${x.n}">Plan it</button>`)).join("")
+  +(mut.length?row(ic("connector"),mut.map(x=>P[x].n).join(", "),"Friends in common"):"");
+ return rows?`<div class="lab">You two</div><div class="yrows">${rows}</div><p class="foot" style="margin:6px 0 0">Only you two see this.</p>`:""}
 const GI={park:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><path d="M10 17V7h3a3 3 0 0 1 0 6h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,pay:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="2"/></svg>`,id:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="11" r="2" stroke="currentColor" stroke-width="2"/><path d="M5.5 16c.5-1.5 1.6-2.2 3-2.2s2.5.7 3 2.2M14 10h4M14 13.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,door:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14.5" cy="12" r="1.2" fill="currentColor"/></svg>`,info:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.2" fill="currentColor"/></svg>`,bring:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="2"/></svg>`};
 const gIcon=g=>{const t=g.toLowerCase();return GI[/park/.test(t)?"park":/\bid\b/.test(t)?"id":/pay|venmo|\$|cash|pass/.test(t)?"pay":/ring|buzz|door|stairs|apt|unit/.test(t)?"door":/bring|jacket|shoes/.test(t)?"bring":"info"]};
 const metLine=k=>{const a=ARCH.find(x=>x.ppl.includes(k)&&(x.newp||[]).includes(k));if(a)return "You met at "+a.t+" · "+a.d;const m=(P[k].rel||"").match(/^You met at (.+), (\w+)$/);if(m)return "You met at "+m[1]+" · "+m[2];const b=ARCH.find(x=>x.ppl.includes(k));if(b)return "Last hung out at "+b.t+" · "+b.d;return P[k].met||(S.added[k]?"Added from your contacts":"Friends on Hourberry")};
@@ -1775,6 +1825,9 @@ function act(a,el){
  if(c==="mkoff"){const m=S.mk;m.off=+v;m.dmenu=false;if(m.off===0)m.s=Math.max(m.s,nextSlot());render();return}
  if(c==="mklen"){const L=[.5,1,1.5,2,3],m=S.mk;m.len=L[(L.indexOf(m.len)+1)%L.length]||1;render();return}
  if(c==="mknset"){S.mk.ppl=+v;S.sheet=null;render();return}
+ if(c==="y2tog"){S.y2open=S.y2open===v?null:v;render();return}
+ if(c==="maketw"){const [w,...pl]=String(v).split("|");startMake({who:[w],place:pl.join("|"),from:"dm"});return}
+ if(c==="mknstep"){const min=Math.max(2,S.mk.who.length+1);S.mk.ppl=Math.min(12,Math.max(min,(S.mk.ppl||4)+(+v)));render();return}
  if(c==="mkppl"){const m=S.mk;m.ppl=Math.max(Math.max(2,m.who.length+1),Math.min(12,m.ppl+(+v)));render();return}
  if(c==="mkmenu"){S.mk.dmenu=false;S.mk.menu=!S.mk.menu;render();return}
  if(c==="mkaud"){S.mk.aud=v;S.mk.menu=false;render();return}

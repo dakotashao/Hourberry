@@ -63,3 +63,12 @@ hi-fi 从 `core/index.html` 复制而来，屏幕、逻辑、文案跟 core 一�
 - 个人页去掉果子上的铅笔；进捏果子的主入口是 "Your berry" 卡片（点果子本身也能进）。
 - Premium 页顶部换成 Figma M16 的 "Premium · hug star"（方块蓝莓抱星星），3 倍导出成 `assets/prem-hug.png`。
 - Plans 主页定版（Dakota 11/25）：Upcoming / Past 放最上面，做成整行的分段控件；Invites 只出现在 Upcoming 里；邀请卡的 Join / Not this time 两个按钮等宽占满一行。左边导航删掉 "Plans · old version" 和 "Plans · v2 (calendar)"，Plans 只用这一版。
+- 以上第一次提交：`5c80ac9`。
+
+## 11/25 · 第五轮
+- 局卡片顶部改成 Dakota 定的样子（Discover、地图上点开的卡片、邀请点开的卡片都用这一个）：host 的留言气泡（带小尖角）→ host 那颗果子的跑步全身图 → "Noor is hosting" → 一行原因（"Jess’s in"）→ 一个白色胶囊：叠起来的头像 + "7 going · 2 seats left"，点胶囊看所有人。原来那排人 + Your seat 格子、主色的原因胶囊去掉了。
+- 人数改成加减：中间大数字，左右 − / +，最少 2 人（或已选的人数 + 1），最多 12 人，下面一个 Done。
+- Blocked and muted 空状态只写 "No one here."。
+- 别人的个人页顶部换成他们带装饰的全身果子（帽子 + 底色），跟你自己的个人页一样，买的装饰别人看得到。原型里给每个朋友配了一套：Jess 青蛙帽、Sam 报童帽、Lena 护耳帽、Noor 兔耳（Premium）、Ana 学士帽等。
+- 朋友页的 You two 收成一组：第一行是 "2 hangs · Last one Tue"（两个小方块果子），点开才展开每次见面；图标改小成 28；去掉大字和单独的彩色块。"Both want to go" 旁边有 Plan it，点了直接带上这个人和这个地方开新局。
+- 修了局卡片胶囊里叠头像的直角白边和缝（多加了一圈白边）。查了所有叠头像的地方（地图 free、Spots、Make a plan、Recap、搜索），其它没问题。
