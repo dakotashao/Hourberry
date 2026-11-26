@@ -77,3 +77,26 @@ hi-fi 从 `core/index.html` 复制而来，屏幕、逻辑、文案跟 core 一�
 ## 11/25 · 第六轮
 - 个人页顶部（你自己的、朋友的、"别人眼里的你"预览）改成 Dakota 选的第一版小舞台：上浅下深的天空用果子的颜色（选了底色就用底色），一块弧形地面，几颗白色闪光；你的页面地面往下淡成白色，没有硬边。
 - 以上第六轮提交：`9a65218`。
+
+## 11/25 · 第七轮：矢量果子（队友的零件）
+- 全身果子从 PNG 换成队友做的矢量零件（`hifi/berry-parts.js`）：五颗果子共用一个坐标系，帽子和耳机分前后层，戴在哪颗果子上都对齐、都清楚。交互和动画还是我们的（Big / On map、一行 3 个、Premium 提示和保留弹窗、小尺寸只显示方块脸、个人页小舞台）。
+- Color 开了：只有自己果子的深浅（Default / Light / Soft / Deep / Dark，用队友的 HSL 调色），不能跨果子换色；四种特殊皮肤（Rainbow / Sugar sparkle / Gummy / Chocolate）是 Premium，跟免费颜色放在同一排圆点里。
+- Face 开了：眼睛 7 种（Look / Happy / Curious / Look up / Excited / Sparkle / Sleepy，Dakota 挑的），嘴巴 4 种（None / Smile / Open / Calm）。
+- Top：免费 青蛙帽、报童帽、护耳帽、蝴蝶结、牛仔帽；Premium 学士帽、兔耳、派对帽。
+- Extras 开了：咖啡杯、猫眼墨镜、耳机、调色盘。
+- 去掉了 Sugar sparkle 皮肤自带的三条动感线。
+- 朋友们各配了一套（Jess 青蛙帽 + 笑眼，Noor 兔耳 + 闪亮眼，Kai 牛仔帽 + 墨镜，Sam 报童帽 + 耳机等）。
+- 队友的"节日套装"（Sets）还没接，等 Dakota 定。
+- 捏果子的选项格子只显示零件本身（帽子、配件裁到只剩零件；眼睛和嘴巴放在你果子颜色的圆里），Berry 标签还是显示整颗果子。嘴巴单独一个标签（Berry / Color / Eyes / Mouth / Top / Extras / Background）。Background 改成一排圆点，不放果子。
+- 捏果子页往下滑时，预览固定在顶部并收成一条小的，标签栏也固定在它下面，不用滑回顶部就能看到效果、切换标签。
+- Premium 的帽子改成：青蛙帽、报童帽、学士帽、兔耳（Dakota 定）；免费：护耳帽、蝴蝶结、牛仔帽、派对帽。
+- 蓝莓头上的星星跟着身体颜色走（换深浅时用更深一档，巧克力配深棕），不再跟身体糊在一起；蓝莓的 Deep / Dark 降低饱和度，不再是电光蓝。
+- 捏果子页的预览改成跟着手指收：预览先跟着内容往上滑 122px 再停住，里面的果子按滑动距离连续缩小，标签栏固定在下面；没有了"滑过某个点就切换"的跳动。
+- Background 改成在小舞台（地球）上加东西，天空和地面的颜色一直跟着你的果子：Sparkles（默认）、Clouds、Flowers 免费；Night、Confetti、Rainbow 是 Premium。编辑页的预览也换成同一个舞台，个人页、朋友页显示你选的场景。格子里只显示场景本身。
+- 捏果子页加了"重置"：改过东西时预览左上角出现一个小按钮，点了颜色、眼睛、嘴巴、帽子、配件、背景都回到默认（果子种类不变），提示条里有 Undo 可以撤回；不弹确认框。
+- 修捏果子页的收起：预览卡从底边往上收（顶部和圆角保留，不再像被切掉），下面的内容一像素一像素跟着手指走（修了一处 margin 合并导致的 16px 跳动）；点选项时预览保持当前收起程度，不再先变大再缩小；"弹一下"的动画只作用在果子身上。
+- 场景的地面画进场景图里，花、彩虹、云永远站在地面上；Flowers、Rainbow 重画得更细。
+- Background 换成更有创意的场景，装饰是 GPT 画的（`assets/deco-*.png`，抠成透明叠在我们的舞台上，天空和地面颜色还是跟着果子）：Sparkles（默认）、Picnic、Golden hour（落日是一个钟面）免费；Pixel、Space（地面变成带陨石坑的小星球）、Rooftop（城市天台 + 一串小灯）Premium。
+- 列表行加了线条图标（Settings、朋友页的 Mute / Restrict / Block / Report、局的菜单等）；填资料的行、通知开关不加。Edit profile 按钮加了铅笔图标，跟旁边的 Share 一致。
+- What you're into：选中的标签有主色描边和对勾；最多 5 个，标题旁显示 3/5，选满再点会提示先去掉一个；点一下就保存（写明 "Saves as you tap"）；最后有 More，打开按分类排、能搜索的完整列表。
+- Background 改成整张场景图（GPT 一整张画出地球、天空和装饰，`assets/scene-*.jpg`），先接好了 Space；Picnic / Golden hour / Pixel / Rooftop 画好前不显示，选了它们的人先显示默认的 Sparkles。Sparkles 还是我们自己画的，颜色跟着果子。
