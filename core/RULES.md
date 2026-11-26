@@ -90,8 +90,13 @@
 - ✅ 开始前 30 分钟提醒 host：扩大到朋友的朋友，或者取消。
 
 ## 7. Recap（11/11 改：就是 Plans → Past 里点开的那一页）
-- ✅ 从上到下：标题 + 日期 · 地点 → 插画（按局的类型、白天/晚上、几个人、谁是新朋友变；不按评价变；见 research/ILLUSTRATION-BRIEF.md）+ 一句结论（"You met 1 new person"，没认识新人就写 "With Jess"）→ New to you（新认识的人展开：加过了写 Added at this plan + Message，没加写 Add；下面一行你的笔记或 + Add a note）→ Also there（老朋友压成一行）→ 主按钮 Plan again with them（人预填，公开地点也预填）→ How was it?（Loved it / It was fine / Not for me）→ 选了以后再问地点适合几个人（2 people / 3–5 / 6+，喂给地点页的 Good for；在家办的局不问）→ "Only you see this. You can change it anytime." → 地点（Save place）、Chat（只读）。
-- ✅ 问卷一直在这页，随时可以改，不是只问一次。第二天早上的推送打开的就是这一页。
+- （旧，11/11–11/25 被第三版替换）从上到下：标题 + 日期 · 地点 → 插画（按局的类型、白天/晚上、几个人、谁是新朋友变；不按评价变；见 research/ILLUSTRATION-BRIEF.md）+ 一句结论（"You met 1 new person"，没认识新人就写 "With Jess"）→ New to you（新认识的人展开：加过了写 Added at this plan + Message，没加写 Add；下面一行你的笔记或 + Add a note）→ Also there（老朋友压成一行）→ 主按钮 Plan again with them（人预填，公开地点也预填）→ How was it?（Loved it / It was fine / Not for me）→ 选了以后再问地点适合几个人（2 people / 3–5 / 6+，喂给地点页的 Good for；在家办的局不问）→ "Only you see this. You can change it anytime." → 地点（Save place）、Chat（只读）。
+- ✅ 11/25 改（第三版，去掉评价）：recap 不再问 "How was it?"，不问地点适合几个人，也不评价人。推荐靠行为（加谁、去什么局、Plan again、存地点、小芽），不靠打分。
+- ✅ 从上到下：标题 + 日期 · 地点 → 插画 → 数据块（N berries · N new · 时长，样式之后再改）→ **Who was there** 一行（叠 3 张脸 + "Noor, Theo, Ren and 5 more" ›）→ Plan again（一直在）→ Save place / Chat。
+- ✅ 点 Who was there → 弹层名单：新认识的排前面。每行：脸（点进个人页）· 名字 · New / Friend · Add（没加的才有）· 最右一列小芽（见 §28）。
+- ✅ recap 不单独推送，第二天早上的 Morning recap 打开的就是这一页。
+- ✅ 11/25：插画先用 GPT 生成的那张（屋顶夜景）占位，以后按局拼：背景按白天/晚上，前景站当天去的人的整只果子（戴各自的装饰），新认识的人头上一片叶子。
+- （旧）问卷一直在这页，随时可以改。11/25 问卷整个删掉。
 - ⬜ 删掉：Did it happen?、"See them again?"、场地标签（Too loud / Pricey）。
 
 ## 8. 地点：Want to go / Save
@@ -108,6 +113,7 @@
 - ⬜ 左右滑只是上一张 / 下一张，卡还在。Skip = 不感兴趣，这张卡拿掉。加入只能点 Join（原来叫 Take a seat）。
 - ⬜ 卡片右上角一个小圆按钮 **Save to map**：这张卡变成地图上一个只有你看得到的 pin，稍后再决定。局开始了 pin 就消失；人满了写 "Full"。
 
+- ✅ 11/25 改（学 Gentler「每屏一个主角」+ Apple Invites 的头像簇）：卡片上半部分只有一个主角——主持人的果子（hi-fi 用整只带腿的果子），上面是主持人的留言气泡，下面一行 "Noor is hosting"，再下面一行小字是为什么你会看到它（"Lena’s in"）或 "via Jess"。其他去的人收成一个白色胶囊：前三个人的果子叠在一起 + "7 going · 2 seats left"，点它看所有人。不再放 Your seat / 空位 / See all 一排格子，也不单独放 "Lena’s in" 标签。加入就是点 Join。上半部分底色是主持人果子的浅色（五种果子调到同样深浅），纯色不加渐变。
 卡上必须有：
 - 谁在：果子，每颗下面写名字。
 - 做什么、在哪：标题。
@@ -164,11 +170,17 @@
 - ✅ 点一个人进个人页（11/11 定，参考微信 / IG / TikTok 的结构，但用我们自己的视觉）：头像 + 名字 + "@sam · Free till 9:30" → Message / Make a plan → Note（只有你看得到；Add people 成功页写的笔记也存在这里）→ Groups（chip 就地加减、+ New；"Sam won’t know which groups they’re in."）→ You two（一起去过的局、都想去的地方，没有就不显示）→ Hide when I’m free（只对这个人隐藏你有空，对方不知道；Who sees you 里会写 Hidden from Sam）→ Mute / Restrict / Remove friend / Block / Report（直接摆出来，不藏在 ⋯ 里；Block 和 Report 红字）。Block 先弹确认（"Block Sam? … They may notice."）；Block 之后个人页不显示有空状态，也没有 Message / Make a plan。私聊右上角 ⋯ 也进这一页。不做：聊天气泡、壁纸、提示音、阅后即焚、通话、清空聊天、置顶、推荐给朋友。
 - ✅ Close friends 固定：永远第一个，不能删、不能改名（Who sees you 默认值和 Make a plan 的 "from Close friends" 靠它）。其他组可以自由建、删。
 - 🧪 （11/17 改）分组在 People、个人页、Who sees you 三个地方都能进去改，进去都是同一个分组页（Add / Remove / 删组），新建都是同一个 New group 弹层。
-- 🧪 （11/18 改，参考 WhatsApp Lists / Telegram 文件夹）People 页去掉底下的 Groups 区。搜索框下面一排小标签：All / 各个分组 / +。点一个分组 = 筛选列表；这时上面一行 "3 people · only you see this group" + Edit（进分组页）。+ 新建分组，建好自动选上。
+- ✅ 11/25 改：People 页不放分组筛选（iOS 通讯录、IG 关注列表、Snapchat 好友页、微信通讯录的人列表都不放筛选；筛选只适合又长又常刷的聊天列表）。搜索框下面直接是 Free now / Everyone。分组在朋友的个人页里：Groups 一排标签就地加减、+ New；也能从 Who sees you 进分组页。
+- （旧，11/18）搜索框下面一排小标签 All / 各个分组 / +，点分组 = 筛选列表。11/25 删。
 - 🧪 Who sees you（11/18 改，学微信"部分可见"）：顶部搜索 "Add someone"（搜到点 Add 加进来，已经能看到的写 "Already sees you"）。下面一个列表全是方框：All friends、每个分组（组名 + 名字，› 进分组页）、加进来的人、+ New group（建好自动勾上）。All friends 就是"全选"：勾上时所有组也显示勾上；在全选状态取消一个组，All friends 自动取消；取消 All friends，所有组保持勾上。最后一个不能取消，不会 0 人。下面单独一行 Hidden from（挑人页）。底部 "N people will see you’re free."，不写别的说明。
 - ✅ Add 是一整页（见 §1 Add people）。
 - ⬜ 改组名。
 - ✅ 新用户 0 个朋友时：点 Discover 或 + Me 先引导加人或探索地点。
+
+- ✅ 11/25 个人页分朋友 / 非朋友（非朋友 = 一起去过局但还没加）：
+  - 朋友：名字 · 有空状态 → Message · Make a plan → 笔记 → 分组 → 你们俩 → Hide when I’m free · 小芽 → Mute · Restrict · Remove friend · Block · Report。
+  - 非朋友：名字 · Met at [局] · [日期] → 只有 **Add**（不能私信，加了才能；局里有群聊）→ 笔记 → 你们俩 → 小芽 → Block · Report。没有分组，没有 Hide when I’m free（他本来看不到你有没有空）。
+  - 私人设置组里一行 "Give X a sprout · Only you’ll know." + 小芽按钮（§28）。Close friends 没有这一行。原来的 Plans with X 三档和 Fewer plans together 删掉（没种小芽 = 照常；真不想见用 Mute / Block）。
 
 ## 14. 其他已定
 - ✅ Premium：头像右上角一颗星，点一下有说明。
@@ -336,3 +348,10 @@
 - 🧪 Past：按月分组、搜索（局名 / 人 / 地点）、长按隐藏（"Others who went still see it."，可撤销）。
 - 试过的：v1 顶部最多 2 张卡 + "N more invites"；v2 日期条 + 月历 + 筛选；v3 前半段 "5 个以上收成一行"。左侧导航 "Plans · old version" / "Plans · v2 (calendar)" 还能看。对比页：Invites 放在哪（A 横排 / B 一摞 / C 收件箱），选了 B + C。
 - ✅ （11/18）所有给用户看的距离都写英里（"0.8 mi"），不写 "15 min walk / 12 min drive"：邀请卡、局卡片、Directions 弹层、地点页、搜索的 Recent。
+
+## 28. 小芽（11/25）
+- ✅ 一个只有自己知道的标记："还想跟这个人玩"。种了的人，他发起或加入的局在你这里排前面（只调你本来能看到的局的顺序，不会多看到局）。没种的照常，不提供"少见他"的选项——真不想见用 Mute / Block。
+- ✅ 两档，跟关系走：还没加的人 = **Planted**（小芽）；朋友 = **Growing**（两片叶子）。种过的人加了好友，小芽自动长成 Growing。Close friends 不显示小芽（分组里已经有 ✓ Close friends）。
+- ✅ 入口：recap 的 Who was there 名单（每行最右一列，纯图标圆按钮）；个人页私人设置组的一行 "Give X a sprout"。地图、列表、聊天、头像上都不显示。
+- ✅ 第一次出现在名单里时，第一个小芽旁冒一个气泡（不等用户点）："Want more of this? / Give them a sprout and watch it grow. Only you’ll know. / Got it"。点 Got it 或点任意小芽后不再出现。
+- ✅ 能点进非朋友个人页的地方：recap 名单、Me 里 Met at plans、局里 Everyone going 名单（11/25 补上可点）。

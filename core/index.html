@@ -131,7 +131,7 @@ input,textarea{font:inherit;color:inherit}
 .omap .r{position:absolute;background:#f6f6f6}
 .chatprev{display:flex;flex-direction:column;gap:6px}
 .msg{display:flex;gap:8px;align-items:flex-end;margin:6px 0}.msg .bb{background:var(--g1);border-radius:16px 16px 16px 4px;padding:8px 12px;font-size:15px;max-width:260px}.msg.me{justify-content:flex-end}.msg.me .bb{background:#000;color:#fff;border-radius:16px 16px 4px 16px}
-.msg small{display:block;font-size:11px;color:var(--mute);margin-bottom:2px}
+.mav{flex:none;display:flex}.msg small{display:block;font-size:11px;color:var(--mute);margin-bottom:2px}
 .sys{text-align:center;font-size:12px;color:var(--mute);margin:10px 0}
 .compose{display:flex;gap:8px;padding:10px 16px 30px;border-top:1px solid var(--g2);flex:none}.compose input{flex:1;height:42px;border-radius:21px;background:var(--g1);border:0;padding:0 16px;outline:0;font-size:15px}
 .pcta{position:sticky;top:0;z-index:2;background:#fff;padding:8px 0}
@@ -448,6 +448,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,
 @media (min-width:700px){body{padding-left:240px}}
 @media (max-width:699px){.pnav{display:none;z-index:200}.pnav.open{display:block;top:56px}.pnbtn{display:flex;position:fixed;left:12px;top:12px;z-index:201;height:36px;padding:0 14px;border-radius:18px;background:var(--ink);color:#fff;font-size:14px;font-weight:700;align-items:center}}
 @media (max-width:430px){.pnav,.pnav.open,.pnbtn{display:none}}
+.srch+.lab{margin-top:24px!important}
+/* 11/25 list rows: title and second line stay on one line, cut with "…" (time on the right never moves) */
+.hrow .m b,.urow .tx b,.row .tx b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hrow .m b>*,.urow .tx b>*,.row .tx b>*{display:inline-flex;vertical-align:middle;margin-left:6px}
+.hrow .m small,.urow .tx small,.row .tx small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rvq,.rvd{background:var(--g1);border-radius:20px;padding:14px;margin-top:16px}.rvh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}.rvh b{font-size:16px}.rvh small{font-size:12px;color:var(--mute)}
+.rvo{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.rvo button{background:#fff;border-radius:16px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:600;font-size:13px}
+.rvf{color:#8e8e93;display:block}
+.rsts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.rsts div{background:var(--g1);border-radius:16px;padding:12px;text-align:center}.rsts b{display:block;font-size:20px;font-weight:800}.rsts small{font-size:12px;color:var(--mute)}
+.rwho{display:flex;align-items:center;gap:12px;width:100%;background:var(--g1);border-radius:16px;padding:12px 14px;margin-top:10px;text-align:left}.rwho .tx{flex:1;min-width:0}.rwho .tx b{display:block;font-size:15px}.rwho .tx small{display:block;font-size:13px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stk{display:flex}.stk .fc i{margin-left:-8px}.stk .fc i:first-child{margin-left:0}
+.whor{align-items:center;gap:12px}.whor>.tx{flex:1;text-align:left}.whor .btn.sm{width:72px;justify-content:center}.sprw{position:relative;width:36px;flex:none;display:flex;justify-content:center}
+.spc{width:36px;height:36px;border-radius:18px;background:var(--g1);display:grid;place-items:center}.spc.on{background:#d1d1d6}
+.spr .st,.spr .l{fill:#636366}.spr .r{fill:#8e8e93}.spr .spg{transform-origin:12px 21px;transform:scale(.74);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}.spr.planted .spg{transform:scale(.86)}.spr.growing .spg{transform:scale(1.04)}.spr.planted .st,.spr.planted .l,.spr.growing .st,.spr.growing .l{fill:#1c1c1e}.spr.planted .r,.spr.growing .r{fill:#48484a}
+.sprcell{display:flex;align-items:center;gap:12px}.sprcell .spc{background:#fff}.sprcell .ct{flex:1}
+.coach{position:absolute;right:-6px;top:46px;z-index:20;width:236px;background:#1c1c1e;color:#fff;border-radius:16px;padding:12px 14px;font-size:14px;line-height:1.35;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.2)}.coach b{display:block;font-size:15px;margin-bottom:2px}.coach button{display:inline-flex;margin-top:10px;background:#fff;color:#1c1c1e;border-radius:14px;height:30px;padding:0 14px;align-items:center;font-size:13px;font-weight:650}.coach::before{content:"";position:absolute;top:-6px;right:18px;width:12px;height:12px;background:#1c1c1e;transform:rotate(45deg);border-radius:2px}.pwseg{padding:12px 14px}.pwseg+*,*+.pwseg{box-shadow:inset 0 1px 0 var(--sep,#e5e5ea)}.pwseg .ct{display:block;font-size:16px}.pwseg .ct small{display:block;font-size:13px;color:var(--mute);margin-top:2px}.seg{display:flex;background:#e3e3e8;border-radius:10px;padding:2px;margin-top:10px}.seg button{flex:1;height:32px;border-radius:8px;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center}.seg button.on{background:#fff;font-weight:650;box-shadow:0 1px 3px rgba(0,0,0,.12)}.rvd.why{flex-wrap:wrap;align-items:flex-start}.rvskip{font-size:14px;color:var(--mute);font-weight:500;padding:2px 0}.rvw{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.rvw .fchip{background:#fff}.rvpair{margin:-4px 0 10px 56px;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}.rvpair button:not(.fchip){font-weight:650;color:var(--ink)}.rvd{display:flex;align-items:center;gap:12px}.rvd .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.rvd .tx b{font-size:15px}.rvd .tx small{font-size:13px;color:var(--mute)}
+.vhero:has(.bunch3){flex:none!important;display:flex;flex-direction:column;align-items:center;padding:14px 16px 16px;min-height:0!important}.vhero:has(.bunch3) .vnote{position:relative;left:auto;transform:none;top:auto;margin-bottom:6px}
+.bunch3{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}.bhero{display:flex;flex-direction:column;align-items:center;gap:2px}.bhero .vb{position:static;margin:6px 0 8px}.bhero b{font-size:16px;font-weight:700}.bhero small{font-size:12px;color:var(--mute)}
+.vnote+.bunch3{position:relative}.vnote+.bunch3::before{content:"";position:absolute;left:50%;top:-12px;width:12px;height:12px;background:#fff;border-radius:2px;transform:translateX(-50%) rotate(45deg)}
+.bpill{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 12px 5px 5px;margin-top:12px;font-size:13px;white-space:nowrap;box-shadow:var(--shc)}.bpill .fc i+i{margin-left:-8px}
 </style></head><body>
 <button class="pnbtn" onclick="document.querySelector('.pnav').classList.toggle('open')">Pages</button><nav class="pnav" aria-label="Prototype pages"><b class="pnt">Hourberry · prototype</b>
 <div class="png"><small>Start</small><button data-j="reload">Loading page</button><button data-j="signup">Sign up</button><button data-j="fresh">New user (empty)</button></div>
@@ -541,7 +560,7 @@ const LINKSET=["Kensho Coffee","Tartine","Eaton Canyon"];
 /* ---------- state ---------- */
 const S={badges:["spot","want","connector"],want:{"Tartine":1,"Eaton Canyon":1},recent:["Leo’s Taqueria","Kensho Coffee"],z:1,pan:{x:0,y:0},saved:{},meFree:false,fp:false,tab:"map",stack:[],sheet:null,modal:null,free:null,pick:0,skipped:{},joined:{},filter:"any",search:null,drawer:"half",layer:"plans",pkView:"people",picksOpen:false,plansTab:"up",notifAsked:false,pending:{},
  chats:{tacos:[["jess","table by the window, see you!"],["sam","omw at 6:55"]],karaoke:[["noor","song list: bit.ly/gogo-r4"]],dump:[],climb:[],roof:[],dm_sam:[["sam","that rooftop was fun lol"],["sam","you climb?"]],dm_lena:[["lena","sent you a plan, ramen wed?"]]},
- unread:{dm_sam:2},inv:{nagi:1},off:{},added:{},texted:{},notes:{},hide:{},rv:{},req:{},reqs:{},me:{shape:"straw",col:1,eyes:0,mouth:0,top:1,acc:0,bg:1,made:false,bio:"always down for bars",pron:"",ask:"Bouldering"},changed:{}};
+ unread:{dm_sam:2},inv:{nagi:1},off:{},added:{},texted:{},notes:{},hide:{},rv:{},nopair:{},pw:{},spr:{},sprSeen:0,req:{},reqs:{},me:{shape:"straw",col:1,eyes:0,mouth:0,top:1,acc:0,bg:1,made:false,bio:"always down for bars",pron:"",ask:"Bouldering"},changed:{}};
 const NOW=18+40/60;
 const BASE=new Date(2026,10,10);/* Tue, Nov 10 */
 const offOf=p=>p.off!=null?p.off:[0,1,4][p.day];
@@ -569,7 +588,7 @@ const hm=h=>hm0(h)+" "+apOf(h);
 const span=p=>apOf(p.s)===apOf(p.e)?hm0(p.s)+"–"+hm(p.e):hm(p.s)+"–"+hm(p.e);
 const fc=(ids,d=22,solo)=>`<span class="fc" role="img" aria-label="${ids.map(x=>P[x]?(x==="mia"?"You":P[x].n):/^\+\d/.test(x)?x.slice(1)+" more":"open seat").join(", ")}">${ids.map((x,k)=>`<i aria-hidden="true" style="width:${d}px;height:${d}px;font-size:${Math.round(d*.45)}px;z-index:${9-k};${k?"margin-left:-6px;":""}${solo==="g"?"background:#d6d6d6;color:#000":""}">${P[x]?P[x].i:x}</i>`).join("")}</span>`;
 const ppl3=p=>{const o=[p.host].concat(byClose(p.ppl.filter(x=>x!==p.host)));const sh=o.slice(0,3);return o.length>3?sh.slice(0,2).concat(["+"+(o.length-2)]):sh};
-const fam=id=>P[id].close?3:P[id].fof?1:P[id].rel==="No mutual friends"?0:2;
+const fam=id=>(P[id].close?3:P[id].fof?1:P[id].rel==="No mutual friends"?0:2)+(S.spr&&S.spr[id]?.5:0);
 const byClose=a=>a.slice().sort((x,y)=>fam(y)-fam(x));
 const going=k=>PL[k].ppl.length+(S.joined[k]?1:0);
 function goingTx(k){const p=PL[k],me=S.joined[k]||p.mine,others=byClose(p.ppl.filter(x=>x!=="mia"));const names=(me?["You"]:[]).concat(others.map(x=>P[x].n)),n=names.length;
@@ -793,10 +812,9 @@ function TAB_plans3(){const tab=S.plansTab==="past"?"past":"up",inv=invList().so
  <div class="pseg" role="tablist">${[["up","Upcoming"],["past","Past"]].map(([k,l])=>`<button role="tab" aria-selected="${tab===k}" class="${tab===k?"on":""}" data-a="ptab:${k}">${l}</button>`).join("")}</div>
  ${tab==="up"?box+(box&&all.length?`<div style="height:6px"></div>`:"")+list:`<label class="srch" style="margin-top:12px">${I.search}<input id="pastq" value="${esc(S.pastQ||"")}" placeholder="Search past plans or people" aria-label="Search past plans"></label><div>${past}</div>`}</div></div>`}
 /* ---------- people tab ---------- */
-/* 11/18 groups are filter chips on top (WhatsApp Lists / Telegram folders): tap = filter, Edit = the same group page */
+/* 11/25 no group filters on People (people lists don't filter): groups live on each friend's profile and in Who sees you */
 function TAB_people(){const G=S.pgrp&&S.groups.find(g=>g.id===S.pgrp);if(!G)S.pgrp=null;const all0=friendsList().filter(k=>!(S.rel&&S.rel[k]==="blocked")),all=G?all0.filter(k=>G.m.includes(k)):all0,fr=all.filter(k=>P[k].free).sort((a,b)=>(P[b].close?1:0)-(P[a].close?1:0)),rest=all.filter(k=>!P[k].free).sort((a,b)=>(P[b].close?1:0)-(P[a].close?1:0));
  return `<div class="view"><div class="nav" style="padding-top:56px"><span style="font-size:30px;font-weight:800;flex:1">People</span><button class="btn sm" data-a="apg:addp">Add</button></div><div class="scroll" style="padding-bottom:110px"><label class="srch">${I.search}<input placeholder="Search friends or @username" aria-label="Search friends"></label>
- ${all0.length?`<div class="wchips pchips">${[["","All"]].concat(S.groups.map(g=>[g.id,esc(g.n)])).map(([id,n])=>`<button class="${(S.pgrp||"")===id?"on":""}" data-a="pgrp:${id}">${n}</button>`).join("")}<button data-a="sheet:newgrp" aria-label="New group">${I.plus}</button></div>`:""}
  ${G?`<div class="pgh"><span>${all.length} ${all.length===1?"person":"people"} · only you see this group</span><button data-a="apg:grp:${G.id}">Edit</button></div>${all.length?all.map(pRow).join(""):`<p class="small" style="padding:12px 0">No one in ${esc(G.n)} yet.</p>`}`:!all.length?`<div class="empty2">${illoSpot("empty-people")}<b>Your bunch is empty</b><span class="small">Add people you’ve met. Hold phones together, scan a code, or send a link.</span><button class="btn sm" data-a="apg:addp">Add people</button></div>`:`
  ${fr.length?`<div class="lab" style="margin-top:4px">Free now</div>${fr.map(pRow).join("")}`:""}
  ${rest.length?`<div class="lab" ${fr.length?"":`style="margin-top:4px"`}>Everyone</div>${rest.map(pRow).join("")}`:""}`}
@@ -807,13 +825,14 @@ const VRD=["56% 44% 52% 48% / 48% 56% 44% 52%","47% 53% 55% 45% / 55% 45% 55% 45
 const clash=k=>Object.keys(S.joined).some(j=>j!==k&&PL[j].day===PL[k].day&&PL[k].s<PL[j].e&&PL[k].e>PL[j].s);
 function pickList(){return PICKS.slice(0,QUOTA()).filter(k=>!S.skipped[k])}
 const clashWith=k=>Object.keys(S.joined).find(j=>j!==k&&PL[j].day===PL[k].day&&PL[k].s<PL[j].e&&PL[k].e>PL[j].s);
-function bunch(k,joining,mode){const p=PL[k],others=byClose(p.ppl.filter(x=>x!==p.host&&x!=="mia")),L=left(k)+(joining?1:0);
- const seatTx=L<=0?"Full · waitlist":`${L} left`;
- let hh=`<div class="bhost"><span class="vb host" style="width:68px;height:68px;border-radius:${VRD[0]};font-size:26px">${P[p.host].i}</span><b>${P[p.host].n}</b><small>HOST${P[p.host].fof?" · via "+P[p.host].fof:""}</small></div>`;
- let h=`<div class="bleft"><small class="${L<=2?"urg":""}">${seatTx}</small>${L>0?`<span class="bslot"><span class="vb ${joining?"me":"seat"}" style="width:40px;height:40px;border-radius:${VRD[4]};font-size:18px">${joining?"T":"+"}</span><i class="${joining?"b":""}">${joining?"You":"Your seat"}</i></span>${L>1?`<span class="bslot"><span class="vb seat soft" style="width:28px;height:28px;border-radius:50%;font-size:15px">+</span><i>${L>2?"+"+(L-1)+" open":"1 open"}</i></span>`:""}`:""}</div>`+hh;
- const R=others.length>3?others.slice(0,2):others.slice(0,3);
- h+=`<div class="bright">${R.map((id,ix)=>`<span class="bslot"><span class="vb" style="width:38px;height:38px;border-radius:${VRD[ix+1]};font-size:15px">${P[id].i}</span><i>${P[id].n}</i></span>`).join("")}${others.length>3?`<button class="bslot" data-a="${mode==="sheet"?"allppl:"+k:"opencard"}" aria-label="See everyone"><span class="vb more" style="width:38px;height:38px;border-radius:50%;font-size:13px">+${others.length-2}</span><i>See all</i></button>`:""}</div>`;
- return `<div class="bunch2 ${joining?"squeeze":""}">${h}</div>`}
+function bunch(k,joining,mode){const p=PL[k],others=byClose(p.ppl.filter(x=>x!==p.host&&x!=="mia")),L=left(k)+(joining?1:0),me=joining||S.joined[k];
+ /* 11/25 (B): one hero — the host's berry with their note above; everyone else is one pill. Tap the pill to see everyone. */
+ const seatTx=L<=0?"Full · waitlist":L===1?"1 seat left":`${L} seats left`;
+ const n=others.length+(me?1:0),faces=(me?["mia"]:[]).concat(others).slice(0,3);
+ const sub=p.why||(P[p.host].fof?"via "+P[p.host].fof:"");
+ const hero=`<div class="bhero"><span class="vb host" style="width:88px;height:88px;border-radius:${VRD[0]};font-size:32px">${P[p.host].i}</span><b>${P[p.host].n} is hosting</b>${sub?`<small>${sub}</small>`:""}</div>`;
+ const pill=`<button class="bpill" data-a="${mode==="sheet"?"allppl:"+k:"opencard"}" aria-label="See everyone going">${n?fc(faces,26):""}<span>${n?n+" going · ":""}<b>${seatTx}</b></span></button>`;
+ return `<div class="bunch3 ${joining?"squeeze":""}">${hero}${pill}</div>`}
 function placeRowV(k){const p=PL[k],before=p.home&&!S.joined[k];const askFirst=p.home&&P[p.host].fof;
  return before?`<div class="vplace"><span class="ic">${I.pin}</span><span class="tx"><b>${p.area}</b><small>${askFirst?"Address after "+P[p.host].n+" says yes":"Address after you join"}</small></span></div>`
   :`<button class="vplace" data-a="dir:${k}" aria-label="Directions to ${p.place}"><span class="ic">${I.pin}</span><span class="tx"><b>${p.place}</b><small>${p.addr}</small></span><span class="go">Directions</span></button>`}
@@ -824,7 +843,7 @@ function vcard(k,joining,mode){const p=PL[k],L=left(k),fT=S.free,past=fT&&p.day=
  const warn=!S.joined[k]&&clashWith(k)?`Overlaps ${PL[clashWith(k)].short}`:past?`Runs past ${hm(fT)}`:"";
  const when=p.day===0?(started?"Started "+Math.round((NOW-p.s)*60)+" min ago":"Tonight "+span(p)):dShort(offOf(p))+" "+span(p);
  const ext=[p.cost,p.age].filter(Boolean);
- return `<div class="vcard ${sheet?"insheet":""}" ${sheet?"":`data-a="opencard" id="vcard"`}><div class="vtop">${sheet?"<span></span>":`<button class="vsave ${S.saved[k]?"on":""}" data-a="save:${k}" aria-label="${S.saved[k]?"Saved to your map. Remove":"Save to map, decide later"}">${I.pinplus}</button>`}<span></span></div><div class="vhero">${note}${bunch(k,joining,mode)}</div>${why}<div class="vbot"><span class="t">${p.t}</span><span class="vmeta"><span>${I.clock}${when}</span><span>·</span><span>${goIcon(p)}${miOf(p)}</span></span>${warn||ext.length?`<span class="vext2">${warn?`<em>${warn}</em>`:""}${ext.map(e=>`<i>${e}</i>`).join("")}</span>`:""}${placeRowV(k)}</div></div>`}
+ return `<div class="vcard ${sheet?"insheet":""}" ${sheet?"":`data-a="opencard" id="vcard"`}><div class="vtop">${sheet?"<span></span>":`<button class="vsave ${S.saved[k]?"on":""}" data-a="save:${k}" aria-label="${S.saved[k]?"Saved to your map. Remove":"Save to map, decide later"}">${I.pinplus}</button>`}<span></span></div><div class="vhero">${note}${bunch(k,joining,mode)}</div><div class="vbot"><span class="t">${p.t}</span><span class="vmeta"><span>${I.clock}${when}</span><span>·</span><span>${goIcon(p)}${miOf(p)}</span></span>${warn||ext.length?`<span class="vext2">${warn?`<em>${warn}</em>`:""}${ext.map(e=>`<i>${e}</i>`).join("")}</span>`:""}${placeRowV(k)}</div></div>`}
 function picks(){const L=pickList(),i=Math.min(S.pick,Math.max(0,L.length-1)),k=L[i];
  if(L.length)S.picksSeen=true;const freeTx=S.freeAll?"Free tonight":"Free till "+hm(S.free);
  const head=`<div class="pktop"><button class="circ" data-a="pkclose" aria-label="Close picks">${I.x}</button>${L.length?`<span class="small">${i+1} of ${L.length}</span>`:""}</div><div class="pkh"><p class="kick">Today’s picks${dLeft()?" · "+dLeft()+" to decide":""}</p><h1><button data-a="sheet:free:disc" aria-label="${freeTx}. Change time">${freeTx}${I.chev}</button></h1></div>`;
@@ -891,17 +910,19 @@ const SCR={
   </div><div class="mkbar"><p class="small" style="color:var(--ink)">${pl.addr||pl.n} · ${pl.d||pl.mi}</p><p class="small">${mkSummary()}</p><button class="btn" data-a="mksend">${S.mk&&S.mk.edit?"Save changes":"Send plan"}</button></div></div>`},
  person({id}){const p=P[id],gs=S.groups,past=ARCH.map((a,i)=>[a,i]).filter(([a])=>a.ppl.includes(id)),both=PLACES.filter(pl=>(pl.wf||[]).includes(id)&&S.want&&S.want[pl.n]),r=(S.rel||{})[id],note=S.notes[id];
   const rc=(k,t,red)=>`<button class="cell ${red?"red":""}" data-a="${r===k?"unrel:"+id:"rel:"+id+":"+k}"><span class="ct">${t}</span><span class="v">${r===k?"On":""}</span></button>`;
+  const isF=friendsList().includes(id),met=ARCH.find(x=>(x.newp||[]).includes(id))||(past.length?past[past.length-1][0]:null),metTx=met?`Met at ${met.t} · ${(met.date||met.d).split(", ").pop()}`:p.fof?"Friends with "+p.fof:"";
+  const pwSeg=`<div class="pwseg"><span class="ct">Plans with ${p.n}<small>Only you see this. ${p.n} won’t know.</small></span><div class="seg"></div></div>`;
   return `<div class="view"><div class="nav"><div class="side"><button class="circ" data-a="back" aria-label="Back">${I.back}</button></div><h1></h1><div class="side r"></div></div><div class="scroll set">
-  <div class="ahead" style="margin-top:0"><div style="display:flex;justify-content:center">${fc([id],96)}</div><b>${p.n}</b><small>@${p.n.toLowerCase()}${r==="blocked"?"":" · "}${r==="blocked"?"":p.free?`<span class="dot" style="background:#34c759;display:inline-block;margin:0 4px 1px 0;vertical-align:middle"></span>`:""}${r==="blocked"?"":pStatus(id)}</small></div>
+  <div class="ahead" style="margin-top:0"><div style="display:flex;justify-content:center">${fc([id],96)}</div><b>${p.n}</b><small>@${p.n.toLowerCase()}${!isF?(metTx&&r!=="blocked"?" · "+metTx:""):`${r==="blocked"?"":" · "}${r==="blocked"?"":p.free?`<span class="dot" style="background:#34c759;display:inline-block;margin:0 4px 1px 0;vertical-align:middle"></span>`:""}${r==="blocked"?"":pStatus(id)}`}</small></div>
   ${r?`<div class="card" style="margin-top:16px"><b>${RELN[r]}</b><p class="small">${RELD[r].replace(/%/g,p.n)}</p></div>`:""}
-  ${r==="blocked"?"":`<div style="display:flex;gap:10px;margin-top:20px"><button class="btn s" data-a="dm:${id}">${I.msg}Message</button><button class="btn" data-a="make:${id}">${I.plus}Make a plan</button></div>`}
+  ${r==="blocked"?"":isF?`<div style="display:flex;gap:10px;margin-top:20px"><button class="btn s" data-a="dm:${id}">${I.msg}Message</button><button class="btn" data-a="make:${id}">${I.plus}Make a plan</button></div>`:`<div style="display:flex;margin-top:20px"><button class="btn" data-a="addp:${id}">${I.plus}Add</button></div>`}
   <div class="lab">Note</div><div class="grp">${cell(note?esc(note):`<span style="color:var(--mute)">Add a note so you remember ${p.n}</span>`,"sheet:note:"+id,{noch:1,v:note?"Edit":""})}</div><p class="foot" style="margin:6px 0 0">Only you see this.</p>
-  <div class="lab">Groups</div><div class="crow" style="flex-wrap:wrap">${gs.map(g=>`<button class="fchip ${g.m.includes(id)?"on":""}" data-a="ingrp:${g.id}:${id}">${g.m.includes(id)?I.check:""}${g.n}</button>`).join("")}<button class="fchip" data-a="sheet:newgrp:${id}">${I.plus}New</button></div>
-  <p class="foot" style="margin:8px 0 0">${p.n} won’t know which groups they’re in.</p>
+  ${isF?`<div class="lab">Groups</div><div class="crow" style="flex-wrap:wrap">${gs.map(g=>`<button class="fchip ${g.m.includes(id)?"on":""}" data-a="ingrp:${g.id}:${id}">${g.m.includes(id)?I.check:""}${g.n}</button>`).join("")}<button class="fchip" data-a="sheet:newgrp:${id}">${I.plus}New</button></div>
+  <p class="foot" style="margin:8px 0 0">${p.n} won’t know which groups they’re in.</p>`:""}
   ${youTwo(id)}
-  <div class="grp" style="margin-top:32px"><button class="cell" data-a="hidefree:${id}"><span class="ct">Hide when I’m free<small>${p.n} won’t see it, and won’t know.</small></span><span class="sw ${S.hide[id]?"on":""}"></span></button></div>
-  <div class="grp" style="margin-top:16px">${rc("muted","Mute")}${rc("restricted","Restrict")}${rc("removed","Remove friend")}${r==="blocked"?rc("blocked","Block",1):`<button class="cell red" data-a="blockask:${id}"><span class="ct">Block</span><span class="v"></span></button>`}<button class="cell red" data-a="repperson:${id}"><span class="ct">Report ${p.n}</span></button></div>
-  <p class="foot" style="margin:6px 0 0">${r?RELD[r].replace(/%/g,p.n):"Mute: no pings about their plans. Restrict: their messages don’t reach you. Neither is shown to them."}</p>
+  <div class="grp" style="margin-top:32px">${isF?`<button class="cell" data-a="hidefree:${id}"><span class="ct">Hide when I’m free<small>${p.n} won’t see it, and won’t know.</small></span><span class="sw ${S.hide[id]?"on":""}"></span></button>`:""}${isClose(id)?"":`<div class="cell sprcell"><span class="ct">Give ${p.n} a sprout<small>Only you’ll know.</small></span><span class="sprw">${sprBtn(id)}</span></div>`}</div>
+  <div class="grp" style="margin-top:16px">${isF?rc("muted","Mute")+rc("restricted","Restrict")+rc("removed","Remove friend"):""}${r==="blocked"?rc("blocked","Block",1):`<button class="cell red" data-a="blockask:${id}"><span class="ct">Block</span><span class="v"></span></button>`}<button class="cell red" data-a="repperson:${id}"><span class="ct">Report ${p.n}</span></button></div>
+  <p class="foot" style="margin:6px 0 0">${r?RELD[r].replace(/%/g,p.n):!isF?"":"Mute: no pings about their plans. Restrict: their messages don’t reach you. Neither is shown to them."}</p>
   </div></div>`},
  stub({t}){return `<div class="view"><div class="nav"><div class="side"><button class="circ" data-a="back" aria-label="Back">${I.back}</button></div><h1>${t}</h1><div class="side r"></div></div><div class="scroll"><div class="card" style="text-align:center;padding:30px"><b>${t}</b><p class="small" style="margin-top:6px">Next step: building this flow.</p></div></div></div>`}
 };
@@ -965,7 +986,7 @@ const SH={
  filter(){return `<div class="grab"><i></i></div><div class="scroll"><h2>Show plans</h2>${[["now","Now","Starting within the hour"],["tonight","Tonight",""],["week","This week",""],["any","Any time","Everything coming up"]].map(([k,l,s])=>`<button class="row selrow ${S.filter===k?"on":""}" data-a="setfilter:${k}" aria-pressed="${S.filter===k}"><span class="tx"><b>${l}</b>${s?`<small>${s}</small>`:""}</span><span class="ring">${S.filter===k?"✓":""}</span></button>`).join("")}<p class="small" style="margin-top:6px">Applies to the map and the list.</p></div>`},
  card({k}){const p=PL[k],o=[p.host].concat(byClose(p.ppl.filter(x=>x!==p.host)));const L=left(k),askFirst=p.home&&P[p.host].fof;
   return `<div class="grab"><i></i></div><div class="scroll" style="padding-top:2px">${vcard(k,false,"sheet")}
-  ${S.allppl===k?`<div class="gh"><b>Everyone going · ${o.length}</b></div>`+o.map(id=>`<div class="row" style="padding:8px 0">${fc([id],40)}<span class="tx"><b style="font-size:15px">${P[id].n}${id===p.host?" · host":""}</b><small>${P[id].rel}</small></span></div>`).join(""):""}
+  ${S.allppl===k?`<div class="gh"><b>Everyone going · ${o.length}</b></div>`+o.map(id=>id==="mia"?`<div class="row" style="padding:8px 0">${fc([id],40)}<span class="tx"><b style="font-size:15px">${P[id].n}${id===p.host?" · host":""}</b><small>${P[id].rel}</small></span></div>`:`<button class="row" style="padding:8px 0" data-a="person:${id}">${fc([id],40)}<span class="tx"><b style="font-size:15px">${P[id].n}${id===p.host?" · host":""}</b><small>${P[id].rel}</small></span>${I.chr}</button>`).join(""):""}
   ${p.home&&!S.joined[k]||!p.getting.length?"":`<div class="lab" style="margin-top:20px">Good to know</div><div class="gtk">${p.getting.map(g=>`<div>${gIcon(g)}<span>${esc(g)}</span></div>`).join("")}</div>`}
   ${S.joined[k]?`<button class="btn" style="margin-top:16px" data-a="page:${k}">Open plan</button>`:S.pending[k]?`<button class="btn" disabled style="margin-top:16px">Waiting for ${P[p.host].n}</button>`:`${S.inv[k]?`<div class="ia2" style="margin-top:16px"><button class="btn" data-a="take:${k}">${askFirst?"Ask to join":L<=0?"Join waitlist":"Join"}</button><button class="btn s" data-a="invno:${k}">Not this time</button></div>`:`<button class="btn" style="margin-top:16px" data-a="take:${k}">${askFirst?"Ask to join":L<=0?"Join waitlist":"Join"}</button>`}${askFirst?`<p class="small" style="margin-top:8px;text-align:center">${P[p.host].n} hasn’t met you yet, so ${P[p.host].n} says yes first. You’ll get the address then.</p>`:""}`}</div>`},
  pmore({k}){const p=PL[k];return `<div class="grab"><i></i></div><div class="scroll"><h2>${p.t}</h2>${p.mine?`<p class="small" style="margin:2px 0 0">You’re the host</p><div class="grp" style="margin-top:16px">${cell("Edit plan","hedit:"+k,{sub:"Time, place or seats. Everyone gets a heads-up."})}<button class="cell" data-a="hclose:${k}"><span class="ct">Stop new people joining<small>People already in stay in</small></span><span class="sw ${p.closed?"on":""}"></span></button>${cell("Who can join","sheet:hjoin:"+k,{v:p.askAll?"Ask me first":"Friends join, others ask"})}</div><div class="grp" style="margin-top:16px">${cell("Call it off","hoff:"+k,{red:1,noch:1})}</div>`:`<div class="grp" style="margin-top:16px">${cell("Can’t make it","cant:"+k,{sub:"Gives your seat back. No one gets a ping.",noch:1})}</div>`}<div class="grp" style="margin-top:16px">${cell("Add to calendar","cal",{noch:1})}${p.mine?"":cell("Report this plan","sheet:rep:plan|"+k,{red:1,noch:1})}</div></div>`},
@@ -1014,6 +1035,26 @@ I.scan=`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden=
 I.msg=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
 I.share=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 I.chr=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+// 11/25: UI icons redrawn in SF Symbols style (simple outlines, round caps). Names = the SF Symbol each one stands for, so Expo can use the real one.
+{const sf=(w,d,sw=2)=>`<svg width="${w}" height="${w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+Object.assign(I,{
+ msg:sf(16,'<path d="M12 4.6c4.8 0 8.6 3.1 8.6 7s-3.8 7-8.6 7c-1.1 0-2.1-.15-3.1-.45-1.2.95-2.8 1.6-4.6 1.75.75-.9 1.25-1.9 1.4-2.9C4.3 15.7 3.4 13.8 3.4 11.6c0-3.9 3.8-7 8.6-7Z"/>'),/* bubble.left */
+ send:sf(18,'<path d="M12 19V5.5M6.5 11 12 5.5l5.5 5.5"/>',2.4),/* arrow.up */
+ search:sf(18,'<circle cx="10.6" cy="10.6" r="6.1"/><path d="m15.2 15.2 4.6 4.6"/>',2.2),/* magnifyingglass */
+ clock:sf(14,'<circle cx="12" cy="12" r="8.6"/><path d="M12 7.2V12h3.6"/>',2.2),/* clock */
+ back:sf(20,'<path d="M14.8 5.2 8 12l6.8 6.8"/>',2.3),/* chevron.left */
+ chr:sf(16,'<path d="M9.2 5.2 16 12l-6.8 6.8"/>',2.2),/* chevron.right */
+ chev:sf(14,'<path d="M6.2 9.4 12 15.2l5.8-5.8"/>',2.4),/* chevron.down */
+ x:sf(18,'<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>',2.2),/* xmark */
+ plus:sf(16,'<path d="M12 5.2v13.6M5.2 12h13.6"/>',2.4),/* plus */
+ check:sf(16,'<path d="M5.5 12.6 10 17l8.5-9.5"/>',2.4),/* checkmark */
+ more:`<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18.5" cy="12" r="1.7"/></svg>`,/* ellipsis */
+ pen:sf(16,'<path d="M15.5 4.8l3.7 3.7L8.6 19.1l-4.6.9.9-4.6L15.5 4.8Z"/><path d="M13.3 7l3.7 3.7"/>'),/* pencil */
+ share:sf(16,'<path d="M12 3.5v11M8 7.5l4-4 4 4M8.5 10.5H7a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.5a2 2 0 0 0-2-2h-1.5"/>'),/* square.and.arrow.up */
+ mark:sf(18,'<path d="M7 4.5h10a.5.5 0 0 1 .5.5v15l-5.5-3.6L6.5 20V5a.5.5 0 0 1 .5-.5Z"/>'),/* bookmark */
+ tchat:sf(24,'<path d="M12 4.6c4.8 0 8.6 3.1 8.6 7s-3.8 7-8.6 7c-1.1 0-2.1-.15-3.1-.45-1.2.95-2.8 1.6-4.6 1.75.75-.9 1.25-1.9 1.4-2.9C4.3 15.7 3.4 13.8 3.4 11.6c0-3.9 3.8-7 8.6-7Z"/>'),/* bubble.left (tab) */
+ tplans:sf(24,'<rect x="3.8" y="5" width="16.4" height="15.2" rx="3"/><path d="M3.8 9.8h16.4M8.2 3v3.6M15.8 3v3.6"/>'),/* calendar (tab) */
+});}
 ARCH.push(
  {t:"Tacos after climbing",d:"Oct 28",m:"October",date:"Tue, Oct 28",scene:"Food",tod:"Night",newp:[],sub:"With Theo, Jess",place:"Leo’s Taqueria",ppl:["theo","jess"],msgs:[["theo","al pastor line is short"]]},
  {t:"Halloween party",d:"Oct 31",m:"October",date:"Fri, Oct 31",scene:"Party",tod:"Night",newp:["bea"],sub:"You met Bea",place:"Kai’s place",ppl:["kai","bea","lena"],msgs:[["kai","costumes required"]]},
@@ -1064,6 +1105,24 @@ const whoSet=()=>{const fl=friendsList();if((S.set.whoMode||"pick")==="all")retu
 const whoTx=()=>{if((S.set.whoMode||"pick")==="all")return "All friends";const {gs,ps}=whoSel(),a=gs.map(g=>g.n).concat(ps.map(k=>P[k].n));return a.length?a[0]+(a.length>1?" +"+(a.length-1):""):"No one"};
 const whoN=()=>whoSet().filter(k=>!S.hide[k]).length;
 const hidN=()=>Object.keys(S.hide).filter(k=>S.hide[k]&&P[k]);
+/* 11/25 recap check-in: before you answer, three faces; after, one line that answers back (tap the face to change) */
+const RVFACE={"Loved it":'<path d="M11 19c2-3 6-3 8 0M23 19c2-3 6-3 8 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M15 27c3 4 9 4 12 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>',"It was fine":'<circle cx="15" cy="18" r="4" fill="#fff"/><circle cx="27" cy="18" r="4" fill="#fff"/><circle cx="16" cy="18.5" r="2" fill="#000"/><circle cx="28" cy="18.5" r="2" fill="#000"/><path d="M15 28h12" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>',"Not for me":'<circle cx="15" cy="18" r="4" fill="#fff"/><circle cx="27" cy="18" r="4" fill="#fff"/><circle cx="16" cy="18.5" r="2" fill="#000"/><circle cx="28" cy="18.5" r="2" fill="#000"/><path d="M15 30c3-4 9-4 12 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>'};
+const rvFace=(o,d)=>`<svg class="rvf" viewBox="0 0 42 42" width="${d}" height="${d}" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="12" fill="currentColor"/>${RVFACE[o]}</svg>`;
+const RVSAY={"Loved it":["Glad you had fun.",""],"It was fine":["Thanks for telling us.",""],"Not for me":["Sorry it wasn’t great.","What didn’t work?"]};
+const rvWhy=(a,w,pub)=>({"The place":["Got it.",`We’ll show ${a.place} less.`],"The people":["Got it.","Tap anyone above you’d rather not see again."],"The activity":["Got it.",`Fewer ${a.scene.toLowerCase()} plans from now on.`],"Something else":["Thanks for telling us.",""],skip:["Thanks for telling us.",""]})[w];
+const rvOdd=(a)=>(a.newp||[]).filter(x=>!friendsList().includes(x));
+// 11/25 Sprout: a private "I'd like more of this person" mark. Planted (not a friend yet) → Growing (friend). Close friends don't get one.
+const isClose=id=>!!(P[id].close||(S.groups.find(g=>g.id==="close")||{m:[]}).m.includes(id));
+const sprStage=id=>S.spr[id]?(friendsList().includes(id)?"growing":"planted"):"";
+const sprIcon=st=>`<svg class="spr ${st}" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><g class="spg"><rect class="st" x="10.9" y="10" width="2.2" height="11" rx="1.1"/><path class="l" d="M11.8 12.6C11.4 7.6 7.6 5 3 5.6c.3 4.6 4 7.6 8.8 7Z"/><path class="r" d="M12.2 13.4c.4-4.8 4.2-7.4 8.8-6.8-.3 4.8-4 7.6-8.8 6.8Z"/></g></svg>`;
+const sprBtn=id=>isClose(id)?"":`<button class="spc ${S.spr[id]?"on":""}" data-a="spr:${id}" aria-pressed="${!!S.spr[id]}" aria-label="Sprout for ${P[id].n}">${sprIcon(sprStage(id))}</button>`;
+const sprCoach=()=>S.sprSeen?"":`<div class="coach"><b>Want more of this?</b>Give them a sprout and watch it grow. Only you’ll know.<button data-a="sprseen">Got it</button></div>`;
+function rvCard(i,a,rv,pub,ch){
+ if(!rv.how)return `<div class="rvq"><div class="rvh"><b>How was it?</b><small>Only you see this.</small></div><div class="rvo">${["Loved it","It was fine","Not for me"].map(o=>`<button data-a="rv:${i}:how:${o}">${rvFace(o,48)}<span>${o}</span></button>`).join("")}</div></div>`;
+ const ask=rv.how==="Not for me"&&!rv.why,[t,sb]=rv.how==="Not for me"&&rv.why?rvWhy(a,rv.why):RVSAY[rv.how];
+ const why=["The place","The people","The activity","Something else"].filter(w=>w!=="The place"||pub).filter(w=>w!=="The people"||rvOdd(a).length);
+ return `<div class="rvd ${ask?"why":""}"><button class="rvx" data-a="rv:${i}:how:${rv.how}" aria-label="Change your answer">${rvFace(rv.how,40)}</button><span class="tx"><b>${t}</b>${sb?`<small>${sb}</small>`:""}</span>${ask?`<button class="rvskip" data-a="rv:${i}:why:skip">Skip</button><div class="rvw">${why.map(w=>`<button class="fchip" data-a="rv:${i}:why:${w}">${w}</button>`).join("")}</div>`:""}</div>
+ ${pub?`<p class="small" style="margin:14px 0 8px;color:var(--ink);font-weight:600">${a.place} is good for</p>${ch("fit",["2 people","3–5","6+"])}`:""}`}
 Object.assign(SCR,{
  chat({k,dm,arch}){
   if(arch!==undefined){const a=ARCH[arch];return `<div class="view"><div class="nav"><div class="side"><button class="circ" data-a="back" aria-label="Back">${I.back}</button></div><h1>${a.t}<small>Ended ${a.d}</small></h1><div class="side r"></div></div><div class="scroll" id="cs">${a.msgs.map(msgH(false)).join("")}</div><p class="ended">This plan ended ${a.d}. You can read the chat but not send.</p></div>`}
@@ -1127,16 +1186,13 @@ Object.assign(SCR,{
   if(st===7){const sel=o.into||{},n=Object.keys(sel).filter(k=>sel[k]).length;return wrap(`${illoSpot("int-header · a berry picking things")}<b class="obh" style="margin-top:12px">What do you like to do?</b><p class="obp">We’ll show plans like these first.</p><div class="obint">${INTO.map(x=>`<button class="${sel[x]?"on":""}" data-a="obint:${x}">${planIcon({short:x})}<span>${x}</span></button>`).join("")}</div>`,(n?btn("Continue","obgo:10"):`<button class="btn s" data-a="obgo:10">Skip for now</button>`))}
   if(st===10)return wrap(`<b class="obh">Add people you’ve met</b><p class="obp">Hourberry is better with a few friends.</p><div class="tiles3"><button data-a="obadd:hold">${I.hold}<span>Hold phones</span></button><button data-a="obadd:code">${I.qr}<span>My code</span></button><button data-a="obadd:scan">${I.scan}<span>Scan</span></button></div><div class="grp" style="margin-top:16px">${cell("Contacts","obadd:contacts",{sub:"Find friends who are already here"})}${cell("Share invite link","obadd:link",{sub:"Text it, post it",noch:1})}</div>${o.added?`<p class="obok" style="margin-top:16px">✓ ${o.added} added</p>`:""}`,btn(o.added?"Done":"Continue","obgo:11")+(o.added?"":link("Skip for now","obgo:11")));
   return `<div class="view ob"><div class="obbody" style="justify-content:center;align-items:center;text-align:center"><span class="bber bump">${berrySVG(S.me,120)}</span><b class="obh" style="margin-top:20px">You’re in, ${esc(nm)}</b><p class="obp">${o.added?"Theo’s in your bunch. Next time you’re free, they’ll know.":"Add a few friends and you’re set."}</p></div><div class="obfoot">${o.added?btn("Let’s go","obdone"):btn("Add friends","obdone:add")+link("Maybe later","obdone")}</div></div>`},
- pastp({i}){i=+i;const a=ARCH[i],nw=a.newp||[],old=a.ppl.filter(x=>!nw.includes(x)),rv=S.rv[i]||{},pub=PLACES.find(x=>x.n===a.place);
-  const ch=(q,opts)=>`<div class="crow" style="flex-wrap:wrap">${opts.map(o=>`<button class="fchip ${rv[q]===o?"on":""}" data-a="rv:${i}:${q}:${o}">${o}</button>`).join("")}</div>`;
+ pastp({i}){i=+i;const a=ARCH[i],nw=a.newp||[],pub=PLACES.find(x=>x.n===a.place),ppl=nw.concat(a.ppl.filter(x=>!nw.includes(x)));
+  const names=ppl.slice(0,3).map(x=>P[x].n).join(", ")+(ppl.length>3?` and ${ppl.length-3} more`:"");
   return sub("",`<div class="ahead" style="align-items:flex-start;margin-top:0"><b class="h1" style="margin:0">${a.t}</b><small>${a.date} · ${a.place}</small></div>
-  <div class="rhero"><div class="illo"><span class="sqb">${a.ppl.slice(0,3).map(x=>fc([x],48)).join("")}${berryAv(48)}</span><small>Illustration · ${a.scene} · ${a.tod} · ${a.ppl.length+1} berries${nw.length?" · new leaf on "+nw.map(x=>P[x].n).join(", "):""}</small></div><b>${nw.length?`You met ${nw.length} new ${nw.length>1?"people":"person"}`:"With "+a.ppl.map(x=>P[x].n).join(", ")}</b></div>
-  ${nw.length?`<div class="lab">New to you</div>${nw.map(id=>`<div class="row" style="align-items:flex-start"><button data-a="person:${id}">${fc([id],44)}</button><span class="tx"><b>${P[id].n}</b><small>${friendsList().includes(id)?"Added at this plan":"Was at this plan too · not added yet"}</small><button class="nlink" data-a="sheet:note:${id}">${S.notes[id]?"“"+esc(S.notes[id])+"”":"+ Add a note"}</button></span>${friendsList().includes(id)?`<button class="btn s sm" data-a="dm:${id}">${I.msg}Message</button>`:`<button class="btn sm" data-a="addp:${id}">Add</button>`}</div>`).join("")}
-  ${old.length?`<div class="lab">Also there</div><div class="row">${fc(old,32)}<span class="tx"><b style="font-weight:500">${old.map(x=>P[x].n).join(", ")}</b></span></div>`:""}`:""}
+  <div class="rhero"><div class="illo"><span class="sqb">${a.ppl.slice(0,3).map(x=>fc([x],48)).join("")}${berryAv(48)}</span><small>Illustration · ${a.scene} · ${a.tod} · ${a.ppl.length+1} berries${nw.length?" · new leaf on "+nw.map(x=>P[x].n).join(", "):""}</small></div></div>
+  <div class="rsts"><div><b>${a.ppl.length+1}</b><small>berries</small></div><div><b>${nw.length}</b><small>new</small></div><div><b>${a.dur||"2h"}</b><small>together</small></div></div>
+  <button class="rwho" data-a="sheet:who:${i}"><span class="stk">${fc(ppl.slice(0,3),36)}</span><span class="tx"><b>Who was there</b><small>${names}</small></span>${I.chr}</button>
   <button class="btn" style="margin-top:24px" data-a="again:${i}">${I.plus}Plan again</button>
-  <div class="lab">How was it?</div>${ch("how",["Loved it","It was fine","Not for me"])}
-  ${rv.how&&pub?`<p class="small" style="margin:16px 0 8px;color:var(--ink);font-weight:600">${a.place} is good for</p>${ch("fit",["2 people","3–5","6+"])}`:""}
-  <p class="foot" style="margin:8px 0 0">Only you see this. You can change it anytime.</p>
   <div class="grp" style="margin-top:32px">${pub?cell(a.place,"savep:"+a.place,{v:S.saveP&&S.saveP[a.place]?"Saved":"Save place",noch:1}):""}${cell("Chat","arch:"+i,{v:"Read only"})}</div>`)},
  archived(){return sub("Archived",`${ARCH.map((a,i)=>`<button class="row" data-a="arch:${i}">${bunchSq(a.ppl.slice(0,3))}<span class="tx"><b>${a.t}</b><small>Ended ${a.d}</small></span>${I.chr}</button>`).join("")}<p class="foot" style="margin:12px 0 0">Plan chats move here the day after the plan.</p>`)},
  me(){const m=S.me,ints=INTO.filter(x=>S.set.into[x]),hosting=Object.entries(PL).filter(([k,p])=>p.mine&&!S.off[k]),wants=PLACES.filter(pl=>S.want&&S.want[pl.n]),hosted=5;
@@ -1235,9 +1291,12 @@ Object.assign(SCR,{
   ${S.prem?`<div class="grp" style="margin-top:16px">${tcell("Show my badge","badge","A star on your berry")}</div>`:""}<p class="foot" style="text-align:center;margin:10px 0 0">Renews monthly. Cancel anytime in Settings.</p>
   <div class="links"><button data-a="restore">Restore purchases</button><button data-a="ext:Terms of Use">Terms</button><button data-a="ext:Privacy Policy">Privacy</button></div>`)}
 });
-const msgH=dm=>([w,t])=>w==="sys"?`<div class="sys">${esc(t)}</div>`:`<div class="msg ${w==="mia"?"me":""}">${w==="mia"||dm?"":fc([w],26)}<div class="bb" ${w==="mia"?"":`data-a="sheet:msgmenu:${w}" role="button"`}>${w==="mia"||dm?"":`<small>${P[w].n}</small>`}${esc(t)}</div></div>`;
+const msgH=dm=>([w,t])=>w==="sys"?`<div class="sys">${esc(t)}</div>`:`<div class="msg ${w==="mia"?"me":""}">${w==="mia"||dm?"":`<button class="mav" data-a="person:${w}" aria-label="${P[w].n}’s profile">${fc([w],30)}</button>`}<div class="bb" ${w==="mia"?"":`data-a="sheet:msgmenu:${w}" role="button"`}>${w==="mia"||dm?"":`<small>${P[w].n}</small>`}${esc(t)}</div></div>`;
 Object.assign(SH,{
  mycode(){return `<div class="grab"><i></i></div><div class="scroll" style="text-align:center"><h2>Your code</h2><div style="display:flex;justify-content:center;margin-top:12px;background:var(--g1);border-radius:16px;padding:20px">${qrH()}</div><b style="display:block;font-size:20px;margin-top:16px">@${ME.user}</b><button class="btn s" style="margin-top:20px" data-a="scanfromcode">${I.scan}Scan</button></div>`},
+ who({k}){const a=ARCH[+k],nw=a.newp||[],ppl=nw.concat(a.ppl.filter(x=>!nw.includes(x))),F=friendsList();let coach=false;
+  return `<div class="grab"><i></i></div><div class="scroll"><h2>Who was there</h2><p class="small" style="margin:2px 0 8px">${a.t} · ${a.date}</p>${ppl.map(id=>{const isF=F.includes(id),b=sprBtn(id),c=b&&!coach&&!S.sprSeen;if(c)coach=true;
+   return `<div class="row whor"><button data-a="person:${id}">${fc([id],44)}</button><button class="tx" data-a="person:${id}"><b>${P[id].n}</b><small>${nw.includes(id)?"New":"Friend"}</small></button>${!isF?`<button class="btn sm" data-a="addp:${id}">Add</button>`:""}${b?`<span class="sprw">${b}${c?sprCoach():""}</span>`:`<span class="sprw"></span>`}</div>`}).join("")}</div>`},
  note({k}){return `<div class="grab"><i></i></div><div class="scroll"><h2>Note</h2><textarea class="tin" id="pnote" rows="3" style="height:auto;padding:12px 14px;resize:none" placeholder="Met at Rooftop. Climbs on Thursdays." maxlength="140">${esc(S.notes[k]||"")}</textarea><p class="foot" style="margin:6px 0 0">Only you see this.</p><button class="btn" style="margin-top:16px" data-a="notesave:${k}">Save</button></div>`},
  newgrp({k}){S.ng=S.ng||{n:"",m:k?[k]:[]};const ng=S.ng;return `<div class="grab"><i></i></div><div class="scroll"><h2>New group</h2><input class="tin" id="ngname" placeholder="Name it — Roommates, Book club…" value="${esc(ng.n)}" maxlength="24" autocomplete="off">
   <div class="lab">Who’s in it</div>${friendsList().map(x=>`<button class="row" data-a="ngtog:${x}">${fc([x],36)}<span class="tx"><b>${P[x].n}</b></span><span class="ck ${ng.m.includes(x)?"on":""}">${ng.m.includes(x)?I.check:""}</span></button>`).join("")}
@@ -1324,7 +1383,11 @@ function actX(c,v){
  if(c==="notesave"){const t=($("#pnote")||{}).value||"";S.notes[v]=t.trim();S.sheet=null;render();return 1}
  if(c==="hidefree"){S.hide[v]=!S.hide[v];render();toast(S.hide[v]?P[v].n+" won’t see you’re free":P[v].n+" can see you’re free again");return 1}
  if(c==="repperson"){toast("Reported · we’ll take a look. "+P[v].n+" won’t know.");return 1}
- if(c==="rv"){const [i,q,o]=v.split(":");S.rv[i]=S.rv[i]||{};S.rv[i][q]=S.rv[i][q]===o?undefined:o;render();return 1}
+ if(c==="rv"){const [i,q,o]=v.split(":");S.rv[i]=S.rv[i]||{};S.rv[i][q]=S.rv[i][q]===o?undefined:o;if(q==="how")delete S.rv[i].why;render();return 1}
+ if(c==="spr"){S.spr[v]=!S.spr[v];S.sprSeen=1;render();return 1}
+ if(c==="sprseen"){S.sprSeen=1;render();return 1}
+ if(c==="pw"){const [id,o]=v.split(":");S.pw[id]=o;S.nopair[id]=o==="Fewer";render();return 1}
+ if(c==="nopair"){S.nopair[v]=!S.nopair[v];S.pw[v]=S.nopair[v]?"Fewer":"Normal";render();if(!S.nopair[v])toast("You might be paired with "+P[v].n+" again");return 1}
  if(c==="again"){const a=ARCH[+v];startMake({who:a.ppl.slice(),place:PLACES.find(x=>x.n===a.place)?a.place:undefined,from:"recap"});return 1}
  if(c==="mcloseadd"){S.modal=null;push("addp");return 1}
  if(c==="freshmode"){applyFresh();render();toast("Viewing as a new user · reload to reset");return 1}

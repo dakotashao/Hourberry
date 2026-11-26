@@ -125,3 +125,18 @@
 ### 登录（§19）
 - 补规则：Get started 用已注册的号码 → 直接进地图 + "Welcome back"；I have an account 用没注册的号码 → "No account with this number" + Create one。原型的主路径本来就是手机号 + 验证码。
 - 删掉旧的密码登录页（step 0.5）和 Forgot password 的代码：11/16 起就没有入口了，但还留在文件里，被误当成现在的登录页画进了 Figma。以后加邮箱找回也是发码到邮箱，不会用密码。
+
+## 11/25 · People · 未提交
+- People 页去掉分组筛选（All / Close friends / Climbing / +）。人的列表不放筛选；分组在朋友个人页的 Groups 标签里加减，也能从 Who sees you 进分组页。（§13）
+- 列表行（地图抽屉、Plans、People 等）的标题和第二行只占一行，太长用 “…” 截断，右边的时间不再被挤。
+
+## 11/25 · Recap · 未提交
+- How was it? 从页面最底部的三个标签，改成插画下面的一张卡：三张果子脸；回答后收成一行回应 + Plan again（Not for me 没有按钮）；点脸可以改。（§7）
+- 局卡片（§9）：上半部分改成一个主角——主持人的果子 + 留言气泡 + "Noor is hosting" / 为什么你会看到它；其他人收成一个胶囊 "7 going · 2 seats left"，点开看所有人。去掉 Your seat、空位、See all 那一排和单独的 "Lena’s in" 标签。
+- Recap 第二版：New to you 挪到评价卡上面；Plan again 移出卡片，一直在底部（Not for me 后变次要）；Loved it / It was fine 不追问；Not for me 追问原因（place / people / activity / something else / Skip），只按原因改推荐；The people 后没加的新朋友出现 "Rather not see X again"；个人页加 "Fewer plans together" 开关（S.nopair）。
+- 图标：UI 图标按 SF Symbols 风格重画（简约线条、圆头）：bubble.left、arrow.up、magnifyingglass、clock、chevron、xmark、plus、checkmark、ellipsis、pencil、square.and.arrow.up、bookmark、两个 tab。定位针保留原来的水滴。
+- 个人页分朋友 / 非朋友：非朋友只有 Add（不能私信）、头部写 Met at…、没有分组和 Hide when I’m free、底部只有 Block / Report。两边都加 Plans with X 分段（Fewer / Normal / More，S.pw），替换 Fewer plans together 开关；跟 recap 的 Rather not see 同步。
+- Recap 第三版：去掉 How was it 评价卡、追问、地点适合几人、New to you / Also there；改成数据块 + Who was there 一行（点开弹层名单 SH.who）+ Plan again。
+- 小芽（RULES §28）：S.spr / S.sprSeen；sprBtn / sprIcon / sprCoach；名单最右一列 + 个人页私人设置一行；第一次出现气泡；排序 fam 加权。个人页去掉 Plans with X 分段和 Fewer plans together。
+- 局里 Everyone going 名单每行可点进个人页。
+- 群聊里别人的头像能点进个人页；头像 26 → 30（跟 iMessage 一样，约等于一行气泡的高度）。
