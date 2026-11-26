@@ -100,3 +100,4 @@ hi-fi 从 `core/index.html` 复制而来，屏幕、逻辑、文案跟 core 一�
 - 列表行加了线条图标（Settings、朋友页的 Mute / Restrict / Block / Report、局的菜单等）；填资料的行、通知开关不加。Edit profile 按钮加了铅笔图标，跟旁边的 Share 一致。
 - What you're into：选中的标签有主色描边和对勾；最多 5 个，标题旁显示 3/5，选满再点会提示先去掉一个；点一下就保存（写明 "Saves as you tap"）；最后有 More，打开按分类排、能搜索的完整列表。
 - Background 改成整张场景图（GPT 一整张画出地球、天空和装饰，`assets/scene-*.jpg`），先接好了 Space；Picnic / Golden hour / Pixel / Rooftop 画好前不显示，选了它们的人先显示默认的 Sparkles。Sparkles 还是我们自己画的，颜色跟着果子。
+- 以上第七轮提交：`0992cde`。
