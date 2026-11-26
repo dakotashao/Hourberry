@@ -101,3 +101,18 @@ hi-fi 从 `core/index.html` 复制而来，屏幕、逻辑、文案跟 core 一�
 - What you're into：选中的标签有主色描边和对勾；最多 5 个，标题旁显示 3/5，选满再点会提示先去掉一个；点一下就保存（写明 "Saves as you tap"）；最后有 More，打开按分类排、能搜索的完整列表。
 - Background 改成整张场景图（GPT 一整张画出地球、天空和装饰，`assets/scene-*.jpg`），先接好了 Space；Picnic / Golden hour / Pixel / Rooftop 画好前不显示，选了它们的人先显示默认的 Sparkles。Sparkles 还是我们自己画的，颜色跟着果子。
 - 以上第七轮提交：`0992cde`。
+- 果子的腿统一画在身体后面（草莓、蓝莓、黑莓、金莓原来腿压在身体上，换浅色时接缝很明显）。
+- "Your berry" 卡片的小图按整颗果子（含帽子）裁切居中，不再偏、不再裁到腿。
+- 五张整图场景全部接好：Picnic、Golden hour（免费），Pixel、Space、Rooftop（Premium）。每张都是 GPT 一次画出的完整画面（地球/地面、天空、装饰融在一起），果子站在中间空出来的地面上。
+- 场景精简（Dakota：要简洁）：去掉 Golden hour 和 Rooftop；Picnic、Pixel、Space 换成极简版（大片纯色天空 + 一条干净的地面弧线 + 两样小装饰）。编辑页预览完整显示整张图，上方用同色天空补齐。
+- 场景加到 12 个。简约（我们自己画，颜色跟着果子）：Sparkles、Bubbles、Hearts、Moon、Dots；整图（GPT 极简版）：Picnic、Beach 免费，Snow、Underwater、Desert、Pixel、Space 是 Premium。
+- Background 默认改成 Auto：白天显示 Day（原 Sparkles），晚上（17 点到 5 点）显示 Night（原 Moon，天色更深 + 月亮）。Day、Night 也能单独选。Auto 的格子一半白天一半夜晚。
+- 7 张整图场景换成 Dakota 在 Figma 里矢量化的版本（更清晰，960×600）。Underwater 改成海蓝渐变 + 光束，Beach 天空改成浅蓝、海改成青蓝，跟沙子分开；这两张的改色在 Figma 里她原图旁边的副本上。天空补色按新图重新取色。
+- Background 的 Auto 现在跟 Appearance 走：Light 一直是白天，Dark 一直是晚上，System 按时间（17 点到 5 点算晚上）。
+- 个人页舞台底部改成完整淡到白色，跟下面的白底接上，不再有一道边。
+- Premium 页顶部的“抱星星”果子换成你自己的果子（形状和颜色都跟着变），星星和小手叠在上面，小手用果子的深色。
+- 个人页舞台底部的渐变拉长、放缓，不再是一截突然变白。
+- “Best time to catch me” 改成用户自己填：几天 + 时段（Mornings / Afternoons / After 7 PM），可以加到 3 段。徽章页去掉柱状图，换成跟 Go-to spot 一样的一行行（一段一行，月亮/太阳图标），点一行进编辑；说明改成 “Trevor’s usually free then.”；标题和徽章上的短字跟着填的内容变。
+- 这个徽章的插画只留黑莓坐懒人沙发（去掉钟、月亮、星星）；徽章墙小图标去掉月亮星星，换成跟其他图标一样的三道小闪光。
+- 列表行图标规则统一（参考 Instagram）：只有点进去会开新页面的行才有图标，开关和单选的行不放；同一组要么每行都有，要么都没有。通知设置页现在全部没有图标，之前只有 Time to leave 和 Morning recap 有。
+- 兴趣还是只能从列表里选（同 Tinder / Bumble）。More 里搜不到时显示 “No match for …” 和 Suggest it：点了只是把这个词提交给我们（toast 提示），不会加进自己的兴趣；搜索框清空，列表回来。
