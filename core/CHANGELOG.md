@@ -126,11 +126,11 @@
 - 补规则：Get started 用已注册的号码 → 直接进地图 + "Welcome back"；I have an account 用没注册的号码 → "No account with this number" + Create one。原型的主路径本来就是手机号 + 验证码。
 - 删掉旧的密码登录页（step 0.5）和 Forgot password 的代码：11/16 起就没有入口了，但还留在文件里，被误当成现在的登录页画进了 Figma。以后加邮箱找回也是发码到邮箱，不会用密码。
 
-## 11/25 · People · 未提交
+## 11/25 · People · 4b9dc8c
 - People 页去掉分组筛选（All / Close friends / Climbing / +）。人的列表不放筛选；分组在朋友个人页的 Groups 标签里加减，也能从 Who sees you 进分组页。（§13）
 - 列表行（地图抽屉、Plans、People 等）的标题和第二行只占一行，太长用 “…” 截断，右边的时间不再被挤。
 
-## 11/25 · Recap · 未提交
+## 11/25 · Recap · 4b9dc8c
 - How was it? 从页面最底部的三个标签，改成插画下面的一张卡：三张果子脸；回答后收成一行回应 + Plan again（Not for me 没有按钮）；点脸可以改。（§7）
 - 局卡片（§9）：上半部分改成一个主角——主持人的果子 + 留言气泡 + "Noor is hosting" / 为什么你会看到它；其他人收成一个胶囊 "7 going · 2 seats left"，点开看所有人。去掉 Your seat、空位、See all 那一排和单独的 "Lena’s in" 标签。
 - Recap 第二版：New to you 挪到评价卡上面；Plan again 移出卡片，一直在底部（Not for me 后变次要）；Loved it / It was fine 不追问；Not for me 追问原因（place / people / activity / something else / Skip），只按原因改推荐；The people 后没加的新朋友出现 "Rather not see X again"；个人页加 "Fewer plans together" 开关（S.nopair）。
